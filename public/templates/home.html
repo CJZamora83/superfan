@@ -1,0 +1,26 @@
+<div class="cen-jus" ng-hide="vm.isLoggedIn()">
+  <br>
+  <h3>Welcome Friend!</h3>
+  <h6>Please call me.</h6>
+  <br>
+  <p><strong>To maximally enjoy your time at <em>Uncle Derry's Fishin' Friends</em>
+      please <a ui-sref-active="active" ui-sref="register">register</a> or login:</strong></p>
+  <br>
+  <form class="form-inline" ng-submit="vm.login()">
+    <div class="form-group">
+      <label for="inputPhone1">Phone Number</label>
+      <input type="text" id="inputPhone1" class="form-control" placeholder="Your Digits!" ng-model="vm.loginData.phoneNumber" required />
+    </div>
+    <div class="form-group">
+      <label for="inputPword1">Password</label>
+      <input type="password" id="inputPword1" class="form-control" placeholder="Save your info!" ng-model="vm.loginData.password" required />
+    </div>
+    <button class="btn btn-success submit-login-button" type="submit">Login!</button>
+  </form>
+
+</div>
+
+<div class="container cen-jus" ng-show="vm.isLoggedIn()">
+  <h3>Welcome {{vm.currentUser.name}}!</h3>
+  <h6>I'll call you at {{vm.currentUser.phoneNumber}}</h6>
+</div>

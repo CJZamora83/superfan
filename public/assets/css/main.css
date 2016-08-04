@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'wooden';
+  src: url('../fonts/wooden_nickel.ttf');
+  src: url('../fonts/wooden_nickel.ttf') format('truetype');
+}
+
+.cen-jus {
+  text-align: center;
+}
+
+.left-jus {
+  float: left;
+}
+
+#heading-text {
+  font-family: wooden;
+  font-size: 5.3rem;
+  -webkit-text-shadow: 10px 10px 18px 0px rgba(55,55,55,0.75);
+  -moz-text-shadow: 10px 10px 18px 0px rgba(55,55,55,0.75);
+  text-shadow: 10px 10px 18px 0px rgba(55,55,55,0.75);
+}
+
+#derry-thumb {
+  border: 1px solid white;
+  border-radius: 25px;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 0px;
+  -webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+}
+
+footer {
+  margin: 30px 0px 35px 0px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.submit-login-button {
+  margin-left: 10px;
+}
+
+.about-thumbs-pics {
+  max-height: 200px;
+  border-radius: 5px;
+}
+
+.fish-li {
+  list-style-type: none;
+}

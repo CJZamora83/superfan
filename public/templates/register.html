@@ -1,0 +1,28 @@
+<div class="cen-jus">
+  <br>
+  <h3>Let Uncle Derry Call You!</h3>
+  <h4>Register Now, Friend!</h4>
+  <br>
+  <form ng-submit="vm.createUser()">
+    <div class="row">
+      <label for="inputName1" class="left-jus col-md-offset-3">Name</label>
+      <div class="form-group col-md-6 col-md-offset-3">
+        <input type="text" id="inputName1" class="form-control" placeholder="First Name..." ng-model="vm.userData.name" required />
+      </div>
+    </div>
+    <div class="row">
+      <label for="inputPhone1" class="left-jus col-md-offset-3">Phone Number</label>
+      <div class="form-group col-md-6 col-md-offset-3">
+        <input type="text" id="inputPhone1" class="form-control" placeholder="Digits only (so I can call ya!)..." ng-model="vm.userData.phoneNumber" required />
+      </div>
+    </div>
+    <div class="row">
+      <label for="inputPword1" class="left-jus col-md-offset-3">Password</label>
+      <div class="form-group col-md-6 col-md-offset-3">
+        <input type="password" id="inputPword1" class="form-control" placeholder="Save your info!" ng-model="vm.userData.password" required />
+      </div>
+    </div>
+    <button class="btn btn-success submit-login-button" type="submit">Friends Forever!</button>
+  </form>
+
+</div>

@@ -1,0 +1,45 @@
+<div class="cen-jus">
+
+  <br>
+  <h3>Uncle Derry's Fishin' Triumphs</h3>
+  <h6>Post Your Catches Here! Please call me.</h6>
+  <br>
+  <form id="new-fish" class="form-inline">
+    <div class="form-group">
+      <input type="text" name='fish[name]' id="fish-name" placeholder="Get Specific!" class="form-control" ng-model="vm.newFish.name" />
+    </div>
+    <select class="form-control" name="fish[category]" id="fish-category" ng-model="vm.newFish.category">
+        <option value="Fish">Fish</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Corpse">Corpse</option>
+        <option value="Trash">Trash</option>
+    </select>
+    <button class="btn btn-success btn-sm submit-login-button" type="submit" ng-click="vm.postFish()">Save Mah' Catch!</button>
+  </form>
+
+  <ul id="fishes">
+    <li ng-repeat="fish in vm.fishes" class="fish-li">
+      <br>
+      <strong>{{fish.name}}</strong> - <em>{{fish.category}}</em>
+      <button class="btn btn-danger btn-xs" ng-click="vm.deleteFish(fish._id)">X</button>
+      <button class="btn btn-warning btn-xs" ng-click="showme=true">Edit</button>
+
+      <form class="form-inline" ng-show="showme" id="edit-form">
+        <br>
+        <div class="form-group">
+          <input type="text" name='fishName' id="fish-name" placeholder="{{fish.name}}" class="form-control" ng-model="vm.editFish.name" />
+        </div>
+        <select class="form-control" name="fishCategory" id="fish-category" ng-model="vm.editFish.category">
+            <option value="Fish">Fish</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Corpse">Corpse</option>
+            <option value="Trash">Trash</option>
+        </select>
+        <button class="btn btn-success btn-xs" ng-click="vm.updateFish(fish._id)">Save</button>
+        <button class="btn btn-default btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>
+
+      </form>
+    </li>
+  </ul>
+
+</div>
