@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("fishinApp")
+    .module("superfanApp")
     .factory("userDataService", userDataService);
 
   userDataService.$inject = ['$http'];

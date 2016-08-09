@@ -1,6 +1,6 @@
 (function() {
 
-  angular.module('fishinApp')
+  angular.module('superfanApp')
          .factory('authToken',       authToken)
          .factory('authService',     authService)
          .factory('authInterceptor', authInterceptor);

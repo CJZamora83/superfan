@@ -1,9 +1,9 @@
 var _ = require('lodash');
 
 var localEnvVars = {
-  TITLE:      "Uncle Derry's Fishin' Log",
-  SAFE_TITLE: 'derry_fishin_log',
-  superSecret: "afishiwishafriendtofish"
+  TITLE:      "SUPERFAN",
+  SAFE_TITLE: 'superfan_celebrity_gossip_feed',
+  superSecret: "gossipycelebnewsandfeeds"
 };
 
 

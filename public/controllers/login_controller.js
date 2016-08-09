@@ -21,7 +21,7 @@
       authService.login(vm.loginData.phoneNumber, vm.loginData.password)
         .then(function(res) {
           $log.log(res.data);
-          $state.go('triumphs');
+          $state.go('user_feeds');
         });
     };
 

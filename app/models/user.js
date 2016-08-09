@@ -1,6 +1,5 @@
 var mongoose     = require('mongoose'),
     Schema       = mongoose.Schema,
-    Fish         = require('./fish.js'),
     bcrypt       = require('bcrypt-nodejs');
 
 //||||||||||||||||||||||||||--

@@ -1,5 +1,5 @@
 (function() {
-  angular.module('fishinApp')
+  angular.module('superfanApp')
          .controller('UsersController', UsersController);
 
   UsersController.$inject = ['$state', 'authService', 'userDataService', '$log'];

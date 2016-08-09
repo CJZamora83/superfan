@@ -11,9 +11,7 @@
     $stateProvider
       .state("homePage", {
         url: "/",
-        templateUrl: "/templates/home.html",
-        controller: "LoginController",
-        controllerAs: "vm"
+        templateUrl: "/templates/landing.html",
       })
       .state("aboutPage", {
         url: "/about",
@@ -23,12 +21,6 @@
         url: "/register",
         templateUrl: "/templates/register.html",
         controller: "UsersController",
-        controllerAs: "vm"
-      })
-      .state("triumphs", {
-        url: "/triumphs",
-        templateUrl: "/templates/triumphs.html",
-        controller: "TriumphsController",
         controllerAs: "vm"
       });
 
