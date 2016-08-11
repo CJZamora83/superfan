@@ -9,17 +9,17 @@
 
   function AppRoutes($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state("homePage", {
+      .state("home", {
         url: "/",
-        templateUrl: "/templates/landing.html",
+        templateUrl: "/templates/home.html",
       })
       .state("aboutPage", {
         url: "/about",
         templateUrl:  "/templates/about.html"
       })
-      .state("register", {
-        url: "/register",
-        templateUrl: "/templates/register.html",
+      .state("login", {
+        url: "/login",
+        templateUrl: "/templates/login.html",
         controller: "UsersController",
         controllerAs: "vm"
       });
