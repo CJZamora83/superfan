@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- Custom CSS -->
@@ -47,7 +48,7 @@
     </nav>
 
     <main class="content" ui-view>
-<!-- Page Content -->
+<!-- Page Templates Go Here -->
 
     </main>
 
@@ -56,12 +57,18 @@
         <div class="col-md-4">Copyright &copy; SUPERFAN 2016</div>
         <div class="col-md-4"><a href="#">Contact</a></div>
     </footer>
-  <script src="/app.routes.js"></script>
-  <script src="/services/auth.service.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.14.1/satellizer.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/app.module.js"></script>
   <script src="/services/user.dataservice.js"></script>
+  <script src="/services/auth.service.js"></script>
   <script src="/controllers/main_controller.js"></script>
   <script src="/controllers/login_controller.js"></script>
   <script src="/controllers/users_controller.js"></script>
+  <script src="/app.routes.js"></script>
+
 </body>
 
 </html>

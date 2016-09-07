@@ -9,7 +9,7 @@
 
   function AppRoutes($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state("home", {
+      .state("homePage", {
         url: "/",
         templateUrl: "/templates/home.html",
       })
@@ -26,5 +26,6 @@
 
     $urlRouterProvider.otherwise("/");
   }
+
 
 })();

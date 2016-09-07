@@ -12,11 +12,16 @@
     "debug": "~2.2.0",
     "dotenv": "^1.2.0",
     "ejs": "~2.3.3",
-    "express": "^4.13.4",
+    "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
     "jsonwebtoken": "^5.4.1",
+    "locus": "^1.2.0",
     "lodash": "^3.10.1",
     "mongoose": "^4.2.5",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "passport": "^0.3.2",
+    "satellizer": "^0.15.5",
+    "serve-favicon": "~2.3.0",
+    "wexgen": "0.1.0-alpha.4.2"
   }
 }
