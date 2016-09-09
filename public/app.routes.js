@@ -11,18 +11,18 @@
     $stateProvider
       .state("homePage", {
         url: "/",
-        templateUrl: "/templates/home.html",
+        templateUrl: "/templates/superfan.html"
       })
       .state("aboutPage", {
         url: "/about",
         templateUrl:  "/templates/about.html"
       })
-      .state("login", {
-        url: "/login",
-        templateUrl: "/templates/login.html",
-        controller: "UsersController",
+      .state("userLogin", {
+        url: "/user_login",
+        templateUrl: "/templates/user_login.html",
+        controller: "UserLoginController",
         controllerAs: "vm"
-      });
+      })
 
     $urlRouterProvider.otherwise("/");
   }

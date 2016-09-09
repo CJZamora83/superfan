@@ -4,9 +4,8 @@ var express = require('express'),
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
-var venuesController = require('../controllers/venues');
 var authController = require('../controllers/oauth');
-var homeController = require('../controllesr/home');
+var homeController = require('../controllers/home');
 
 // root path:
 router.get('/', pagesController.welcome);
@@ -17,7 +16,7 @@ router.get('/users/:id', usersController.show);
 
 
 // Google OAuth resource path:
-router.post('/auth/instagram', authController.google);
+router.post('/auth/instagram', authController.instagram);
 
 
 module.exports = router;

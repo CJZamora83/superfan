@@ -1,59 +1,35 @@
-var mongoose     = require('mongoose'),
-    Schema       = mongoose.Schema,
-    bcrypt       = require('bcrypt-nodejs');
+var mongoose = require('mongoose'),
+    debug    = require('debug')('app:models'),
+    bcrypt   = require('bcrypt')
 
-//||||||||||||||||||||||||||--
-// CREATE USER SCHEMA
-//||||||||||||||||||||||||||--
-var UserSchema   = new Schema({
-  name:        { type: String, required: true },
-  phoneNumber: {
-                 type: String,
-                 required: true,
-                 index: { unique: true },
-                 minlength: 7,
-                 maxlength: 10
-  },
-  password:    { type: String, required: true, select: false }
+
+var userSchema = new mongoose.Schema({
+  displayName:   String,
+  instagram: String,
+  picture: String,
+
 });
 
-// exclude password
-UserSchema.set('toJSON', {
-  transform: function(doc, ret) {
-    delete ret.password;
-    return ret;
+userSchema.pre('save', function(next) {
+  var user = this;
+  if (!user.isModified('password')) {
+    return next();
   }
-});
-
-// hash the password before the user is saved
-UserSchema.pre('save', function(next) {
-  var user = this;
-
-  // hash the password only if the password has been changed or user is new
-  if (!user.isModified('password')) return next();
-
-  // generate the hash
-  bcrypt.hash(user.password, null, null, function(err, hash) {
-    if (err) return next(err);
-
-    // change the password to the hashed version
-    user.password = hash;
-    next();
+  bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.hash(user.password, salt, function(err, hash) {
+      user.password = hash;
+      next();
+    });
   });
 });
 
-// method to compare a given password with the database hash
-UserSchema.methods.comparePassword = function(password) {
-  var user = this;
-
-  return bcrypt.compareSync(password, user.password);
-};
-
-// Access user's fishes
-UserSchema.methods.fishes = function(callback) {
-  Fish.find({user: this._id}, function(err, fishes) {
-    callback(err, fishes);
+userSchema.methods.comparePassword = function(password, done) {
+  bcrypt.compare(password, this.password, function(err, isMatch) {
+    done(err, isMatch);
   });
 };
 
-module.exports = mongoose.model('User', UserSchema);
+
+var User = mongoose.model('User', userSchema);
+
+module.exports = User;
