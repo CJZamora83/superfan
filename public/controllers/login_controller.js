@@ -1,5 +1,5 @@
 (function() {
-  angular.module('VirtApp')
+  angular.module('superfanApp')
     .controller('UserLoginController', function($scope, $auth, $state, userDataService) {
 
       $scope.authenticate = function(provider) {
