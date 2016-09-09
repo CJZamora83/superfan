@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   if (req.user) {
     console.log("access" + req.user.accessToken);
   };
-  res.render('../views/pages/welcome', { user: req.user, apikey: process.env.GOOGLE_API_KEY });
+  res.render('../views/pages/welcome', { user: req.user, apikey: process.env.instagram_api_key });
 });
 
 router.get('/contact', function(req, res, next) {
