@@ -1,20 +1,24 @@
 (function() {
   "use strict";
 
-  angular
+    angular
       .module("superfanApp")
       .controller("MainController", MainController);
 
-  MainController.$inject = ["$state", "userDataService", "$log", "authService"];
+  MainController.$inject = ['userDataService', '$auth', '$state'];
 
-  function MainController($state, userDataService, $log, authService) {
+  function MainController(userDataService, $auth, $state) {
     var vm = this;
 
-    vm.userService = userDataService;
-    vm.logout      = authService.logout;
-    vm.isLoggedIn  = authService.isLoggedIn;
+    vm.userDS = userDataService;
 
-    vm.$state = $state;
+    vm.isLoggedIn = function() {
+      return $auth.isAuthenticated();
+    };
+
+    vm.logout = function() {
+      $auth.logout();
+      $state.go('homePage');
+    };
   }
-
 })();

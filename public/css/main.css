@@ -1,79 +1,39 @@
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-}
-
-.super-red {
-  color: solid red;
-}
-
-.super-blue {
-  color: solid blue;
-}
-
 body {
-  margin: 0;
+  padding-top: 100px;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
+
+.intro-header {
+  background-size: cover no repeat;
 }
-audio,
-canvas,
-progress,
-video {
+
+span {
+  text-align: center;
+}
+
+a.white-box:link {color: white;}
+a.white-box:hover {color: white;}
+a.white-box:active {color: white;}
+a.white-box:visited {color: white;}
+
+.boxed-link {
+  border: 2px solid white;
   display: inline-block;
-  vertical-align: baseline;
+  padding: 3px;
 }
 
-h1 {
-  margin: 0 auto;
-  font-size: 2em;
+/* Gradient color1 - color2 - color1 */
+
+hr.style-one {
+    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.col-md-6 {
+  align-content: center;
+}
+
+/*h2 {
   text-align: center;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-}
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-body > .container {
-  padding: 60px 15px 0;
-}
-.container .text-muted {
-  margin: 20px 0;
-}
-
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-code {
-  font-size: 80%;
-}
-
-.col-md-4 {
-  text-align: center;
-  padding-top: 1em;
-}
+}*/
