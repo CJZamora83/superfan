@@ -45,9 +45,5 @@
       })
     $urlRouterProvider.otherwise("/");
 
-
-    $authProvider.facebook({
-      clientId: '270126770028870'
-    });
   }
 })();

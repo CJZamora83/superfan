@@ -21,7 +21,7 @@ router.get('/venues',     venuesController.index);
 router.get('/venues/:id', venuesController.show);
 
 // Google OAuth resource path:
-router.post('/auth/google', authController.google);
+router.post('/auth/instagram', authController.instagram);
 
 
 module.exports = router;
