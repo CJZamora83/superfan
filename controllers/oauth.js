@@ -8,7 +8,7 @@ var request = require('request');
  |--------------------------------------------------------------------------
  | Login with Google
  |--------------------------------------------------------------------------
-
+*/
 
 var google = function(req, res, next){
   var accessTokenUrl = 'https://accounts.google.com/o/oauth2/token';
@@ -149,10 +149,17 @@ var instagram = function(req, res, next){
           displayName: body.user.username
         });
 
-        user.save(function() {
-          var token = createJWT(user);
-          res.send({ token: token, user: user });
-        });
+          user.save(function() {
+            var token = jwt.encode({
+              user: user
+            },
+              process.env.TOKEN_SECRET
+            );
+            res.send({
+              token: token,
+              user: user
+            });
+          });
       });
     }
   });
