@@ -1,6 +1,6 @@
 (function() {
 
-  angular.module('superfanApp')
+  angular.module("superfanApp")
          .factory('authToken',       authToken)
          .factory('authService',     authService)
          .factory('authInterceptor', authInterceptor);
@@ -19,12 +19,12 @@
     var authFactory = {};
 
     // log a user in
-    authFactory.login = function(phoneNumber, password) {
+    authFactory.login = function(email, password) {
 
       // return the promise object and its data
       return $http.post('/api/login', {
-        phoneNumber: phoneNumber,
-        password:    password
+        email: email,
+        password: password
       })
         .success(function(data) {
           authToken.setToken(data.token);
