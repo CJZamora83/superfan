@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./app/bin/www"
+    "start": "node ./app/bin/www",
+    "seed": "node ./config/seeds.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

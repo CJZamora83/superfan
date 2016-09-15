@@ -1,8 +1,6 @@
-// Require resource's model(s).
-var User = require('../models/user');
-var request = require('request');
+// Login with Instagram
 
-app.post('/auth/instagram', function(req, res){
+var instagram = function(req, res, next) {
   var accessTokenUrl = 'https://api.instagram.com/oauth/access_token';
 
   var params = {
