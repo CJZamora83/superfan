@@ -8,7 +8,6 @@ var request = require('request');
  |--------------------------------------------------------------------------
  | Login with Google
  |--------------------------------------------------------------------------
-*/
 
 var google = function(req, res, next){
   var accessTokenUrl = 'https://accounts.google.com/o/oauth2/token';
