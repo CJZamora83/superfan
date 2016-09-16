@@ -3,12 +3,9 @@ var mongoose = require('mongoose'),
 
 var VenueSchema = new mongoose.Schema({
   name:   String,
-  address: String,
-  email: String,
-  phone: String,
-  estab_type: String
+  full_name: String
 });
 
-var Venue = mongoose.model('Venue', VenueSchema);
+var instagram_User = mongoose.model('Instagram_User', Instagram_UserSchema);
 
 module.exports = Venue;
