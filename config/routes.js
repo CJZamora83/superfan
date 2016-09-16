@@ -10,7 +10,9 @@ var authController = require('../controllers/oauth');
 // root path:
 router.get('/', pagesController.welcome);
 
-// users resource paths:
+//||||||||||||||||||||||||||--
+// USERS CRUD SERVICES
+//||||||||||||||||||||||||||--
 router.get('/users',     usersController.index);
 router.get('/users/:id', usersController.show);
 
@@ -20,7 +22,7 @@ router.post('/venues', venuesController.create);
 router.get('/venues',     venuesController.index);
 router.get('/venues/:id', venuesController.show);
 
-// Google OAuth resource path:
+// Instagram OAuth resource path:
 router.post('/auth/instagram', authController.instagram);
 
 
