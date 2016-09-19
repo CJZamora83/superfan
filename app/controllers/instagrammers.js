@@ -18,6 +18,7 @@ function instagrammerFilter(req, res, next) {
     console.log("Grab data is hit!");
     var instagrammerData = instagrammerData.data.map(igmrData => [igmrData.images.standard_resolution.url, igmrData.images.text, igmrData.videos.standard_resolution.url, igmrData.user.full_name, igmrData.user.id]);
     res.json(instagrammerData);
+    favorites.push(instagrammerData);
   });
 }
 

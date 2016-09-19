@@ -17,8 +17,7 @@ var authController = require('../controllers/oauth');
 //||||||||||||||||||||||||||--
 // INSTAGRAMMER CRUD SERVICES
 //||||||||||||||||||||||||||--
-router.get('https://api.instagram.com/v1/users/search?q=jack&access_token=ACCESS-TOKEN', instagrammerController.show);
-
+router.get('/auth/instagram/find', instagrammerController.instagrammerSearch);
 //||||||||||||||||||||||||||--
 // INSTAGRAM GUEST OAUTH SERVICES
 //||||||||||||||||||||||||||--
