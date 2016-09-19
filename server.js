@@ -9,9 +9,9 @@ var cookieParser = require('cookie-parser');
 require('dotenv').load();
 
 // Load local libraries.
-var env      = require('./config/environment'),
-    mongoose = require('./config/database'),
-    routes   = require('./config/routes');
+var env      = require('./app/config/environment'),
+    mongoose = require('./app/config/database'),
+    routes   = require('./app/config/routes');
 
 // Instantiate a server application.
 var app = express();

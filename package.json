@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "seed": "node ./config/seeds.js"
+    "start": "node ./app/bin/www",
+    "seed": "node ./app/config/seeds.js"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
@@ -14,6 +14,7 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.3.4",
     "express": "^4.13.4",
+    "instagram-node": "^0.5.8",
     "jsonwebtoken": "^7.1.6",
     "jwt-simple": "^0.5.0",
     "lodash": "^3.10.1",

@@ -1,65 +1,12 @@
-<div class="container cen-jus">
-      <h3>Welcome, {{vm.userDS.user.displayName}}</h3>
-      <img ng-src="{{vm.userDS.user.picture}}">
+<div class="row">
 
+<h1>Explore Your Favorite Celebrities</h1>
 
-<!--   <table id="local_virts" class="table table-striped" //* ng-something goes here *//>
-    <thead>
-      <tr>
-        <th><h2 class="jumbotron text-center">Local Events</h2></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="home in vm.local_virts">
-        <td>{{vm.virt.venue}}</td>
-        <td>{{vm.virt.admission}}</td>
-        <td>{{vm.virt.text}}</td>
-        <td>{{vm.virt.location}}</td>
-      </tr>
-    </tbody>
-  </table> -->
-  <div class="section">
-    <div class="row">
-              <h2 style="text-align:center">Local Events Now</h2></th>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ding Dong Lounge<br />929 Columbus Ave<br />New York, NY 10025</td>
-            <td>$5 cover</td>
-            <td>Punk rock from 8-12pm.  $3 draft. $5 draft + shot</td>
-            <td>.3 miles away</td>
-          </tr>
-          <tr>
-            <td>Columbia University<br />116th & Broadway<br />New York, NY 10027</td>
-            <td>$160,000</td>
-            <td>Yappin' of trust fund kids and awkward genius.</td>
-            <td>.5 miles away</td>
-          </tr>
-          <tr>
-            <td>Carnegie Cigar Club<br />156 W 56th St<br />New York, NY 10019</td>
-            <td>No cover</td>
-            <td>Quality and expensive cocktails.  Bring your paycheck.</td>
-            <td>2 miles away</td>
-          </tr>
-           <tr>
-            <td>St. Jerome's<br />155 Rivington St<br />New York, NY 10002</td>
-            <td>No cover</td>
-            <td>Punk rock from 8-12pm.  $3 draft. $5 draft + shot</td>
-            <td>5 miles away</td>
-          </tr>
-           <tr>
-            <td>Welcome to the Johnson's<br />123 Rivington St<br />New York, NY 10002</td>
-            <td>No cover</td>
-            <td>Pool and beer and cheap things.  Lady Gaga's former stomping ground.</td>
-            <td>5 miles away</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="col-md-12">
+        <tags-input ng-model="tags">
+        <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
+
   </div>
+
 </div>
