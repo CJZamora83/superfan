@@ -1,13 +1,41 @@
 <div class="row">
 
-<div class="col-md-12">
-  <h1>Explore Your Favorite Celebrities...</h1>
-</div>
+
+<h1>Explore Your Favorite Celebrities...</h1>
+
   <div class="col-md-12">
-        <tags-input ng-model="tags">
-        <auto-complete source="loadTags($query)"></auto-complete>
-    </tags-input>
+    <div id="content"></div>
 
+        <script type="text/javascript">
+            var content = document.getElementById('content');
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function(){
+                    if (xhr.readyState==4 && xhr.status==200)
+                    {
+                        var data = JSON.parse(xhr.responseText);
+                        if(data.status == 'ok'){
+
+                            var output = '<h1>'+data.feed.title+'</h1>';
+
+                            for(var i=0;i<data.items.length;++i){
+
+                                output += '<div class="col-md-4"><h2><a href="' +
+                                        data.items[i].link + '" >' +
+                                        data.items[i].title + '</h2></a></div>';
+
+                            }
+
+
+                            content.innerHTML = output;
+
+                        }
+                    }
+                };
+            xhr.open('GET','http://rss2json.com/api.json?rss_url=http%3A%2F%2Fwww.tmz.com%2Frss.xml',true);
+            xhr.send();
+
+        </script>
   </div>
-
 </div>
