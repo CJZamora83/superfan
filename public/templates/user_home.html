@@ -1,9 +1,9 @@
 <div class="row">
 
 
-<h1>Explore Your Favorite Celebrities...</h1>
+<div class="col-md-12">
 
-  <div class="col-md-12">
+
     <div id="content"></div>
 
         <script type="text/javascript">
@@ -17,7 +17,7 @@
                         var data = JSON.parse(xhr.responseText);
                         if(data.status == 'ok'){
 
-                            var output = '<h1>'+data.feed.title+'</h1>';
+                            var output = "";
 
                             for(var i=0;i<data.items.length;++i){
 
