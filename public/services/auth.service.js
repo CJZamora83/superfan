@@ -41,8 +41,8 @@
       // clear the token
       authToken.setToken();
 
-      // return to homepage
-      $state.go('homePage');
+      // return to sign in page
+      $state.go('user_login');
     };
 
     // check if a user is logged in
