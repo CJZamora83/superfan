@@ -26,6 +26,12 @@
         controller: "UsersController",
         controllerAs: "vm"
       })
+      .state("twitter", {
+        url: "/twitter",
+        templateUrl: "/templates/twitter.html",
+        controller: "FeedController",
+        controllerAs: "vm"
+      })
     $urlRouterProvider.otherwise("/");
 
   }
