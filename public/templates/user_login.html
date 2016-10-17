@@ -1,8 +1,18 @@
 <div class="container">
-  <div class="section">
-    <button ng-click="authenticate('instagram')">Sign in with Instagram</button>
-  </div>
-  <div class="section">
-    <button ng-click="authenticate('twitter')">Sign in with Twitter</button>
+  <div class="row">
+    <div class="col-md-8">
+      <img src="../images/mobile_1.png">
+      <img src="../images/mobile_2.png">
+    </div>
+    <div class="col-md-4">
+      <h5>Sign in using Instagram.  It's that easy.</h5>
+      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="authenticate('instagram')">Primary</button>
+        <h5>Don't have an Instagram account?</h5>
+        <h5>Sign up <a href="www.instagram.com">Here</a></h5>
+        <div class="badges">
+          <img src="../images/badge-iphone.png">
+          <img src="../images/badge-android.png">
+        </div>
+    </div>
   </div>
 </div>

@@ -2,9 +2,9 @@ var express = require('express'),
     router  = new express.Router();
 
 // Require controllers.
-// var userController = require('../controllers/users');
-var instagrammerController = require('../controllers/instagrammers');
-var authController = require('../controllers/oauth');
+var userController    = require('../controllers/users');
+var authController    = require('../controllers/oauth');
+var twitterController = require('../controllers/twitter');
 
 // root path:
 // router.get('/', pagesController.welcome);
@@ -14,14 +14,14 @@ var authController = require('../controllers/oauth');
 //||||||||||||||||||||||||||--
 // router.get('/users',     userController.index);
 
-//||||||||||||||||||||||||||--
-// INSTAGRAMMER CRUD SERVICES
-//||||||||||||||||||||||||||--
-router.get('/auth/instagram/find', instagrammerController.instagrammerSearch);
+
 //||||||||||||||||||||||||||--
 // INSTAGRAM GUEST OAUTH SERVICES
 //||||||||||||||||||||||||||--
 router.post('/auth/instagram', authController.instagram);
+
+// twitter auth path
+router.post('/twitter', twitterController.twitter);
 
 
 module.exports = router;
