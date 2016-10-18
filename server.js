@@ -5,8 +5,10 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
+var cors         = require('cors');
 
 require('dotenv').load();
+
 
 // Load local libraries.
 var env      = require('./app/config/environment'),
@@ -15,6 +17,8 @@ var env      = require('./app/config/environment'),
 
 // Instantiate a server application.
 var app = express();
+
+app.use(cors());
 
 // Configure the application (and set it's title!).
 app.set('title', env.TITLE);
@@ -45,7 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(debugReq);
 
 // Defines all of our "dynamic" routes.
-app.use('/', routes);
+app.use('/api', routes);
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {
