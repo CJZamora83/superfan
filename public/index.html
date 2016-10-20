@@ -47,7 +47,8 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="templates/user_login.html">Sign In</a></li>
+            <li><a ui-sref="userLogin">Sign In</a></li>
+            <li ng-show="vm.isLoggedIn">test</li>
           </ul>
         </li>
       </ul>
