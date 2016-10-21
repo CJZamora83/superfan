@@ -47,8 +47,13 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
             <li role="separator" class="divider"></li>
+<<<<<<< HEAD
             <li><a href="templates/user_login.html" ng-switch-when="false">Sign In</a></li>
             <li><a href="" ng-click="main.logout()" ng-show="main.isLoggedIn()" ng-switch-when="true">Log Out</a></li>
+=======
+            <li><a ui-sref="userLogin">Sign In</a></li>
+            <li ng-show="vm.isLoggedIn">test</li>
+>>>>>>> 2ca99a65a8698fec769aebaf5db696652979bbb0
           </ul>
         </li>
       </ul>
