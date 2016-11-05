@@ -12,7 +12,7 @@ var twitterController = require('../controllers/twitter');
 //||||||||||||||||||||||||||--
 // USERS CRUD SERVICES
 //||||||||||||||||||||||||||--
-// router.get('/users',     userController.index);
+// router.get('/users', userController.index);
 
 
 //||||||||||||||||||||||||||--
@@ -20,8 +20,8 @@ var twitterController = require('../controllers/twitter');
 //||||||||||||||||||||||||||--
 router.post('/auth/instagram', authController.instagram);
 
-// twitter auth path
-// router.post('/twitter', twitterController.twitter);
+// twitter jwt auth path
+router.get('/jwt/twitter', twitterController.jwt);
 
 
 module.exports = router;

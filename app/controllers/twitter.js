@@ -1,43 +1,59 @@
-// var request = require('request');
+var request = require('request');
+var access_token;
 
-// function twitter(req, res, next) {
-//   var twitterKey    = process.env.TWITTER_KEY;
-//   var twitterSecret = process.env.TWITTER_SECRET;
-//   var authCode      = window.btoa(`${encodeURIComponent(twitterKey)}:${encodeURIComponent(twitterSecret)}`);
+// making it a route so that it would be easier to reset the variable 
+// without restarting the server
+function jwt(req, res, next) {
+  // URL encode the consumer key and the consumer secret according to RFC 1738
+  var key = encodeURIComponent(process.env.SUPERFAN_TWITTER_KEY);
+  var secret = encodeURIComponent(process.env.SUPERFAN_TWITTER_SECRET);
+  
+  // Concatenate the encoded consumer key, a colon character ”:”, and the encoded consumer secret
+  var token = key + ':' + secret;
+  
+  // Base64 encode the string
+  token = new Buffer(token, 'utf8').toString('base64');
+  
+  // oauth app access token request
+  request({
+    method: 'POST',
+    headers: {
+      'Authorization': 'Basic ' + token, 
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    uri: 'https://api.twitter.com/oauth2/token',
+    body: 'grant_type=client_credentials'
+  }, function (er, response, body) {
+    if (er) {
+      console.log(er)
+    }
 
-//   var options = {
-//     url: 'https://api.twitter.com/oauth2/token',
-//     headers: {
-//           'Authorization': `Basic ${authCode}`,
-//           'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8'
-//     },
-//     body: 'grant_type=client_credentials'
-//   }
+    if (JSON.parse(body).token_type === 'bearer') {
+      access_token = JSON.parse(body).access_token;
+      console.log(access_token);
+      res.json({
+        access_token: access_token
+      });
+    } else {
+      console.log('We need bearer not ' + JSON.parse(body).token_type);
+      res.json({
+        error: 'Wrong Token Type'
+      });
+    }
+  });
+}
 
-//   // get bearer token
-//   request.post(options, function(err, res, body) {
-//     if (err) {
-//       console.log(err)
-//     } else {
-//       console.log(body)
-//     }
-//   });
+// setting this route up just because it might be useful later
+// and you wouldnt have to curl twitter you could just hit this route
+function invalidateToken (req, res, next) {
 
-// };
+}
 
-// module.exports = {
-//   twitter: twitter
-// };
+function search(req, res, next) {
 
-var Twit = require('twit');
+}
 
-var T = new Twit({
-  consumer_key: process.env.TWITTER_KEY,
-  consumer_secret: process.env.TWITTER_SECRET,
-  access_token: process.env.TWITTER_ACCESS_TOKEN,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-});
-
-T.get('search/tweets', { q: 'drake', count: 100 }, function(err, data, response) {
-  console.log(data)
-})
+module.exports = {
+  search: search,
+  jwt: jwt
+};

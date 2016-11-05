@@ -4,14 +4,12 @@
   angular.module('superfanApp')
   .controller('FeedController', FeedController);
 
-  FeedController.$inject = ['$http', 'twitterDataService'];
+  FeedController.$inject = ['$scope', '$http', 'twitterDataService'];
 
-  function FeedController($http, twitterDataService) {
+  function FeedController($http, $scope, twitterDataService) {
     var vm = this;
 
-    twitterDataService.getBearerToken();
-
-
+    twitterDataService.jwt();
   }
 
 })();

@@ -10,11 +10,11 @@
   function twitterDataService($http) {
     var service = {};
 
-    service.getBearerToken = getBearerToken;
+    service.jwt = jwt;
 
-    function getBearerToken() {
+    function jwt() {
       return $http
-        .post('/api/twitter').then(function(res) {
+        .get('/api/jwt/twitter').then(function(res) {
           console.log(res);
         }, function(err) {
           console.log(err);
