@@ -9,7 +9,7 @@
   function FeedController($http, $scope, twitterDataService) {
     var vm = this;
 
-    twitterDataService.jwt();
+    // twitterDataService.jwt();
   }
 
 })();

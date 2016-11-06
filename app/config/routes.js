@@ -20,8 +20,22 @@ var twitterController = require('../controllers/twitter');
 //||||||||||||||||||||||||||--
 router.post('/auth/instagram', authController.instagram);
 
-// twitter jwt auth path
+
+//||||||||||||||||||||||||||--
+// TWITTER SERVICES
+//||||||||||||||||||||||||||--
+
+// twitter auth path (user auth)
+router.get('/auth/twitter', twitterController.oauth);
+
+// twitter jwt path (app only auth)
 router.get('/jwt/twitter', twitterController.jwt);
+
+// twitter invalidate jwt path (only use if app only token becomes compromised for some reason)
+router.get('/jwtinval/twitter', twitterController.invalJwt);
+
+// twitter search path
+router.get('/search/twitter/:keyword', twitterController.search);
 
 
 module.exports = router;
