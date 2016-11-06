@@ -11,6 +11,9 @@
     var service = {};
 
     service.jwt = jwt;
+    service.oauth = oauth;
+    service.search = search;
+    service.invalJwt = invalJwt;
 
     function jwt() {
       return $http
@@ -21,9 +24,36 @@
         })
     }
 
+    function oauth(body) {
+      return $http
+        .get('/api/auth/twitter').then(function(res) {
+          if (typeof res.data === 'string') {
+            window.location = 'https://api.twitter.com/oauth/authorize?' + res.data;
+          } else {
+            console.log(res);
+          }
+        }, function(err) {
+          console.log(err);
+        })
+    }
 
-    // twitter search api
+    function search(keyword) {
+      return $http
+        .get('/api/search/twitter/' + keyword).then(function(res) {
+          console.log(res);
+        }, function(err) {
+          console.log(err);
+        })
+    }
 
+    function invalJwt() {
+      return $http
+        .get('/api/invaljwt/twitter').then(function(res) {
+          console.log(res);
+        }, function(err) {
+          console.log(err);
+        })
+    }
 
     return service;
   }

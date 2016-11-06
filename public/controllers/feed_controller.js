@@ -4,12 +4,21 @@
   angular.module('superfanApp')
   .controller('FeedController', FeedController);
 
-  FeedController.$inject = ['$scope', '$http', 'twitterDataService'];
+  FeedController.$inject = ['$scope', '$http', '$location', 'twitterDataService'];
 
-  function FeedController($http, $scope, twitterDataService) {
+  function FeedController($scope, $http, $location, twitterDataService) {
     var vm = this;
 
-    // twitterDataService.jwt();
+    // console.log($location.$$search.oauth_token);
+    if ($location.$$search.oauth_token_secret) {
+      console.log($location.$$search)
+    } else {
+      twitterDataService.oauth()
+    }
+
+    // setTimeout(function () {
+    //   twitterDataService.search('drake');
+    // }, 2000);
   }
 
 })();

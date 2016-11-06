@@ -32,7 +32,7 @@ router.get('/auth/twitter', twitterController.oauth);
 router.get('/jwt/twitter', twitterController.jwt);
 
 // twitter invalidate jwt path (only use if app only token becomes compromised for some reason)
-router.get('/jwtinval/twitter', twitterController.invalJwt);
+router.get('/invaljwt/twitter', twitterController.invalJwt);
 
 // twitter search path
 router.get('/search/twitter/:keyword', twitterController.search);
