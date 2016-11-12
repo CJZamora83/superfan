@@ -1,11 +1,7 @@
 var request = require('request');
 var access_token;
 
-// making it a route so that it would be easier to reset the variable 
-// without restarting the server
-function jwt(req, res, next) {
-  // URL encode the consumer key and the consumer secret according to RFC 1738 and
-  // Concatenate the encoded consumer key, a colon character ”:”, and the encoded consumer secret
+function jwt() {
   var token = encodeURIComponent(process.env.SUPERFAN_TWITTER_KEY) + ':' + encodeURIComponent(process.env.SUPERFAN_TWITTER_SECRET);
   
   // Base64 encode the string
@@ -27,16 +23,22 @@ function jwt(req, res, next) {
 
     if (JSON.parse(body).token_type === 'bearer') {
       access_token = JSON.parse(body).access_token;
-      console.log(access_token);
-      res.json({
-        status: '200: success'
-      });
+      return access_token;
     } else {
-      console.log('We need bearer not ' + JSON.parse(body).token_type);
-      res.json({
-        status: 'error: Wrong Token Type'
-      });
+      console.log('Wrong Token Type. Restart Server');
+      return null;
     }
+  });
+}
+
+// making a route so that it would be easier to reset the variable 
+// without restarting the server
+function jwtRoute(req, res, next) {
+  jwt();
+
+  res.json({
+    er: null,
+    results: 'New Jwt Token Saved.'
   });
 }
 
@@ -57,7 +59,7 @@ function invalidateJwtToken (req, res, next) {
     }
 
     // after you invalidate the token might as well get another
-    jwt();
+    res.redirect('/jwt/twitter');
   });
 }
 
@@ -66,9 +68,6 @@ function oauth (req, res, next) {
   var requestTokenUrl = 'https://api.twitter.com/oauth/request_token';
   var accessTokenUrl = 'https://api.twitter.com/oauth/access_token';
   var profileUrl = 'https://api.twitter.com/1.1/account/verify_credentials.json';
-  console.log(req.params);
-  console.log(req.body);
-  console.log(req.query);
 
   // Part 1 of 2: Initial request from Satellizer.
   if (!req.query.oauth_token || !req.query.oauth_verifier) {
@@ -96,7 +95,7 @@ function oauth (req, res, next) {
     // Step 3. Exchange oauth token and oauth verifier for access token.
     request.post({ url: accessTokenUrl, oauth: accessTokenOauth }, function(err, response, accessToken) {
 
-      res.redirect('http://localhost:3000/#/twitter?' + accessToken)
+      res.json('http://localhost:3000/#/twitter?' + accessToken)
       // accessToken = qs.parse(accessToken);
 
       // var profileOauth = {
@@ -182,14 +181,17 @@ function search(req, res, next) {
     }
 
     res.json({
-      status: body
+      er: null,
+      results: body
     });
   })
 }
 
+jwt();
+
 module.exports = {
   oauth: oauth,
-  jwt: jwt,
+  jwt: jwtRoute,
   invalJwt: invalidateJwtToken,
   search: search
 };

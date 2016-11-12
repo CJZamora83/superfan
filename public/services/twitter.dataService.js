@@ -9,11 +9,13 @@
 
   function twitterDataService($http) {
     var service = {};
+    var results = {};
 
     service.jwt = jwt;
     service.oauth = oauth;
     service.search = search;
     service.invalJwt = invalJwt;
+    service.getSearchResults = getSearchResults;
 
     function jwt() {
       return $http
@@ -37,13 +39,18 @@
         })
     }
 
-    function search(keyword) {
-      return $http
-        .get('/api/search/twitter/' + keyword).then(function(res) {
-          console.log(res);
-        }, function(err) {
-          console.log(err);
-        })
+    // you can either call the getSearchResults method or use a callback to
+    // get the results
+    function search(keyword, callback) {
+      return $http.get('/api/search/twitter/' + keyword).then(function(res) {
+        results[keyword] = JSON.parse(res.data.results);
+
+        if (callback) {
+          callback(JSON.parse(res.data.results));
+        }
+      }, function(err) {
+        console.log(err);
+      })
     }
 
     function invalJwt() {
@@ -53,6 +60,10 @@
         }, function(err) {
           console.log(err);
         })
+    }
+
+    function getSearchResults() {
+      return results;
     }
 
     return service;
