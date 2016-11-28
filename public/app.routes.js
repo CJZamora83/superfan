@@ -32,7 +32,7 @@
         controller: "FeedController",
         controllerAs: "vm"
       })
-    $urlRouterProvider.otherwise("/");
 
+    $urlRouterProvider.otherwise("/");
   }
 })();
