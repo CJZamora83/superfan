@@ -1,7 +1,6 @@
 (function() {
   angular.module('superfanApp')
-    .controller('UserLoginController', function($scope, $auth, $state, userDataService) {
-
+    .controller('LoginController', function($scope, $auth, $state, userDataService) {
       $scope.authenticate = function(provider) {
         if (!$auth.isAuthenticated()) {
           $auth.authenticate(provider).then(function(res) {
@@ -12,3 +11,4 @@
       };
     });
 })();
+Add Comment Collap
