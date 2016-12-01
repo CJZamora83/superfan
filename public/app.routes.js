@@ -13,11 +13,10 @@
         url: "/",
         templateUrl: "/templates/landing.html",
       })
-
-      .state("userLogin", {
+      .state("user_login", {
         url: "/user_login",
         templateUrl: "/templates/user_login.html",
-        controller: "UserLoginController",
+        controller: "LoginController",
         controllerAs: "vm"
       })
       .state("user_home", {
