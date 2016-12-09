@@ -1431,6 +1431,7 @@ ol ol {
   padding-left: 0;
   margin-left: -5px;
   list-style: none;
+  color: white;
 }
 .list-inline > li {
   display: inline-block;
