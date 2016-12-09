@@ -127,7 +127,7 @@ p {
     color: white;
   }
   .navbar-default.affix {
-    background-color: white;
+    background-color: #979A9A;
     border-color: rgba(34, 34, 34, 0.1);
   }
   .navbar-default.affix .navbar-header .navbar-brand {
@@ -376,9 +376,9 @@ section.contact ul.list-social li.social-snapchat a:hover {
   background-color: #000000;
 }
 footer {
-  background-color: #85929E;
+  background-color: #979A9A;
   padding: 25px 0;
-  color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
   text-align: center;
 }
 footer p {
