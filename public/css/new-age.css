@@ -20,6 +20,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  margin-top: 50px;
 }
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
@@ -370,23 +371,14 @@ section.contact ul.list-social li.social-google-plus a:hover {
   background-color: #d73925;
 }
 section.contact ul.list-social li.social-snapchat a {
-<<<<<<< HEAD
-<<<<<<< HEAD
   background-color: #fffc00;
 }
 section.contact ul.list-social li.social-snapchat a:hover {
   background-color: #fffc00;
-=======
-=======
->>>>>>> 3e9d4caa0cf18575fe28b5716704dccb3d169c03
   background-color: #000000;
 }
 section.contact ul.list-social li.social-snapchat a:hover {
   background-color: #000000;
-<<<<<<< HEAD
->>>>>>> 3e9d4caa0cf18575fe28b5716704dccb3d169c03
-=======
->>>>>>> 3e9d4caa0cf18575fe28b5716704dccb3d169c03
 }
 footer {
   background-color: #979A9A;
