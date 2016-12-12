@@ -2152,8 +2152,8 @@
 .fa-snapchat:before {
   content: "\f2ab";
 }
-.fa-snapchat-ghost:before {
-  content: "\f2ac";
+.fa-snapchat-ghost {
+  border-color: solid black !important;
 }
 .fa-snapchat-square:before {
   content: "\f2ad";
