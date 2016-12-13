@@ -60,7 +60,7 @@ p {
   margin-bottom: 20px;
 }
 .navbar-default {
-  background-color: #85929E;
+  background: linear-gradient(to left, #7b4397, #dc2430);
   border-color: rgba(34, 34, 34, 0.05);
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -381,7 +381,7 @@ section.contact ul.list-social li.social-snapchat a:hover {
   background-color: #000000;
 }
 footer {
-  background-color: #979A9A;
+  background: linear-gradient(to left, #7b4397, #dc2430);
   padding: 25px 0;
   color: #FFFFFF;
   text-align: center;
