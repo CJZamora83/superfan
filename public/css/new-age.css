@@ -458,4 +458,7 @@ body {
 .quad {
   color: #000000;
   font-weight: bold;
+  margin: 3px;
+  padding: 3px;
+  border-color: #000000;
 }
