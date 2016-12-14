@@ -454,3 +454,8 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
+.quad {
+  color: #000000;
+  font-weight: bold;
+}
