@@ -459,6 +459,7 @@ body {
   color: #000000;
   font-weight: bold;
 }
+<<<<<<< HEAD
 /* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
 
 .carousel {
@@ -482,3 +483,5 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
+=======
+>>>>>>> ddd5decca2113b516c6163d04d5c0c1ed41d384f

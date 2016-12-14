@@ -1,44 +1,48 @@
 <section>
-<div class="container" ng-controller="FeedController as vm">
-    <div class="row">
-        <div id="content"></div>
-
-  <div class="container">
+  <div class="container" ng-controller="FeedController as vm">
       <div class="row">
+        <div class="highlight">
 
-          <div id="content"></div>
+            <div id="content"></div>
 
-              <script type="text/javascript">
-                  var content = document.getElementById('content');
+                <script type="text/javascript">
+                    var content = document.getElementById('content');
 
-                  var xhr = new XMLHttpRequest();
+                    var xhr = new XMLHttpRequest();
 
-                  xhr.onreadystatechange = function(){
-                          if (xhr.readyState==4 && xhr.status==200)
-                          {
-                              var data = JSON.parse(xhr.responseText);
-                              if(data.status == 'ok'){
+                    xhr.onreadystatechange = function(){
+                            if (xhr.readyState==4 && xhr.status==200)
+                            {
+                                var data = JSON.parse(xhr.responseText);
+                                if(data.status == 'ok'){
 
-                                  var output = "";
+                                    var output = "";
 
-                                  for(var i=0;i<data.items.length;++i){
+                                    for(var i=0;i<data.items.length;++i){
 
+<<<<<<< HEAD
                                       output += '<div class="col-md-3"><h4><a class="quad" href="' +
                                               data.items[i].link + '" >' +
                                               data.items[i].title + '</h4></div>';
+=======
+                                        output += '<div class="col-md-3"><h4><a class="quad" href="' +
+                                                data.items[i].link + '" >' +
+                                                data.items[i].title + '</h4></div>';
+>>>>>>> ddd5decca2113b516c6163d04d5c0c1ed41d384f
 
-                                  }
+                                    }
 
 
-                                  content.innerHTML = output;
+                                    content.innerHTML = output;
 
-                              }
-                          }
-                      };
-                  xhr.open('GET','https://rss2json.com/api.json?rss_url=http%3A%2F%2Fwww.tmz.com%2Frss.xml',true);
-                  xhr.send();
+                                }
+                            }
+                        };
+                    xhr.open('GET','https://rss2json.com/api.json?rss_url=http%3A%2F%2Fwww.tmz.com%2Frss.xml',true);
+                    xhr.send();
 
-              </script>
-      </div>
+                </script>
+        </div>
+    </div>
   </div>
 </section>
