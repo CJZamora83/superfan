@@ -6816,3 +6816,10 @@ button.close {
   background-color: #f7f7f9;
 }
 
+
+.quad {
+  border-width: 5px;
+  margin: 2px;
+  padding: 1px;
+  border-color: #000000 !important;
+}
