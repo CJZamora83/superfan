@@ -14,9 +14,9 @@
     // otherwise, if it seems like the token isnt set, hit twitterDataService.jwt() and that will
     // reset the token on the backend
 
-    // change it to be whatever you want (remember to change the html), i tried to chose one that 
+    // change it to be whatever you want (remember to change the html), i tried to chose one that
     // had recent tweets... annnd im a liverpool fc fan, also if you'd rather
-    // you can give this method a callback instead of doing the timeout 
+    // you can give this method a callback instead of doing the timeout
     // and grabbing the results that you see after this, whatever you like best
     var keyword = 'LFC'
     twitterDataService.search(keyword);
@@ -34,7 +34,7 @@
 
 
     // this is for user oauth stuff, figured id leave it here for you to see
-    // but ultimately i figured we'd have twitterDataService.oauth() trigger when the user clicks certain 
+    // but ultimately i figured we'd have twitterDataService.oauth() trigger when the user clicks certain
     // things, like retweets or likes but i feel like thats a little further down
     // the line
 
@@ -44,5 +44,7 @@
     //   twitterDataService.oauth()
     // }
   }
+
+
 
 })();

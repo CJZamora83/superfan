@@ -1,6 +1,6 @@
 (function() {
   angular.module('superfanApp', [
-    "ui.router", 'satellizer'
+    "ui.router", 'satellizer', 'ngTagsInput'
     ])
 
     .config(function($httpProvider, $authProvider) {

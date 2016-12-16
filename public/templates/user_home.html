@@ -1,7 +1,13 @@
 <section>
-  <div class="container" ng-controller="FeedController as vm">
-      <div class="row">
-        <div class="highlight">
+    <div class="container" ng-controller="FeedController as vm">
+        <div class="row">
+            <div class="col-md-12">
+                    <div class="input-group center-block">
+                        <tags-input ng-model="tags"><auto-complete source="loadItems($query)"></auto-complete></tags-input>
+                    </div>
+            </div>
+        </div>
+        <div class="row jumbotron">
 
             <div id="content"></div>
 
@@ -21,11 +27,15 @@
                                     for(var i=0;i<data.items.length;++i){
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                       output += '<div class="col-md-3"><h4><a class="quad" href="' +
                                               data.items[i].link + '" >' +
                                               data.items[i].title + '</h4></div>';
 =======
                                         output += '<div class="col-md-3"><h4><a class="quad" href="' +
+=======
+                                        output += '<div class="col-md-3"><h5><a class="feed-link" href="' +
+>>>>>>> cec451cf7eb79dd512e337a6d0c902d3ba105e81
                                                 data.items[i].link + '" >' +
                                                 data.items[i].title + '</h4></div>';
 >>>>>>> ddd5decca2113b516c6163d04d5c0c1ed41d384f
@@ -44,5 +54,4 @@
                 </script>
         </div>
     </div>
-  </div>
 </section>
