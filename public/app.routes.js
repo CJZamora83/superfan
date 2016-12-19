@@ -22,12 +22,6 @@
       .state("user_home", {
         url: "/user_home",
         templateUrl: "/templates/user_home.html",
-        controller: "UsersController",
-        controllerAs: "vm"
-      })
-      .state("twitter", {
-        url: "/twitter",
-        templateUrl: "/templates/twitter.html",
         controller: "FeedController",
         controllerAs: "vm"
       })

@@ -1,9 +1,11 @@
 <section>
-    <div class="container" ng-controller="FeedController as vm">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                     <div class="input-group center-block">
-                        <tags-input ng-model="tags"><auto-complete source="loadItems($query)"></auto-complete></tags-input>
+                        <tags-input ng-model="tags">
+                            <!-- <auto-complete source="loadItems($query)"></auto-complete> -->
+                        </tags-input>
                     </div>
             </div>
         </div>
