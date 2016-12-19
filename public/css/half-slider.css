@@ -34,12 +34,6 @@ a:hover,
 a:focus {
   color: #ffffff;
 }
-hr {
-  max-width: 100px;
-  margin: 25px auto 0;
-  border-width: 1px;
-  border-color: rgba(34, 34, 34, 0.1);
-}
 hr.light {
   border-color: white;
 }
@@ -112,7 +106,7 @@ p {
     border-color: transparent;
   }
   .navbar-default .navbar-header .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    color: white;
   }
   .navbar-default .navbar-header .navbar-brand:hover,
   .navbar-default .navbar-header .navbar-brand:focus {
@@ -220,6 +214,7 @@ header .device-container .screen img {
 }
 section {
   padding: 100px 0;
+  margin: 0;
 }
 section h2 {
   font-size: 50px;
@@ -302,7 +297,6 @@ section.cta {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/bg-cta.jpg');
   padding: 250px 0;
 }
 section.cta .cta-content {
@@ -376,10 +370,8 @@ section.contact ul.list-social li.social-snapchat a:hover {
   background-color: #000000;
 }
 footer {
-  background: linear-gradient(to left, #7b4397, #dc2430);
-  padding: 25px 0;
-  color: #FFFFFF;
-  text-align: center;
+    margin: 20px 0;
+    text-align: center;
 }
 footer p {
   font-size: 12px;
@@ -458,4 +450,29 @@ body {
 .feed-link {
   color: #000000;
   font-weight: bold;
+}
+
+
+/* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
+
+.carousel {
+    height: 75%;
+}
+
+.item,
+.active,
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }

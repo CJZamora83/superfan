@@ -11,7 +11,7 @@
     $stateProvider
       .state("homePage", {
         url: "/",
-        templateUrl: "/templates/landing.html",
+        templateUrl: "/templates/home.html",
       })
       .state("user_login", {
         url: "/user_login",
@@ -19,9 +19,9 @@
         controller: "LoginController",
         controllerAs: "vm"
       })
-      .state("user_home", {
-        url: "/user_home",
-        templateUrl: "/templates/user_home.html",
+      .state("feed", {
+        url: "/feed",
+        templateUrl: "/templates/feed.html",
         controller: "FeedController",
         controllerAs: "vm"
       })
