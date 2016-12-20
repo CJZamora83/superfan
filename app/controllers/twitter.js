@@ -105,10 +105,17 @@ function oauth (req, res, next) {
 
 function search(req, res, next) {
   Tweet.find({}, function (er, row) {
-    res.json({
-      er: null,
-      results: row
-    })
+    if (er) {
+      res.json({
+        er: er,
+        results: null
+      });
+    } else {
+      res.json({
+        er: null,
+        results: row
+      });
+    }
   })
 }
 

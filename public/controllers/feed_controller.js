@@ -10,18 +10,25 @@
     var vm = this;
 
     // make these random
-    $scope.tags = [
-      { text: 'Drake' },
-      { text: 'Beyonce & Jay Z' },
-      { text: 'Mel Gibson & Morgan Freeman' },
-      { text: 'Jennifer Lawrence' }
-    ];
+    // $scope.tags = [
+    //   {
+    //     systemname: 'drake',
+    //     text: 'Drake'
+    //   },
+    //   // { text: 'Beyonce & Jay Z' }
+    //   // { text: 'Mel Gibson & Morgan Freeman' },
+    //   {
+    //     systemname: 'kyliejenner',
+    //     text: 'Kylie Jenner'
+    //   }
+    // ];
 
-    $scope.loadTags = function(query) {
-      return $http.get('/api/celebrities/tags?query=' + query);
-    };
+    $scope.loadTags = function() {
+      return $http.get('/api/tags/celebrities');
+    }
+
+    // $scope.$watch('tags.length', function (v, old) {
+    //   console.log($scope.tags);
+    // })
   }
-
-
-
 })();
