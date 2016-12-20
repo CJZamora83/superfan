@@ -104,25 +104,29 @@ function oauth (req, res, next) {
 }
 
 function search(req, res, next) {
-  Tweet.find({}, function (er, row) {
+  Tweet.find({
+    systemname: req.query.search
+  }, function (er, row) {
     if (er) {
-      res.json({
-        er: er,
-        results: null
-      });
+      res.json(er);
     } else {
-      res.json({
-        er: null,
-        results: row
-      });
+      res.json(row);
     }
   })
 }
 
-
-
+function list(req, res, next) {
+  Tweet.find({}, function (er, row) {
+    if (er) {
+      res.json(er);
+    } else {
+      res.json(row);
+    }
+  });
+};
 
 module.exports = {
   oauth: oauth,
-  search: search
+  search: search,
+  list: list
 };

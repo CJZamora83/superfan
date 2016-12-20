@@ -1,22 +1,30 @@
 var Gram = require('../models/gram.js');
 
 var search = function (req, res, next) {
-  Gram.find({}, function (er, results) {
+  Gram.find({
+    systemname: req.query.search
+  }, function (er, row) {
     if (er) {
       console.log(er);
-      res.json({
-        er: er,
-        results: null
-      });
+      res.json(er);
     } else {
-      res.json({
-        er: null,
-        results: results
-      });
+      res.json(row);
+    }
+  });
+}
+
+var list = function (req, res, next) {
+  Gram.find({}, function (er, row) {
+    if (er) {
+      console.log(er);
+      res.json(er);
+    } else {
+      res.json(row);
     }
   });
 }
 
 module.exports = {
-  search: search
+  search: search,
+  list: list
 }
