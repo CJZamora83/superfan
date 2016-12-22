@@ -5,9 +5,9 @@
       .module("superfanApp")
       .controller("MainController", MainController);
 
-  MainController.$inject = ['userDataService', '$auth', '$state', '$http'];
+  MainController.$inject = ['$scope','userDataService', '$auth', '$state', '$http'];
 
-  function MainController(userDataService, $auth, $state, $http) {
+  function MainController($scope, userDataService, $auth, $state, $http) {
     var vm = this;
 
     vm.userDS = userDataService;
@@ -20,11 +20,13 @@
     //   { text: 'Jennifer Lawrence' }
     // ];
 
-    // vm.loadTags = function() {
-      // $http.get('/api/tags/celebrities', function (results) {
-      //   console.log(results);
-      // });
-    // };
+    $scope.loadNavTags = function() {
+      return $http.get('/api/celebrities/tags');
+    }
+
+    // $http.get('/api/celebrities/tags').then(function (results) {
+    //   console.log(results)
+    // })
 
     vm.isLoggedIn = function() {
       return $auth.isAuthenticated();
