@@ -14,7 +14,7 @@
 
       $scope.loadTags = function(query) {
         return $http.get('/tags?query=' + query);
-        };
+      };
     })
 
 })();

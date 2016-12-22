@@ -1,0 +1,20 @@
+{
+  "name": "vendor",
+  "homepage": "https://github.com/CJZamora83/superfan",
+  "authors": [
+    "alschofield93 <alschofield93@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-tags-input": "^3.1.1"
+  }
+}

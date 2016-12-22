@@ -8,43 +8,42 @@
 
   function FeedController($scope, $http, $location, twitterDataService) {
     var vm = this;
-    $scope.dataLoaded = false;
 
-    // the jwt runs once everytime the server loads so you shouldnt ever have to worry about it
-    // otherwise, if it seems like the token isnt set, hit twitterDataService.jwt() and that will
-    // reset the token on the backend
+    // make these random
+    // $scope.tags = [
+    //   {
+    //     systemname: 'drake',
+    //     text: 'Drake'
+    //   },
+    //   // { text: 'Beyonce & Jay Z' }
+    //   // { text: 'Mel Gibson & Morgan Freeman' },
+    //   {
+    //     systemname: 'kyliejenner',
+    //     text: 'Kylie Jenner'
+    //   }
+    // ];
 
-    // change it to be whatever you want (remember to change the html), i tried to chose one that
-    // had recent tweets... annnd im a liverpool fc fan, also if you'd rather
-    // you can give this method a callback instead of doing the timeout
-    // and grabbing the results that you see after this, whatever you like best
-    var keyword = 'LFC'
-    twitterDataService.search(keyword);
+    $http.get('/api/celebrities/list').then(function (results) {
+      console.log('all celebrity objects or contact cards if you like');
+      console.log(results);
+    });
 
-    setTimeout(function () {
-      var searchResults = twitterDataService.getSearchResults();
+    $http.get('/api/instagram/list').then(function (results) {
+      console.log('all instagram posts. there is also a search route for this api, it is "/api/instagram/search?search=*the systemname of the celebrity you want data from *"');
+      console.log(results);
+    });
 
-      $scope.results = searchResults[keyword];
+    $http.get('/api/twitter/list').then(function (results) {
+      console.log('all tweets. also, same as instagram, there is a search route for this api, works the same way, send the systemname (found on the celebrity object) of the celebrity you want data for');
+      console.log(results);
+    });
 
-      $scope.dataLoaded = true;
+    $scope.loadTags = function() {
+      return $http.get('/api/celebrities/tags');
+    }
 
-      // dont need to $apply if you use the callback i believe
-      $scope.$apply();
-    }, 1000);
-
-
-    // this is for user oauth stuff, figured id leave it here for you to see
-    // but ultimately i figured we'd have twitterDataService.oauth() trigger when the user clicks certain
-    // things, like retweets or likes but i feel like thats a little further down
-    // the line
-
-    // if ($location.$$search.oauth_token_secret) {
-    //   console.log($location.$$search)
-    // } else {
-    //   twitterDataService.oauth()
-    // }
+    $scope.$watch('tags.length', function (v, old) {
+      console.log($scope.tags);
+    })
   }
-
-
-
 })();
