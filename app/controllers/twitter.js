@@ -1,67 +1,4 @@
-var request = require('request');
-var access_token;
-
-function jwt() {
-  var token = encodeURIComponent(process.env.SUPERFAN_TWITTER_KEY) + ':' + encodeURIComponent(process.env.SUPERFAN_TWITTER_SECRET);
-  
-  // Base64 encode the string
-  token = new Buffer(token, 'utf8').toString('base64');
-  
-  // oauth app access token request
-  request({
-    method: 'POST',
-    headers: {
-      'Authorization': 'Basic ' + token, 
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    uri: 'https://api.twitter.com/oauth2/token',
-    body: 'grant_type=client_credentials'
-  }, function (er, response, body) {
-    if (er) {
-      console.log(er)
-    }
-
-    if (JSON.parse(body).token_type === 'bearer') {
-      access_token = JSON.parse(body).access_token;
-      return access_token;
-    } else {
-      console.log('Wrong Token Type. Restart Server');
-      return null;
-    }
-  });
-}
-
-// making a route so that it would be easier to reset the variable 
-// without restarting the server
-function jwtRoute(req, res, next) {
-  jwt();
-
-  res.json({
-    er: null,
-    results: 'New Jwt Token Saved.'
-  });
-}
-
-// setting this route up just because it might be useful later
-// and you wouldnt have to curl twitter you could just hit this route
-function invalidateJwtToken (req, res, next) {
-  request({
-    method: 'POST',
-    headers: {
-      'Authorization': 'Basic ' + access_token, 
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    uri: 'https://api.twitter.com/oauth2/token',
-    body: 'access_token=' + access_token
-  }, function (er, response, body) {
-    if (er) {
-      console.log(er);
-    }
-
-    // after you invalidate the token might as well get another
-    res.redirect('/jwt/twitter');
-  });
-}
+var Tweet = require('../models/tweet.js');
 
 // user oauth2
 function oauth (req, res, next) {
@@ -167,31 +104,29 @@ function oauth (req, res, next) {
 }
 
 function search(req, res, next) {
-  options = {
-    method: 'GET',
-    headers: {
-      'Authorization': 'Bearer ' + access_token, 
-    },
-    uri: 'https://api.twitter.com/1.1/search/tweets.json?q=from:' + req.params.keyword
-  };
-
-  request(options, function (er, response, body) {
+  Tweet.find({
+    systemname: req.query.search
+  }, function (er, row) {
     if (er) {
-      console.log(er);
+      res.json(er);
+    } else {
+      res.json(row);
     }
-
-    res.json({
-      er: null,
-      results: body
-    });
   })
 }
 
-jwt();
+function list(req, res, next) {
+  Tweet.find({}, function (er, row) {
+    if (er) {
+      res.json(er);
+    } else {
+      res.json(row);
+    }
+  });
+};
 
 module.exports = {
   oauth: oauth,
-  jwt: jwtRoute,
-  invalJwt: invalidateJwtToken,
-  search: search
+  search: search,
+  list: list
 };

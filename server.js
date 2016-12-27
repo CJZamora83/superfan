@@ -52,22 +52,22 @@ app.use(debugReq);
 app.use('/api', routes);
 
 // Catches all 404 routes.
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// app.use(function(req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 // Error-handling layer.
-app.use(function(err, req, res, next) {
-  // In development, the error handler will print stacktrace.
-  err = (app.get('env') === 'development') ? err : {};
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: err
-  });
-});
+// app.use(function(err, req, res, next) {
+//   // In development, the error handler will print stacktrace.
+//   err = (app.get('env') === 'development') ? err : {};
+//   res.status(err.status || 500);
+//   res.render('error', {
+//     message: err.message,
+//     error: err
+//   });
+// });
 
 function debugReq(req, res, next) {
   debug('params:', req.params);
