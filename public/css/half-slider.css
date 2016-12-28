@@ -66,7 +66,7 @@ p {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
-  color: #fdcc52;
+  color: #1B2631;
 }
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
@@ -464,7 +464,11 @@ body {
 
 .carousel {
     height: 75%;
+<<<<<<< HEAD
 >>>>>>> 29d4e213efbf720d86561d89190f1be476d31af0:public/css/half-slider.css
+=======
+    padding-top: 500px;
+>>>>>>> 69142a9d233508b8eeee03ab45c61307a780b59a
 }
 
 .item,
