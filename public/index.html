@@ -52,7 +52,7 @@
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
                     <tags-input ng-model="tags" replace-spaces-with-dashes='false' style="width:600px;height:35px;margin:5px;">
-                        <auto-complete source="loadNavTags()" max-results-to-show="100"></auto-complete>
+                        <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
                     </tags-input>
                 </div>
               </form>
