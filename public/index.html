@@ -50,7 +50,6 @@
             <div class="navbar-header">
               <form class="form-inline float-xs-left">
                 <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
                     <tags-input ng-model="tags" replace-spaces-with-dashes='false' style="width:600px;height:35px;margin:5px;">
                         <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
                     </tags-input>
@@ -64,7 +63,7 @@
                         <a class="page-scroll" href="#features">Features</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Mobile</a>
+                        <a class="page-scroll" href="#mobile">Mobile</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -75,6 +74,7 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
     <div class="content" ui-view>
       <!-- templates go here -->
     </div>
