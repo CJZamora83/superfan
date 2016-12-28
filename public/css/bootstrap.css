@@ -1374,7 +1374,7 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #76d7c4 !important;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
@@ -6760,3 +6760,45 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+<<<<<<< HEAD
+
+
+/*Additional CSS*/
+.Absolute-Center {
+  margin: 50%;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+  width: 50%;
+  height: 50%;
+  min-width: 600px;
+  max-width: 600px;
+  padding: 40px;
+  margin: 50%;
+  text-align: center;
+}
+
+.fixed-bottom {
+   position: fixed;
+   height: 60px;
+   bottom: 0;
+   width: 100%;
+}
+
+.highlight {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #f7f7f9;
+}
+
+
+.quad {
+  border-width: 5px;
+  margin: 2px;
+  padding: 1px;
+  border-color: #000000 !important;
+}
+=======
+>>>>>>> 29d4e213efbf720d86561d89190f1be476d31af0

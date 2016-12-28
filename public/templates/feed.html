@@ -9,7 +9,6 @@
                 </div>
             </div>
         </div>
-        <div class="row jumbotron">
 
             <div id="content"></div>
 
@@ -28,10 +27,9 @@
 
                                     for(var i=0;i<data.items.length;++i){
 
-                                        output += '<div class="col-md-3"><h5><a class="feed-link" href="' +
-                                                data.items[i].link + '" >' +
-                                                data.items[i].title + '</h4></div>';
-
+                                      output += '<div class="col-md-3"><h4><a href="' +
+                                              data.items[i].link + '" >' +
+                                              data.items[i].title + '</h4></div>';
                                     }
 
 
@@ -44,6 +42,5 @@
                     xhr.send();
 
                 </script>
-        </div>
     </div>
 </section>
