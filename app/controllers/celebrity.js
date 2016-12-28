@@ -1,7 +1,9 @@
 var Celebrities = require('../models/celebrity.js');
 
 function tags (req, res, next) {
-  Celebrities.find({}, function (er, row) {
+  Celebrities.find({
+    
+  }, function (er, row) {
     if (er) {
       console.log(er);
     }
