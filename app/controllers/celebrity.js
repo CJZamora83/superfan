@@ -15,7 +15,7 @@ function tags (req, res, next) {
     while (l--) {
       celebrities.push({
         text: row[l].prettyName,
-        system
+        system: row[l].systemName
       });
     }
 
