@@ -20,8 +20,8 @@
     //   { text: 'Jennifer Lawrence' }
     // ];
 
-    $scope.loadNavTags = function() {
-      return $http.get('/api/celebrities/tags');
+    $scope.loadNavTags = function(query) {
+      return $http.get('/api/celebrities/tags?query=' + query);
     }
 
     // $http.get('/api/celebrities/tags').then(function (results) {
