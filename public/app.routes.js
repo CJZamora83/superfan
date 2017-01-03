@@ -12,6 +12,8 @@
       .state("homePage", {
         url: "/",
         templateUrl: "/templates/home.html",
+        controller: "CarouselDemoCtrl",
+        controllerAs: "vm"
       })
       .state("user_login", {
         url: "/user_login",
