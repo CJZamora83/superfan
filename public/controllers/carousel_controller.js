@@ -1,4 +1,5 @@
 (function() {
+<<<<<<< HEAD
   "use strict";
 
   angular
@@ -60,3 +61,13 @@
     return array;
   }
 });
+=======
+  'use strict';
+
+  angular
+  .module('superfanApp')
+  .controller('CarouselCtrl', function ($scope) {
+
+  });
+})();
+>>>>>>> 482e296c65d2c9cfecea58cd179a045659c867c3
