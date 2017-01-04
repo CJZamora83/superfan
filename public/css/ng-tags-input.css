@@ -1,5 +1,6 @@
 tags-input {
   display: block;
+  margin: 0 auto;
 }
 tags-input *, tags-input *:before, tags-input *:after {
   -moz-box-sizing: border-box;

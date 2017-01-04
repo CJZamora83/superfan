@@ -12,7 +12,7 @@
       .state("homePage", {
         url: "/",
         templateUrl: "/templates/home.html",
-        controller: "CarouselDemoCtrl",
+        controller: "CarouselCtrl",
         controllerAs: "vm"
       })
       .state("user_login", {
