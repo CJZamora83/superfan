@@ -34,8 +34,8 @@
   <div class="container">
     <div class="row">
           <div class="col-md-10">
-              <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' style="margin-bottom:10px;">
-                <auto-complete source="loadTags()" max-results-to-show="100"></auto-complete>
+              <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="onTagAdd($tag)" style="margin-bottom:10px;">
+                <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
               </tags-input>
           </div>
           <div class="col-md-2">

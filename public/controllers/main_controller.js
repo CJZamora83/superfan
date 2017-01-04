@@ -28,6 +28,16 @@
     //   console.log(results)
     // })
 
+    $scope.onTagAdd = function ($tag) {
+      $http.get('/api/twitter/search?search=' + $tag.system).then(function (results) {
+        console.log(results)
+      });
+
+      $http.get('/api/instagram/search?search=' + $tag.system).then(function (results) {
+        console.log(results)
+      });
+    }
+
     vm.isLoggedIn = function() {
       return $auth.isAuthenticated();
     };
