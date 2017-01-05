@@ -6,7 +6,8 @@ var userController = require('../controllers/users.js'),
     authController = require('../controllers/oauth.js'),
     twitterController = require('../controllers/twitter.js'),
     celebrityController = require('../controllers/celebrity.js'),
-    instagramController = require('../controllers/instagram.js');
+    instagramController = require('../controllers/instagram.js'),
+    meshedController = require('../controllers/meshed.js');
 
 
 // root path:
@@ -66,5 +67,13 @@ router.get('/instagram/search', instagramController.search);
 
 // list all instagram posts
 router.get('/instagram/list', instagramController.list);
+
+//||||||||||||||||||||||||||--
+// MESHED MEDIA SERVICES
+//||||||||||||||||||||||||||--
+
+router.get('/trending', meshedController.trending);
+
+router.get('/search', meshedController.search);
 
 module.exports = router;
