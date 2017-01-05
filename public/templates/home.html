@@ -34,9 +34,9 @@
   <div class="container">
     <div class="row">
           <div class="col-md-10">
-              <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="onTagAdd($tag)" style="margin-bottom:10px;">
-                <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
-              </tags-input>
+            <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="onTagAdd($tag)" style="margin-bottom:10px;">
+              <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+            </tags-input>
           </div>
           <div class="col-md-2">
            <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -46,10 +46,7 @@
     </div>
   <hr>
     <div class="row">
-      <div class="col-md-3"><img class="celeb_image200" src="images/celeb_placeholder1.png"></div>
-      <div class="col-md-3"><img class="celeb_image200" src="images/celeb_placeholder2.png"></div>
-      <div class="col-md-3"><img class="celeb_image200" src="images/celeb_placeholder3.png"></div>
-      <div class="col-md-3"><img class="celeb_image200" src="images/celeb_placeholder4.png"></div>
+      <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
     </div>
   </div>
 
