@@ -1,5 +1,5 @@
-var Tweet = require('../models/tweet.js'),
-    Gram = require('../models/gram.js'),
+var Tweet       = require('../models/tweet.js'),
+    Gram        = require('../models/gram.js'),
     Celebrities = require('../models/celebrity.js');
 
 function trending (req, res, next) {
