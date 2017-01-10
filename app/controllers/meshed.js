@@ -3,7 +3,7 @@ var Tweet       = require('../models/tweet.js'),
     Celebrities = require('../models/celebrity.js');
 
 function trending (req, res, next) {
-  Gram.find({}, {}, {sort: {likes: -1}, limit: 4}, function (er, row) {
+  Gram.find({}, {}, {sort: {likes: -1, createdAt: -1}, limit: 4}, function (er, row) {
     if (er) {
       console.log(er);
       res.json(er);
