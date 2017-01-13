@@ -76,4 +76,6 @@ router.get('/trending', meshedController.trending);
 
 router.get('/search', meshedController.search);
 
+router.get('/mostRecent', meshedController.mostRecent);
+
 module.exports = router;

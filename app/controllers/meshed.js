@@ -3,7 +3,26 @@ var Tweet       = require('../models/tweet.js'),
     Celebrities = require('../models/celebrity.js');
 
 function trending (req, res, next) {
-  Gram.find({}, {}, {sort: {likes: -1}, limit: 4}, function (er, row) {
+  var oneWeekAgo = new Date();
+  oneWeekAgo.setHours(0, 0, 0, 0);
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+  Gram.find({
+    createdAt: { 
+      $gte: oneWeekAgo
+    }
+  }, {}, {sort: {likes: -1}, limit: 4}, function (er, row) {
+    if (er) {
+      console.log(er);
+      res.json(er);
+    } else {
+      res.json(row);
+    }
+  })
+}
+
+function mostRecent (req, res, next) {
+  Gram.find({}, {}, {sort: {createdAt: -1}, limit: 4}, function (er, row) {
     if (er) {
       console.log(er);
       res.json(er);
@@ -67,5 +86,6 @@ function search (req, res, next) {
 
 module.exports = {
   trending: trending,
-  search: search
+  search: search,
+  mostRecent: mostRecent
 };

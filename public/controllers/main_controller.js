@@ -36,8 +36,11 @@
 
     $http.get('/api/trending').then(function (results) {
       $scope.trending = results.data;
-      console.log($scope.trending);
-    })
+    });
+
+    $http.get('/api/mostRecent').then(function (results) {
+      $scope.mostRecent = results.data;
+    });
 
     vm.isLoggedIn = function() {
       return $auth.isAuthenticated();
