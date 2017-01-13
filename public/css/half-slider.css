@@ -419,7 +419,7 @@ footer ul li a.active {
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-radius: 300px;
+  border-radius: 3px;
 }
 .btn-xl {
   padding: 15px 45px;
@@ -451,24 +451,18 @@ body {
   color: #000000;
   font-weight: bold;
 }
-<<<<<<< HEAD:public/css/new-age.css
-<<<<<<< HEAD
+
 /* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
 
 .carousel {
     height: 20%;
-=======
 
 
 /* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
 
 .carousel {
     height: 75%;
-<<<<<<< HEAD
->>>>>>> 29d4e213efbf720d86561d89190f1be476d31af0:public/css/half-slider.css
-=======
     padding-top: 500px;
->>>>>>> 69142a9d233508b8eeee03ab45c61307a780b59a
 }
 
 .item,
@@ -488,8 +482,8 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
-<<<<<<< HEAD:public/css/new-age.css
-=======
->>>>>>> ddd5decca2113b516c6163d04d5c0c1ed41d384f
-=======
->>>>>>> 29d4e213efbf720d86561d89190f1be476d31af0:public/css/half-slider.css
+
+.buscabox {
+  display: inline-block;
+  border: 1px solid red;
+}

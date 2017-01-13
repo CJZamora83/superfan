@@ -3,10 +3,10 @@
     <div uib-carousel active="0" interval="2500" wrap=true>
     <!-- Slide 1 -->
       <div uib-slide index=0>
-        <img src="../images/carousel_slide_1.jpg" height=650px style="margin:auto;">
+        <img src="../images/carousel_slide_one.jpg" height=650px style="margin:auto;">
         <div class="carousel-caption">
-          <h3>SUPERFAN</h3>
-          <p>the world's first celebrity engine...</p>
+          <h1>SUPERFAN</h1>
+          <h4>the world's first celebrity engine...</h4>
         </div>
       </div>
     <!-- Slide 2 -->
@@ -33,17 +33,17 @@
   <br>
   <div class="container">
     <div class="row">
-          <div class="col-md-10">
-            <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="onTagAdd($tag)" style="margin-bottom:10px;">
-              <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
-            </tags-input>
-          </div>
-          <div class="col-md-2">
-           <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <div class="col-md-12">
+            <div class="buscabox">
+              <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="onTagAdd($tag)" style="margin-bottom:10px;">
+                <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+              </tags-input>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
           </div>
     </div>
 
-    </div>
+  </div>
   <hr>
   <div class="container">
     <div class="row">
@@ -57,7 +57,9 @@
       <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
   </div>
   </div>
-
+</br>
+</br>
+</br>
     <section id="mobile" class="download bg-primary text-center">
         <div class="container-fluid padding-zero">
             <div class="row">
@@ -78,7 +80,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <div class="section-heading">
-              <h2>Content from multiple social media platforms - all in one app.</h2>
+              <h2>Content from platforms - all in one app.</h2>
               <hr>
             </div>
           </div>
