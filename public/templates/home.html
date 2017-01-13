@@ -1,31 +1,22 @@
 <div ng-controller="CarouselCtrl">
   <div>
-    <div uib-carousel active="0" interval="2500" wrap=true>
+    <div uib-carousel active="0" interval="4500" wrap=true>
     <!-- Slide 1 -->
       <div uib-slide index=0>
         <img src="../images/carousel_slide_one.jpg" height=650px style="margin:auto;">
         <div class="carousel-caption">
-          <h1>SUPERFAN</h1>
-          <h4>the world's first celebrity engine...</h4>
+          <h1 color=#FF69B4>SUPERFAN</h1>
+          <h3>the world's first celebrity engine...</h3>
         </div>
       </div>
     <!-- Slide 2 -->
       <div uib-slide index=1>
-        <img src="../images/carousel_slide_2.jpg" height=650px style="margin:auto;">
+        <img src="../images/carousel_slide_three.jpg" height=650px style="margin:auto;">
         <div class="carousel-caption">
-          <h3>SUPERFANESS</h3>
-          <p>the world's first blah blah blah...</p>
+          <h1>SUPERFANESS</h1>
+          <h3>the world's first blah blah blah...</h3>
         </div>
       </div>
-    <!-- Slide 3 -->
-      <div uib-slide index=2>
-        <img src="../images/Lebron_Feed.png" height=650px style="margin:auto;">
-        <div class="carousel-caption">
-          <h3>MOBILE, TABLETS, AND PHABLETS</h3>
-          <p>Stay up to date on any device!</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
@@ -80,25 +71,25 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <div class="section-heading">
-              <h2>Content from platforms - all in one app.</h2>
+              <h2>We gather all of your favorite sources</h2>
               <hr>
             </div>
           </div>
         </div>
-
+        <h3><i class="fa fa-twitter fa-2x"></i></h3>
         <div class="row">
-          <h3>Twitter</h3>
-            <div ng-repeat="post in twitterHome" class="col-md-3"><h4>@{{post.username}}</h4><p>{{post.text}}</p></div>
+            <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
         </div>
           </br>
         <div class="row">
           </br>
-        <h3>Instagram</h3>
-          <div ng-repeat="post in instagramHome" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
+        <h3><i class="fa fa-instagram fa-2x"></i></h3>
+          <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
         </div>
+         </br>
         <div class="row">
           </br>
-        <h3>Youtube</h3>
+        <h3><i class="fa fa-youtube fa-2x"></i></h3>
           <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
         </div>
       </div>
