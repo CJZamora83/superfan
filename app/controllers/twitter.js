@@ -125,8 +125,27 @@ function list(req, res, next) {
   });
 };
 
+function home(req, res, next) {
+  var threeDaysAgo = new Date();
+  threeDaysAgo.setHours(0, 0, 0, 0);
+  threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
+
+  Tweet.find({
+    createdAt: {
+      $gte: threeDaysAgo
+    }
+  }, {}, {sort: {favorites: -1}, limit: 4}, function (er, row) {
+    if (er) {
+      res.json(er);
+    } else {
+      res.json(row);
+    }
+  });
+};
+
 module.exports = {
   oauth: oauth,
   search: search,
-  list: list
+  list: list,
+  home: home
 };
