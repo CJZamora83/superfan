@@ -88,13 +88,13 @@
 
         <div class="row">
           <h3>Twitter</h3>
-            <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
+            <div ng-repeat="post in twitterHome" class="col-md-3"><h4>@{{post.username}}</h4><p>{{post.text}}</p></div>
         </div>
           </br>
         <div class="row">
           </br>
         <h3>Instagram</h3>
-          <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
+          <div ng-repeat="post in instagramHome" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
         </div>
         <div class="row">
           </br>

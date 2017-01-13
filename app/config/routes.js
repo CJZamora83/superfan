@@ -55,8 +55,11 @@ router.get('/twitter/auth', twitterController.oauth);
 // twitter search path
 router.get('/twitter/search', twitterController.search);
 
-// list all instagram posts
+// list all twitter posts
 router.get('/twitter/list', instagramController.list);
+
+// twitter route handler for home page
+router.get('/twitter/home', twitterController.home);
 
 //||||||||||||||||||||||||||--
 // INSTAGRAM SERVICES
@@ -67,6 +70,9 @@ router.get('/instagram/search', instagramController.search);
 
 // list all instagram posts
 router.get('/instagram/list', instagramController.list);
+
+// instagram route handler for home page
+router.get('/instagram/home', instagramController.home);
 
 //||||||||||||||||||||||||||--
 // MESHED MEDIA SERVICES

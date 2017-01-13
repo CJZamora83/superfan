@@ -21,12 +21,15 @@
     // ];
 
     $scope.loadNavTags = function(query) {
-      return $http.get('/api/celebrities/tags?query=' + query);
-    }
+      var queryArray = query.split(' ').reverse();
+      var queryString = '';
+      var l = queryArray.length;
+      while (l--) {
+        queryString += queryArray[l].slice(0,1).toUpperCase() + queryArray[l].slice(1).toLowerCase() + ' ';
+      }
 
-    // $http.get('/api/celebrities/tags').then(function (results) {
-    //   console.log(results)
-    // })
+      return $http.get('/api/celebrities/tags?query=' + queryString);
+    }
 
     $scope.onTagAdd = function ($tag) {
       $http.get('/api/search?search=' + $tag.text).then(function (results) {
@@ -40,6 +43,14 @@
 
     $http.get('/api/mostRecent').then(function (results) {
       $scope.mostRecent = results.data;
+    });
+
+    $http.get('/api/instagram/home').then(function (results) {
+      $scope.instagramHome = results.data;
+    });
+
+    $http.get('/api/twitter/home').then(function (results) {
+      $scope.twitterHome = results.data;
     });
 
     vm.isLoggedIn = function() {
