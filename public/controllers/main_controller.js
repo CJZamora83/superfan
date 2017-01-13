@@ -21,7 +21,14 @@
     // ];
 
     $scope.loadNavTags = function(query) {
-      return $http.get('/api/celebrities/tags?query=' + query);
+      var queryArray = query.split(' ').reverse();
+      var queryString = '';
+      var l = queryArray.length;
+      while (l--) {
+        queryString += queryArray[l].slice(0,1).toUpperCase() + queryArray[l].slice(1).toLowerCase() + ' ';
+      }
+
+      return $http.get('/api/celebrities/tags?query=' + queryString);
     }
 
     // $http.get('/api/celebrities/tags').then(function (results) {
