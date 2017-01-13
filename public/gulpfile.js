@@ -1,11 +1,11 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
+var gulp        = require('gulp');
+var less        = require('gulp-less');
 var browserSync = require('browser-sync').create();
-var header = require('gulp-header');
-var cleanCSS = require('gulp-clean-css');
-var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
+var header      = require('gulp-header');
+var cleanCSS    = require('gulp-clean-css');
+var rename      = require("gulp-rename");
+var uglify      = require('gulp-uglify');
+var pkg         = require('./package.json');
 
 // Set the banner content
 var banner = ['/*!\n',

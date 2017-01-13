@@ -1,5 +1,3 @@
 #_*SUPERFAN*_
 
-Celebrity Gossip Feed Aggregator
-
-to be continued...
+https://sleepy-depths-64431.herokuapp.com/
