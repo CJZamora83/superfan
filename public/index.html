@@ -57,7 +57,7 @@
             <div class="navbar-header">
               <form class="form-inline float-xs-left">
                 <div class="input-group">
-                    <tags-input ng-model="tags" replace-spaces-with-dashes='false' on-tag-added="onTagAdd($tag)" style="width:600px;height:35px;margin:5px;">
+                    <tags-input ng-model="tags" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="width:600px;height:35px;margin:5px;">
                         <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
                     </tags-input>
                 </div>

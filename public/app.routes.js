@@ -5,9 +5,9 @@
     .module("superfanApp")
     .config(AppRoutes);
 
-  AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider", "$authProvider"];
+  AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider", "$authProvider", '$locationProvider'];
 
-  function AppRoutes($stateProvider, $urlRouterProvider, $authProvider) {
+  function AppRoutes($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
     $stateProvider
       .state("homePage", {
         url: "/",
