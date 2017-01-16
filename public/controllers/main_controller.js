@@ -5,20 +5,14 @@
       .module("superfanApp")
       .controller("MainController", MainController);
 
-  MainController.$inject = ['$scope','userDataService', '$auth', '$state', '$http'];
+  MainController.$inject = ['$scope','userDataService', '$auth', '$state', '$http', 'feedService', '$location'];
 
-  function MainController($scope, userDataService, $auth, $state, $http) {
+  function MainController($scope, userDataService, $auth, $state, $http, feedService, $location) {
     var vm = this;
+    $scope.searchTags = [];
+    $scope.feedService = feedService
 
     vm.userDS = userDataService;
-
-    // make these random
-    // vm.tags = [
-    //   { text: 'Drake' },
-    //   { text: 'Beyonce & Jay Z' },
-    //   { text: 'Mel Gibson & Morgan Freeman' },
-    //   { text: 'Jennifer Lawrence' }
-    // ];
 
     $scope.loadNavTags = function(query) {
       var queryArray = query.split(' ').reverse();
@@ -29,13 +23,11 @@
       }
 
       return $http.get('/api/celebrities/tags?query=' + queryString);
-    }
+    };
 
-    $scope.onTagAdd = function ($tag) {
-      $http.get('/api/search?search=' + $tag.text).then(function (results) {
-        console.log(results);
-      });
-    }
+    $scope.loadFeed = function () {
+      $location.url('/feed');
+    };
 
     $http.get('/api/trending').then(function (results) {
       $scope.trending = results.data;

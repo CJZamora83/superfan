@@ -26,10 +26,10 @@
     <div class="row">
           <div class="col-md-12">
             <div class="buscabox">
-              <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="onTagAdd($tag)" style="margin-bottom:10px;">
+              <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
                 <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
               </tags-input>
-              <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+              <button type="submit" class="btn btn-primary" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
           </div>
     </div>
@@ -78,13 +78,16 @@
         </div>
         <h3><i class="fa fa-twitter fa-2x"></i></h3>
         <div class="row">
-            <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
+            <div ng-repeat="post in twitterHome" class="col-md-3">
+              <h3>{{post.username}}</h3>
+              <p>{{post.text}}</p>
+            </div>
         </div>
           </br>
         <div class="row">
           </br>
         <h3><i class="fa fa-instagram fa-2x"></i></h3>
-          <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
+          <div ng-repeat="post in instagramHome" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
         </div>
          </br>
         <div class="row">
