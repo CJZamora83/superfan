@@ -11,7 +11,6 @@ html {
 }
 body {
   margin: 0;
-  padding-top: 50px;
 }
 article,
 aside,
@@ -62,7 +61,8 @@ dfn {
 }
 h1 {
   margin: .67em 0;
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: 300;
 }
 mark {
   color: #000;
@@ -95,6 +95,7 @@ figure {
 }
 hr {
   height: 0;
+  width: 65%;
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
           box-sizing: content-box;
@@ -1185,7 +1186,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.1;
   color: inherit;
 }
@@ -1213,7 +1214,7 @@ h6 .small,
 .h4 .small,
 .h5 .small,
 .h6 .small {
-  font-weight: normal;
+  font-weight: 400;
   line-height: 1;
   color: #777;
 }
@@ -1265,7 +1266,8 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 72px;
+  font-weight: 300;
 }
 h2,
 .h2 {
@@ -1374,7 +1376,7 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #76d7c4 !important;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
@@ -1609,6 +1611,10 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+.padding-zero {
+  margin: 0 !important;
+}
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -1616,8 +1622,8 @@ pre code {
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -2080,12 +2086,14 @@ pre code {
   }
   .col-md-offset-3 {
     margin-left: 25%;
+    margin-right: 25%;
   }
   .col-md-offset-2 {
     margin-left: 16.66666667%;
   }
   .col-md-offset-1 {
     margin-left: 8.33333333%;
+    margin-right: 8.33333333%;
   }
   .col-md-offset-0 {
     margin-left: 0;
@@ -3230,7 +3238,7 @@ fieldset[disabled] .btn-success.focus {
 }
 .btn-info {
   color: #fff;
-  background-color: #5bc0de;
+  background-color: #E30061;
   border-color: #46b8da;
 }
 .btn-info:focus,
@@ -4229,8 +4237,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 0;
+  margin-left: 0;
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -4494,7 +4502,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: #FFFFFF;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
@@ -4509,12 +4517,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: #0F2436;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333;
-  background-color: transparent;
+  color: #0F2436;
+  font-weight: bold;
+  font-style: italic;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -4546,7 +4555,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #555;
-  background-color: #e7e7e7;
+  background-color: #FFFFFF;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -6756,3 +6765,40 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+/*Additional CSS*/
+.Absolute-Center {
+  margin: 50%;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+  width: 50%;
+  height: 50%;
+  min-width: 600px;
+  max-width: 600px;
+  padding: 40px;
+  margin: 50%;
+  text-align: center;
+}
+
+.fixed-bottom {
+   position: fixed;
+   height: 60px;
+   bottom: 0;
+   width: 100%;
+}
+
+.highlight {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #f7f7f9;
+}
+.quad {
+  border-width: 5px;
+  margin: 2px;
+  padding: 1px;
+  border-color: #000000 !important;
+}
