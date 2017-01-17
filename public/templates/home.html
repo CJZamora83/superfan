@@ -23,14 +23,20 @@
   <br>
   <br>
 <div class="container">
-  <div class="col-lg-12">
-   <div class="input-group">
-      <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
-        <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
-      </tags-input>
-      <span class="input-group-btn">
-      <button class="btn btn-primary" type="submit" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </span>
+  <div class="row">
+    <div class="col-lg-12" id="quad">
+      <div class="row">
+        <div class="col-lg-12">
+         <div class="input-group">
+            <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+              <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+            </tags-input>
+            <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
