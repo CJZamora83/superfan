@@ -22,36 +22,36 @@
 </div>
   <br>
   <br>
+<div class="container">
+  <div class="col-lg-6">
+   <div class="input-group">
+      <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+        <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+      </tags-input>
+      <span class="input-group-btn">
+      <button class="btn btn-primary" type="submit" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </span>
+    </div>
+  </div>
+</div>
+  <hr>
+
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <form class="form-inline">
-          <div class="form-group">
-            <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
-              <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
-            </tags-input>
-            <button type="submit" class="btn btn-primary" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-  </div>
-  <hr>
-
-  <div class="container-fluid">
-    <div class="row justify-content-center">
           <h3>Trending</h3>
-            <div ng-repeat="post in trending" class="col-md-2"><img class="celeb_image200" src="{{post.image}}"></div>
+        <div class="row justify-content-center">
+          <img class="col-sm-2" ng-repeat="post in trending" src="{{post.image}}">
         </div>
-    </div>
-  </div>
+        </div>
+        </div>
+      </div>
     </br>
     <div class="row">
-    </br>
-    <h3>Most Recent</h3>
+      </br>
+        <h3>Most Recent</h3>
       <div ng-repeat="post in mostRecent" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
-  </div>
+    </div>
   </div>
 </br>
 </br>
