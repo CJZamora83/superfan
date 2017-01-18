@@ -1,20 +1,21 @@
 <div ng-controller="CarouselCtrl">
   <div>
-    <div uib-carousel active="0" interval="3000" wrap=true>
+    <div uib-carousel active="0" interval="4500" wrap=true>
     <!-- Slide 1 -->
       <div uib-slide index=0>
-        <img src="../images/selena_filtered_darker.jpg" height=650px style="margin:auto;">
+        <img src="../images/popular_celebrities_filtered_darker.jpg" height=650px style="margin:auto;">
+
         <div class="carousel-caption">
-          <h1 color=#FF69B4>SUPERFAN</h1>
-          <h3>the world's first celebrity engine...</h3>
+          <h1 color=#FF69B4>S&nbsp;U&nbsp;P&nbsp;E&nbsp;R&nbsp;F&nbsp;A&nbsp;N</h1>
+          <h2>explore celebrities you love</h2>
         </div>
       </div>
     <!-- Slide 2 -->
       <div uib-slide index=1>
-        <img src="../images/popular_celebrities_filtered_darker.jpg" height=650px style="margin:auto;">
+        <img src="../images/selena_filtered_darker.jpg" height=650px style="margin:auto;">
         <div class="carousel-caption">
-          <h1>SUPERFANESS</h1>
-          <h3>the world's first blah blah blah...</h3>
+          <h1>ALL-IN-ONE</h1>
+          <h2>popular social media, trending news, and celebrity gossip</h2>
         </div>
       </div>
     </div>
@@ -24,18 +25,14 @@
   <br>
 <div class="container">
   <div class="row">
-    <div class="col-lg-12" id="quad">
-      <div class="row">
-        <div class="col-lg-12">
-         <div class="input-group">
-            <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
-              <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
-            </tags-input>
-            <span class="input-group-btn">
-            <button class="btn btn-primary" type="submit" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </span>
-          </div>
-        </div>
+    <div class="col-lg-12">
+      <div class="input-group">
+        <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+          <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+        </tags-input>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="submit" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </span>
       </div>
     </div>
   </div>
@@ -51,13 +48,14 @@
         </div>
         </div>
         </div>
-      </div>
     </br>
     <div class="row">
       </br>
         <h3>Most Recent</h3>
-      <div ng-repeat="post in mostRecent" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
-    </div>
+      <div class="row justify-content-center">
+          <img class="col-sm-2" ng-repeat="post in mostRecent" src="{{post.image}}">
+        </div>
+  </div>
   </div>
 </br>
 </br>
