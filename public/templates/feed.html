@@ -1,0 +1,49 @@
+<section>
+    <div class="container">
+      <div class="row">
+            <div class="col-md-12">
+                <div class="input-group center-block">
+                    <tags-input ng-model="tags" replace-spaces-with-dashes='false' style="width:100%;height:100px;margin-bottom:10px;">
+                        <auto-complete source="loadTags()" max-results-to-show="100"></auto-complete>
+                    </tags-input>
+                </div>
+            </div>
+        </div>
+
+            <div id="content"></div>
+
+                <script type="text/javascript">
+                    var content = document.getElementById('content');
+
+                    var xhr = new XMLHttpRequest();
+
+                    xhr.onreadystatechange = function(){
+                            if (xhr.readyState==4 && xhr.status==200)
+                            {
+                                var data = JSON.parse(xhr.responseText);
+                                if(data.status == 'ok'){
+
+                                    var output = "";
+
+                                    for(var i=0;i<data.items.length;++i){
+
+                                      output += '<div class="col-md-3"><h4><a href="' +
+                                              data.items[i].link + '" >' +
+                                              data.items[i].title + '</h4></div>';
+                                    }
+
+
+                                    content.innerHTML = output;
+
+                                }
+                            }
+                        };
+                    xhr.open('GET','https://rss2json.com/api.json?rss_url=http%3A%2F%2Fwww.tmz.com%2Frss.xml',true);
+                    xhr.send();
+
+                </script>
+    </div>
+</section>
+
+<!-- tweet.handle
+gram.username -->

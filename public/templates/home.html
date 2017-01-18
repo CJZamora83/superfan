@@ -40,22 +40,15 @@
   <hr>
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-          <h3>Trending</h3>
-        <div class="row justify-content-center">
-          <img class="col-sm-2" ng-repeat="post in trending" src="{{post.image}}">
-        </div>
-        </div>
-        </div>
-    </br>
-    <div class="row">
-      </br>
-        <h3>Most Recent</h3>
-      <div class="row justify-content-center">
-          <img class="col-sm-2" ng-repeat="post in mostRecent" src="{{post.image}}">
-        </div>
-  </div>
+    <h3>Trending</h3>
+    <div class="row justify-content-center">
+      <img class="col-sm-2 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
+    </div>
+  </br>
+    <h3>Most Recent</h3>
+      <div class="row justify-content-center bord">
+        <img class="col-sm-2" ng-repeat="post in mostRecent" src="{{post.image}}">
+      </div>
   </div>
 </br>
 </br>
@@ -96,13 +89,17 @@
         <div class="row">
           </br>
         <h3><i class="fa fa-instagram fa-2x"></i></h3>
-          <div ng-repeat="post in instagramHome" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
+          <div class="row justify-content-center">
+            <img class="col-sm-2" ng-repeat="post in instagramHome" src="{{post.image}}">
+          </div>
         </div>
          </br>
         <div class="row">
           </br>
-        <h3><i class="fa fa-youtube fa-2x"></i></h3>
-          <div ng-repeat="post in trending" class="col-md-3"><img class="celeb_image200" src="{{post.image}}"></div>
+  <h3><i class="fa fa-youtube fa-2x"></i></h3>
+    <div class="row justify-content-center">
+      <img class="col-sm-2" ng-repeat="post in instagramHome" src="{{post.image}}">
+    </div
         </div>
       </div>
     </section>

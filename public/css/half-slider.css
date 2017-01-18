@@ -487,3 +487,8 @@ body {
   display: inline-block;
   border: 1px solid red;
 }
+
+.bord {
+  border-width: 1px !important;
+  border-color: solid green !important;
+}
