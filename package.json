@@ -7,24 +7,6 @@
     "seed": "node ./app/config/seeds.js"
   },
   "dependencies": {
-    "bcrypt": "^0.8.7",
-    "body-parser": "^1.15.2",
-    "cookie-parser": "^1.4.3",
-    "cors": "^2.8.1",
-    "debug": "^2.2.0",
-    "dotenv": "^2.0.0",
-    "ejs": "^2.3.4",
-    "express": "^4.13.4",
-    "instagram-node": "^0.5.8",
-    "jsonwebtoken": "^7.1.6",
-    "jwt-simple": "^0.5.0",
-    "lodash": "^3.10.1",
-    "moment": "^2.14.1",
-    "mongoose": "4.7.1",
-    "morgan": "^1.7.0",
-    "ng-tags-input": "^3.1.1",
-    "request": "^2.74.0",
-    "serve-favicon": "^2.3.0",
-    "twit": "^2.2.5"
+
   }
 }
