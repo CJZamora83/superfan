@@ -1,0 +1,144 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/7.2.1/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'rebuild' ]
+2 info using npm@3.10.9
+3 info using node@v7.2.1
+4 info readInstalled object
+5 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan', 'SUPERFAN@0.0.0' ]
+6 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan/node_modules/ansi-regex',
+6 verbose rebuild   'ansi-regex@2.1.1' ]
+7 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan/node_modules/ipaddr.js',
+7 verbose rebuild   'ipaddr.js@1.2.0' ]
+8 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan/node_modules/mime-db',
+8 verbose rebuild   'mime-db@1.26.0' ]
+9 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan/node_modules/mime-types',
+9 verbose rebuild   'mime-types@2.1.14' ]
+10 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan/node_modules/ms',
+10 verbose rebuild   'ms@0.7.1' ]
+11 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan/node_modules/sliced',
+11 verbose rebuild   'sliced@1.0.1' ]
+12 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan/node_modules/proxy-addr',
+12 verbose rebuild   'proxy-addr@1.1.3' ]
+13 verbose rebuild path, id [ '/Users/scho/SuperFanApp/superfan/node_modules/sshpk',
+13 verbose rebuild   'sshpk@1.10.2' ]
+14 silly rebuild set [ '/Users/scho/SuperFanApp/superfan/node_modules/ansi-regex',
+14 silly rebuild set   '/Users/scho/SuperFanApp/superfan/node_modules/ipaddr.js',
+14 silly rebuild set   '/Users/scho/SuperFanApp/superfan/node_modules/mime-db',
+14 silly rebuild set   '/Users/scho/SuperFanApp/superfan/node_modules/mime-types',
+14 silly rebuild set   '/Users/scho/SuperFanApp/superfan/node_modules/ms',
+14 silly rebuild set   '/Users/scho/SuperFanApp/superfan/node_modules/sliced',
+14 silly rebuild set   '/Users/scho/SuperFanApp/superfan/node_modules/proxy-addr',
+14 silly rebuild set   '/Users/scho/SuperFanApp/superfan/node_modules/sshpk' ]
+15 info build /Users/scho/SuperFanApp/superfan/node_modules/ansi-regex
+16 info lifecycle ansi-regex@2.1.1~preinstall: ansi-regex@2.1.1
+17 silly lifecycle ansi-regex@2.1.1~preinstall: no script for preinstall, continuing
+18 info linkStuff ansi-regex@2.1.1
+19 silly linkStuff ansi-regex@2.1.1 has /Users/scho/SuperFanApp/superfan/node_modules as its parent node_modules
+20 verbose linkBins ansi-regex@2.1.1
+21 verbose linkMans ansi-regex@2.1.1
+22 verbose rebuildBundles ansi-regex@2.1.1
+23 info lifecycle ansi-regex@2.1.1~install: ansi-regex@2.1.1
+24 silly lifecycle ansi-regex@2.1.1~install: no script for install, continuing
+25 info lifecycle ansi-regex@2.1.1~postinstall: ansi-regex@2.1.1
+26 silly lifecycle ansi-regex@2.1.1~postinstall: no script for postinstall, continuing
+27 info build /Users/scho/SuperFanApp/superfan/node_modules/ipaddr.js
+28 info lifecycle ipaddr.js@1.2.0~preinstall: ipaddr.js@1.2.0
+29 silly lifecycle ipaddr.js@1.2.0~preinstall: no script for preinstall, continuing
+30 info linkStuff ipaddr.js@1.2.0
+31 silly linkStuff ipaddr.js@1.2.0 has /Users/scho/SuperFanApp/superfan/node_modules as its parent node_modules
+32 verbose linkBins ipaddr.js@1.2.0
+33 verbose linkMans ipaddr.js@1.2.0
+34 verbose rebuildBundles ipaddr.js@1.2.0
+35 info lifecycle ipaddr.js@1.2.0~install: ipaddr.js@1.2.0
+36 silly lifecycle ipaddr.js@1.2.0~install: no script for install, continuing
+37 info lifecycle ipaddr.js@1.2.0~postinstall: ipaddr.js@1.2.0
+38 silly lifecycle ipaddr.js@1.2.0~postinstall: no script for postinstall, continuing
+39 info build /Users/scho/SuperFanApp/superfan/node_modules/mime-db
+40 info lifecycle mime-db@1.26.0~preinstall: mime-db@1.26.0
+41 silly lifecycle mime-db@1.26.0~preinstall: no script for preinstall, continuing
+42 info linkStuff mime-db@1.26.0
+43 silly linkStuff mime-db@1.26.0 has /Users/scho/SuperFanApp/superfan/node_modules as its parent node_modules
+44 verbose linkBins mime-db@1.26.0
+45 verbose linkMans mime-db@1.26.0
+46 verbose rebuildBundles mime-db@1.26.0
+47 info lifecycle mime-db@1.26.0~install: mime-db@1.26.0
+48 silly lifecycle mime-db@1.26.0~install: no script for install, continuing
+49 info lifecycle mime-db@1.26.0~postinstall: mime-db@1.26.0
+50 silly lifecycle mime-db@1.26.0~postinstall: no script for postinstall, continuing
+51 info build /Users/scho/SuperFanApp/superfan/node_modules/mime-types
+52 info lifecycle mime-types@2.1.14~preinstall: mime-types@2.1.14
+53 silly lifecycle mime-types@2.1.14~preinstall: no script for preinstall, continuing
+54 info linkStuff mime-types@2.1.14
+55 silly linkStuff mime-types@2.1.14 has /Users/scho/SuperFanApp/superfan/node_modules as its parent node_modules
+56 verbose linkBins mime-types@2.1.14
+57 verbose linkMans mime-types@2.1.14
+58 verbose rebuildBundles mime-types@2.1.14
+59 info lifecycle mime-types@2.1.14~install: mime-types@2.1.14
+60 silly lifecycle mime-types@2.1.14~install: no script for install, continuing
+61 info lifecycle mime-types@2.1.14~postinstall: mime-types@2.1.14
+62 silly lifecycle mime-types@2.1.14~postinstall: no script for postinstall, continuing
+63 info build /Users/scho/SuperFanApp/superfan/node_modules/ms
+64 info lifecycle ms@0.7.1~preinstall: ms@0.7.1
+65 silly lifecycle ms@0.7.1~preinstall: no script for preinstall, continuing
+66 info linkStuff ms@0.7.1
+67 silly linkStuff ms@0.7.1 has /Users/scho/SuperFanApp/superfan/node_modules as its parent node_modules
+68 verbose linkBins ms@0.7.1
+69 verbose linkMans ms@0.7.1
+70 verbose rebuildBundles ms@0.7.1
+71 info lifecycle ms@0.7.1~install: ms@0.7.1
+72 silly lifecycle ms@0.7.1~install: no script for install, continuing
+73 info lifecycle ms@0.7.1~postinstall: ms@0.7.1
+74 silly lifecycle ms@0.7.1~postinstall: no script for postinstall, continuing
+75 info build /Users/scho/SuperFanApp/superfan/node_modules/sliced
+76 info lifecycle sliced@1.0.1~preinstall: sliced@1.0.1
+77 silly lifecycle sliced@1.0.1~preinstall: no script for preinstall, continuing
+78 info linkStuff sliced@1.0.1
+79 silly linkStuff sliced@1.0.1 has /Users/scho/SuperFanApp/superfan/node_modules as its parent node_modules
+80 verbose linkBins sliced@1.0.1
+81 verbose linkMans sliced@1.0.1
+82 verbose rebuildBundles sliced@1.0.1
+83 info lifecycle sliced@1.0.1~install: sliced@1.0.1
+84 silly lifecycle sliced@1.0.1~install: no script for install, continuing
+85 info lifecycle sliced@1.0.1~postinstall: sliced@1.0.1
+86 silly lifecycle sliced@1.0.1~postinstall: no script for postinstall, continuing
+87 info build /Users/scho/SuperFanApp/superfan/node_modules/proxy-addr
+88 info lifecycle proxy-addr@1.1.3~preinstall: proxy-addr@1.1.3
+89 silly lifecycle proxy-addr@1.1.3~preinstall: no script for preinstall, continuing
+90 info linkStuff proxy-addr@1.1.3
+91 silly linkStuff proxy-addr@1.1.3 has /Users/scho/SuperFanApp/superfan/node_modules as its parent node_modules
+92 verbose linkBins proxy-addr@1.1.3
+93 verbose linkMans proxy-addr@1.1.3
+94 verbose rebuildBundles proxy-addr@1.1.3
+95 info lifecycle proxy-addr@1.1.3~install: proxy-addr@1.1.3
+96 silly lifecycle proxy-addr@1.1.3~install: no script for install, continuing
+97 info lifecycle proxy-addr@1.1.3~postinstall: proxy-addr@1.1.3
+98 silly lifecycle proxy-addr@1.1.3~postinstall: no script for postinstall, continuing
+99 info build /Users/scho/SuperFanApp/superfan/node_modules/sshpk
+100 info lifecycle sshpk@1.10.2~preinstall: sshpk@1.10.2
+101 silly lifecycle sshpk@1.10.2~preinstall: no script for preinstall, continuing
+102 info linkStuff sshpk@1.10.2
+103 silly linkStuff sshpk@1.10.2 has /Users/scho/SuperFanApp/superfan/node_modules as its parent node_modules
+104 verbose linkBins sshpk@1.10.2
+105 verbose link bins [ { 'sshpk-conv': 'bin/sshpk-conv',
+105 verbose link bins     'sshpk-sign': 'bin/sshpk-sign',
+105 verbose link bins     'sshpk-verify': 'bin/sshpk-verify' },
+105 verbose link bins   '/Users/scho/SuperFanApp/superfan/node_modules/.bin',
+105 verbose link bins   false ]
+106 verbose linkMans sshpk@1.10.2
+107 verbose rebuildBundles sshpk@1.10.2
+108 verbose stack Error: ENOENT: no such file or directory, chmod '/Users/scho/SuperFanApp/superfan/node_modules/sshpk/bin/sshpk-sign'
+109 verbose cwd /Users/scho/SuperFanApp/superfan
+110 error Darwin 16.1.0
+111 error argv "/usr/local/Cellar/node/7.2.1/bin/node" "/usr/local/bin/npm" "rebuild"
+112 error node v7.2.1
+113 error npm  v3.10.9
+114 error path /Users/scho/SuperFanApp/superfan/node_modules/sshpk/bin/sshpk-sign
+115 error code ENOENT
+116 error errno -2
+117 error syscall chmod
+118 error enoent ENOENT: no such file or directory, chmod '/Users/scho/SuperFanApp/superfan/node_modules/sshpk/bin/sshpk-sign'
+119 error enoent ENOENT: no such file or directory, chmod '/Users/scho/SuperFanApp/superfan/node_modules/sshpk/bin/sshpk-sign'
+119 error enoent This is most likely not a problem with npm itself
+119 error enoent and is related to npm not being able to find a file.
+120 verbose exit [ -2, true ]

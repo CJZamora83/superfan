@@ -25,7 +25,7 @@ tags-input .tags {
   word-wrap: break-word;
   cursor: text;
   background-color: #fff;
-  border: 0px;
+  border: 1px #CCCCCC;
   height: 100%;
 }
 tags-input .tags.focused {
