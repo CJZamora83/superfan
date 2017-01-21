@@ -45,6 +45,11 @@
       $scope.twitterHome = results.data;
     });
 
+    $http.get('/api/youtube/home').then(function (results) {
+      console.log(results);
+      $scope.youtubeHome = results.data;
+    });
+
     vm.isLoggedIn = function() {
       return $auth.isAuthenticated();
     };
