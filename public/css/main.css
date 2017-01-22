@@ -7,10 +7,4 @@ html {
   .col-md-3 {
     width:24.5%;
   }
-
-  .col-md-4 {
-    width:33%;
-  }
 }
-
-/* changes bootstraps col-md-3 width when the screen is greater than 768px */
