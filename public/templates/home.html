@@ -60,7 +60,7 @@
     </br>
     </br>
     </br>
-    <section id="mobile" class="download bg-primary text-center" style="width:500%;left:-200%;">
+    <section id="mobile" class="download bg-primary text-center">
       <div class="container-fluid padding-zero">
         <div class="row">
           <div class="col-md-12">
@@ -76,45 +76,48 @@
     </section>
 
     <section id="features" class="features">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <!-- <div class="section-heading"> -->
-              <h2>We connect all of your favorite sources</h2>
-              <hr>
-            <!-- </div> -->
-          </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <!-- <div class="section-heading"> -->
+            <h2>We connect all of your favorite sources</h2>
+            <hr>
+          <!-- </div> -->
         </div>
-        <h3><i class="fa fa-twitter fa-2x"></i></h3>
-        <div class="row justify-content-center">
-          <div ng-repeat="post in twitterHome" class="col-md-3">
-            <h3>{{post.username}}</h3>
-            <p>{{post.text}}</p>
-          </div>
+      </div>
+    </section>
+
+    <div class="container" style="margin-bottom:25px;">
+      <h3><i class="fa fa-twitter fa-2x"></i></h3>
+      <div class="row justify-content-center">
+        <div ng-repeat="post in twitterHome" class="col-md-3">
+          <h3>{{post.username}}</h3>
+          <p>{{post.text}}</p>
         </div>
-          </br>
-        <div class="row">
-          </br>
+      </div>
+      </br>
+      <div class="row">
+        </br>
+        <div class="col-md-12">
           <h3><i class="fa fa-instagram fa-2x"></i></h3>
           <div class="row justify-content-center">
             <img class="col-md-3" ng-repeat="post in instagramHome" src="{{post.image}}">
           </div>
         </div>
-         </br>
+      </div>
+       </br>
+      <div class="row">
+        </br>
+        <h3><i class="fa fa-youtube fa-2x"></i></h3>
         <div class="row">
-          </br>
-          <h3><i class="fa fa-youtube fa-2x"></i></h3>
-          <div class="row">
-            <div class="col-sm-12 youtube-home">
-              <div class="col-md-5" ng-repeat="post in youtubeHome | limitTo:2" ng-bind-html="post.video | trust"></div>
-            </div>
+          <div class="col-sm-12 youtube-home">
+            <div class="col-md-5" ng-repeat="post in youtubeHome | limitTo:2" ng-bind-html="post.video | trust"></div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
 
-    <section id="contact" class="contact download bg-primary" style="width:500%;left:-200%;">
+    <section id="contact" class="contact download bg-primary">
         <div class="container-fluid padding-zero">
             <h2><i class="fa fa-heart"></i> us on social media!</h2>
             <ul class="list-inline list-social">
