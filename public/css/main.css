@@ -4,3 +4,28 @@
     width:24.5%;
   }
 }
+
+/* changes bootstraps col-md-3 width when the screen is greater than 768px */
+@media (min-width: 600px) {
+  .youtube-home {
+    width: 100%;
+    left: 60%;
+    margin-left:-50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .youtube-home {
+    width: 115%;
+    left: 50%;
+    margin-left:-50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .youtube-home {
+    width: 100%;
+    left: 59%;
+    margin-left:-50%;
+  }
+}
