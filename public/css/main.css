@@ -1,0 +1,6 @@
+/* changes bootstraps col-md-3 width when the screen is greater than 992px */
+@media (min-width: 992px) {
+  .col-md-3 {
+    width:24.5%;
+  }
+}

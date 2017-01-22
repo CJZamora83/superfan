@@ -40,21 +40,22 @@
   <hr>
 
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-12">
         <h3>Trending</h3>
-        <div class="row">
-          <img class="col-sm-3" ng-repeat="post in trending" src="{{post.image}}">
+        <div class="row justify-content-center">
+          <img class="col-md-3" ng-repeat="post in trending" src="{{post.image}}">
         </div>
       </div>
     </div>
   </br>
   <div class="row">
-    </br>
-    <h3>Most Recent</h3>
-      <div ng-repeat="post in mostRecent" class="col-md-3">
-        <img class="celeb_image200" src="{{post.image}}">
+    <div>
+      <h3>Most Recent</h3>
+      <div class="row justify-content-center">
+        <img class="col-md-3" ng-repeat="post in mostRecent" src="{{post.image}}">
       </div>
+    </div>
   </div>
   </br>
   </br>
@@ -66,8 +67,8 @@
             <h2 class="section-heading">Coming to mobile devices soon!</h2>
             <br>
             <div class="badges">
-                <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-                <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
+              <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+              <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
             </div>
           </div>
         </div>
@@ -85,27 +86,27 @@
           </div>
         </div>
         <h3><i class="fa fa-twitter fa-2x"></i></h3>
-        <div class="row">
-            <div ng-repeat="post in twitterHome" class="col-md-3">
-              <h3>{{post.username}}</h3>
-              <p>{{post.text}}</p>
-            </div>
+        <div class="row justify-content-center">
+          <div ng-repeat="post in twitterHome" class="col-md-3">
+            <h3>{{post.username}}</h3>
+            <p>{{post.text}}</p>
+          </div>
         </div>
           </br>
         <div class="row">
           </br>
-        <h3><i class="fa fa-instagram fa-2x"></i></h3>
+          <h3><i class="fa fa-instagram fa-2x"></i></h3>
           <div class="row justify-content-center">
-            <img class="col-sm-2" ng-repeat="post in instagramHome" src="{{post.image}}">
+            <img class="col-md-3" ng-repeat="post in instagramHome" src="{{post.image}}">
           </div>
         </div>
          </br>
         <div class="row">
           </br>
-  <h3><i class="fa fa-youtube fa-2x"></i></h3>
-    <div class="row justify-content-center">
-      <div class="col-sm-5" ng-repeat="post in youtubeHome | limitTo:2" ng-bind-html="post.video | trust"></div>
-    </div
+          <h3><i class="fa fa-youtube fa-2x"></i></h3>
+          <div class="row">
+            <div class="col-md-5" ng-repeat="post in youtubeHome | limitTo:2" ng-bind-html="post.video | trust"></div>
+          </div>
         </div>
       </div>
     </section>
