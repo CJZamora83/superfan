@@ -5,6 +5,7 @@ var express = require('express'),
 var userController = require('../controllers/users.js'),
     authController = require('../controllers/oauth.js'),
     twitterController = require('../controllers/twitter.js'),
+    youtubeController = require('../controllers/youtube.js'),
     celebrityController = require('../controllers/celebrity.js'),
     instagramController = require('../controllers/instagram.js'),
     meshedController = require('../controllers/meshed.js');
@@ -73,6 +74,19 @@ router.get('/instagram/list', instagramController.list);
 
 // instagram route handler for home page
 router.get('/instagram/home', instagramController.home);
+
+//||||||||||||||||||||||||||--
+// YOUTUBE SERVICES
+//||||||||||||||||||||||||||--
+
+// youtube search route
+router.get('/youtube/search', youtubeController.search);
+
+// list all youtube posts
+router.get('/youtube/list', youtubeController.list);
+
+// youtube route handler for home page
+router.get('/youtube/home', youtubeController.home);
 
 //||||||||||||||||||||||||||--
 // MESHED MEDIA SERVICES

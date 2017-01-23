@@ -134,7 +134,7 @@ function home(req, res, next) {
     createdAt: {
       $gte: threeDaysAgo
     }
-  }, {}, {sort: {favorites: -1}, limit: 4}, function (er, row) {
+  }, {}, {sort: {favorites: -1, createdAt: -1}, limit: 4}, function (er, row) {
     if (er) {
       res.json(er);
     } else {
