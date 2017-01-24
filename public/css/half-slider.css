@@ -214,7 +214,6 @@ header .device-container .screen img {
 }
 section {
   padding: 100px 0;
-  margin: 0;
 }
 section h2 {
   font-size: 50px;
@@ -297,6 +296,7 @@ section.cta {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
+  background-image: url('../img/bg-cta.jpg');
   padding: 250px 0;
 }
 section.cta .cta-content {
@@ -389,11 +389,6 @@ footer ul li a:focus,
 footer ul li a:active,
 footer ul li a.active {
   text-decoration: none;
-}
-.bg-primary {
-  background: #76D7C4;
-/*  background: -webkit-linear-gradient(#fdcc52, #fdc539);
-  background: linear-gradient(#fdcc52, #fdc539);*/
 }
 .text-primary {
   color: #fdcc52;
