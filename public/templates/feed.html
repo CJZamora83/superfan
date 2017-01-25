@@ -1,27 +1,46 @@
 <section>
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-4">
-        <div class="form-group">
-          <label for="exampleSelect1">Filter Content By</label>
-            <select class="form-control" id="exampleSelect1">
-              <option>All</option>
-              <option>Most Recent</option>
-              <option>Trending</option>
-            </select>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+            ...
         </div>
       </div>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <img class="col-sm-3 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
+  <hr>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleSelect1">Filter Content By</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>All</option>
+                <option>Most Recent</option>
+                <option>Trending</option>
+              </select>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row justify-content-center">
-      <img class="col-md-4 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <img class="col-sm-3 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
+      </div>
+      <div class="row justify-content-center">
+        <img class="col-md-4 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
+      </div>
     </div>
-  </div>
 </section>
+<script>
+  $('.grid').masonry({
+    // options...
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  });
+</script>
 <!-- tweet.handle
 gram.username -->
 
