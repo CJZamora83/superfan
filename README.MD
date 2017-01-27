@@ -24,3 +24,10 @@ To add a photo:
 ####Landing Page:  
 [<img src="public/images/superfan_layout.png">](public/images/superfan_layout.png) 
 
+##Superfan Trello link:
+[SF Trello](https://trello.com/b/UFZnHnGE/superfan)
+
+To break to next line, add space at end of sentence 
+
+
+
