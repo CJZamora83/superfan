@@ -20,3 +20,7 @@ git pull origin masonry
 git push origin masonry
 
 
+To add a photo:
+####Landing Page:  
+[<img src="public/images/superfan_layout.png">](public/images/superfan_layout.png) 
+
