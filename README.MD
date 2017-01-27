@@ -1,6 +1,6 @@
 #_*SUPERFAN*_
 
-https://sleepy-depths-64431.herokuapp.com/
+[Superfan on Heroku](https://sleepy-depths-64431.herokuapp.com/)
 
 This is a test, just a test to show Tyler how MacDown works 
 
@@ -26,8 +26,4 @@ To add a photo:
 
 ##Superfan Trello link:
 [SF Trello](https://trello.com/b/UFZnHnGE/superfan)
-
-To break to next line, add space at end of sentence 
-
-
 
