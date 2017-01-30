@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
 var celebritySchema = new mongoose.Schema({
-  systemName: String,
-  twitterName: String,
-  instagramName: String,
-  youtubeName: String,
-  prettyName: String
+  system: String,
+  twitter: String,
+  instagram: String,
+  youtube: Array,
+  pretty: String
 });
 
 var Celebrity = mongoose.model('celebrity', celebritySchema);

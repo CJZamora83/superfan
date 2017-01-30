@@ -2,7 +2,7 @@ var Celebrities = require('../models/celebrity.js');
 
 function tags (req, res, next) {
   Celebrities.find({
-    prettyName: {
+    pretty: {
       $regex: req.query.query
     }
   }, function (er, row) {
@@ -14,8 +14,8 @@ function tags (req, res, next) {
     var l = row.length;
     while (l--) {
       celebrities.push({
-        text: row[l].prettyName,
-        system: row[l].systemName
+        text: row[l].pretty,
+        system: row[l].system
       });
     }
 
