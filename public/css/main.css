@@ -8,3 +8,8 @@ html {
     width:24.5%;
   }
 }
+
+/* takes away ng-tags-input border when focused */
+.tags.focused {
+  border: none !important;
+}
