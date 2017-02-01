@@ -1,15 +1,17 @@
 <section>
-  <div class="container">
-    <div class="row">
+  <div class="container"></div>
       <div class="col-md-12">
-        <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-            ...
+        <div class="transitions-enabled masonry" id="pics" style="position: relative; height: 1777px; width: 1092px;">
+            <div class="grid-item--width2 masonry-brick" ng-repeat="post in trending"><img src="{{post.image}}"></div>
         </div>
       </div>
-    </div>
-  </div>
+      <script>
+  $('.grid').masonry({
+    // options...
+    itemSelector: '.grid-item--width2',
+    columnWidth: 400
+  });
+</script>
   <hr>
     <div class="container">
       <div class="row justify-content-center">
@@ -34,13 +36,7 @@
       </div>
     </div>
 </section>
-<script>
-  $('.grid').masonry({
-    // options...
-    itemSelector: '.grid-item',
-    columnWidth: 200
-  });
-</script>
+
 <!-- tweet.handle
 gram.username -->
 
