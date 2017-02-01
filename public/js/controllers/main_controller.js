@@ -46,6 +46,7 @@
     });
 
     $http.get('/api/youtube/home').then(function (results) {
+      console.log(results)
       $scope.youtubeHome = results.data;
     });
 
