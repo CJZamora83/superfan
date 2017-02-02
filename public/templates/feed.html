@@ -1,18 +1,4 @@
 <section>
-  <div class="container"></div>
-      <div class="col-md-12">
-        <div class="transitions-enabled masonry" id="pics" style="position: relative; height: 1777px; width: 1092px;">
-            <div class="grid-item--width2 masonry-brick" ng-repeat="post in trending"><img src="{{post.image}}"></div>
-        </div>
-      </div>
-      <script>
-  $('.grid').masonry({
-    // options...
-    itemSelector: '.grid-item--width2',
-    columnWidth: 400
-  });
-</script>
-  <hr>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-4">
@@ -27,14 +13,21 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+
+<div masonry>
+    <div class="masonry-brick" ng-repeat="brick in bricks">
+        <img ng-src="{{post.image}}" alt="A masonry brick">
+    </div>
+</div>
+
+<!--     <div class="container-fluid">
       <div class="row justify-content-center">
         <img class="col-sm-3 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
       </div>
       <div class="row justify-content-center">
         <img class="col-md-4 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
       </div>
-    </div>
+    </div> -->
 </section>
 
 <!-- tweet.handle
