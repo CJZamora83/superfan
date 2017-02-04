@@ -51,7 +51,7 @@
                 </button>
                 <a class="navbar-brand page-scroll" ui-sref="homePage">SUPERFAN&copy;</a>
             </div>
-            <div class="navbar-header">
+            <div ng-hide="true" class="navbar-header">
               <form class="form-inline float-xs-left">
                 <div class="input-group">
                     <tags-input ng-model="tags" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="width:600px;height:35px;padding-top:4px;">
