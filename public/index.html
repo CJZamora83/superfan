@@ -9,30 +9,32 @@
     <meta name="author" content="">
 
     <title>SUPERFAN</title>
-
-
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/ng-tags-input.bootstrap.css" rel="stylesheet">
-    <link href="css/ng-tags-input.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
-    <script src="https://use.fontawesome.com/878d1f0b49.js"></script>
-
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- NG-Tags-Input CSS -->
+    <link href="vendor/ng-tags-input/css/ng-tags-input.bootstrap.css" rel="stylesheet">
+    <link href="vendor/ng-tags-input/css/ng-tags-input.css" rel="stylesheet">
+
+    <!-- GlideJS CSS -->
+    <link href="vendor/glidejs/dist/css/glide.core.css" rel="stylesheet">
+    <link href="vendor/glidejs/dist/css/glide.theme.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+    <script src="https://use.fontawesome.com/878d1f0b49.js"></script>
+
+    <!-- Our CSS -->
     <link href="css/half-slider.css" rel="stylesheet">
     <link href="/public/vendor/masonry-docs/css/masonry-docs.css">
     <link href="css/main.css" rel="stylesheet">
@@ -53,7 +55,7 @@
             <div class="navbar-header">
               <form class="form-inline float-xs-left">
                 <div class="input-group">
-                    <tags-input ng-model="tags" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="width:600px;height:35px;margin:5px;">
+                    <tags-input ng-model="tags" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="width:600px;height:35px;padding-top:4px;">
                         <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
                     </tags-input>
                 </div>
@@ -86,25 +88,32 @@
     </div>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Theme JavaScript/CDN's -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.14.1/satellizer.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+
     <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <!-- Theme JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.14.1/satellizer.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.min.js"></script>
-    <script src="/app.module.js"></script>
-    <script src="/services/user.dataservice.js"></script>
-    <script src="/services/twitter.dataService.js"></script>
-    <script src="/controllers/main_controller.js"></script>
-    <script src="/controllers/login_controller.js"></script>
-    <script src="/controllers/feed_controller.js"></script>
-    <script src="/controllers/carousel_controller.js"></script>
-    <script src="/app.routes.js"></script>
-    <script type="text/javascript" src="/js/ng-tags-input.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="vendor/ng-tags-input/js/ng-tags-input.js" type="text/javascript"></script>
+    <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
+    <script src="vendor/glidejs/dist/glide.js" type="text/javascript"></script>
+
+    <!-- Our Javascript -->
+    <script src="js/app.module.js" type="text/javascript"></script>
+    <script src="js/app.routes.js" type="text/javascript"></script>
+    <script src="js/services/user.dataservice.js" type="text/javascript"></script>
+    <script src="js/services/twitter.dataService.js" type="text/javascript"></script>
+    <script src="js/controllers/main_controller.js" type="text/javascript"></script>
+    <script src="js/controllers/login_controller.js" type="text/javascript"></script>
+    <script src="js/controllers/feed_controller.js" type="text/javascript"></script>
+    <script src="js/controllers/carousel_controller.js" type="text/javascript"></script>
     <script src="/public/vendor/masonry-docs/js/angular-masonry.js"></script>
 </body>
 

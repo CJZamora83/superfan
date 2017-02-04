@@ -23,6 +23,7 @@ app.use(cors());
 // Configure the application (and set it's title!).
 app.set('title', env.TITLE);
 app.set('safe-title', env.SAFE_TITLE);
+
 // EJS view engine config
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
