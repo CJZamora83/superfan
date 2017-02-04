@@ -1,45 +1,35 @@
 <section>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 100 }'>
-          <div class="grid-item" ng-repeat="post in trending"><img class="col-sm-2 img-fluid" src="{{post.image}}"></div>
-          <div class="grid-item" ng-repeat="post in mostRecent"><img class="col-sm-2 img-fluid" src="{{post.image}}"></div>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="exampleSelect1">Filter Content By</label>
+            <select class="form-control" id="exampleSelect1">
+              <option>All</option>
+              <option>Most Recent</option>
+              <option>Trending</option>
+            </select>
         </div>
       </div>
     </div>
   </div>
-  <hr>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="exampleSelect1">Filter Content By</label>
-              <select class="form-control" id="exampleSelect1">
-                <option>All</option>
-                <option>Most Recent</option>
-                <option>Trending</option>
-              </select>
-          </div>
-        </div>
-      </div>
+
+<div masonry>
+    <div class="masonry-brick" ng-repeat="brick in bricks">
+        <img ng-src="{{post.image}}" alt="A masonry brick">
     </div>
-    <div class="container-fluid">
+</div>
+
+<!--     <div class="container-fluid">
       <div class="row justify-content-center">
         <img class="col-sm-2 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
       </div>
       <div class="row justify-content-center">
         <img class="col-md-2 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
       </div>
-    </div>
+    </div> -->
 </section>
-<!-- <script>
-  // $('.grid').masonry({
-  //   // options...
-  //   itemSelector: '.grid-item',
-  //   columnWidth: 200
-  // });
-</script> -->
+
 <!-- tweet.handle
 gram.username -->
 
