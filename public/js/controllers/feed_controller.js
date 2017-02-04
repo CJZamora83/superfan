@@ -10,10 +10,5 @@
     var vm = this;
     console.log(feedService.feed);
     $scope.feed = feedService.feed;
-
-    // $('.grid').masonry({
-      // columnWidth: 200,
-      // itemSelector: '.grid-item'
-    // });
   }
 })();

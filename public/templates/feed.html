@@ -15,12 +15,14 @@
   </div>
 
   <div class="container-fluid">
-    <div masonry>
-      <div class="masonry-brick" ng-repeat="brick in feed">
-        <img ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
-        <div ng-if="brick.favorites" style="width:200px;height:200px;" alt="A masonry brick">
-          <h3>{{ brick.username }}</h3>
-          <p>{{ brick.text }}</p>
+    <div class="row justify-content-center">
+      <div masonry>
+        <div class="masonry-brick" ng-repeat="brick in feed">
+          <img ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
+          <div ng-if="brick.favorites" style="width:200px;height:200px;" alt="A masonry brick">
+            <h3>{{ brick.username }}</h3>
+            <p>{{ brick.text }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -37,6 +39,7 @@
     </div>
   </div> 
 -->
+
 <!-- 
 tweet.handle
 gram.username 
