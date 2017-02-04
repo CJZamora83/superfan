@@ -8,3 +8,7 @@ html {
     width:24.5%;
   }
 }
+
+tags-input .tags.focused {
+  border: none !important;
+}

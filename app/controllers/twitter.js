@@ -128,7 +128,7 @@ function list(req, res, next) {
 function home(req, res, next) {
   var threeDaysAgo = new Date();
   threeDaysAgo.setHours(0, 0, 0, 0);
-  threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
+  threeDaysAgo.setDate(threeDaysAgo.getDate() - 14);
 
   Tweet.find({
     createdAt: {

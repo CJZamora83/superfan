@@ -1,44 +1,44 @@
-<div ng-controller="CarouselCtrl">
-  <div>
-    <div uib-carousel active="0" interval="4500" wrap=true>
-    <!-- Slide 1 -->
-      <div uib-slide index=0>
-        <img src="../images/popular_celebrities_filtered_darker.jpg" height=650px style="margin:auto;">
-
-        <div class="carousel-caption">
-          <h1 color=#FF69B4>S&nbsp;U&nbsp;P&nbsp;E&nbsp;R&nbsp;F&nbsp;A&nbsp;N</h1>
-          <h2>explore celebrities you love</h2>
+<div>
+  <div ng-controller="CarouselCtrl">
+    <div>
+      <div uib-carousel active="0" interval="4500" wrap=true>
+        <!-- Slide 1 -->
+        <div uib-slide index=0>
+          <img src="img/popular_celebrities_filtered_darker.jpg" height=650px style="margin:auto;">
+  
+          <div class="carousel-caption">
+            <h1 color=#FF69B4>S&nbsp;U&nbsp;P&nbsp;E&nbsp;R&nbsp;F&nbsp;A&nbsp;N</h1>
+            <h2>explore celebrities you love</h2>
+          </div>
         </div>
-      </div>
-    <!-- Slide 2 -->
-      <div uib-slide index=1>
-        <img src="../images/selena_filtered_darker.jpg" height=650px style="margin:auto;">
-        <div class="carousel-caption">
-          <h1>ALL IN ONE</h1>
-          <h2>popular social media, trending news, and celebrity gossip</h2>
+        <!-- Slide 2 -->
+        <div uib-slide index=1>
+          <img src="img/selena_filtered_darker.jpg" height=650px style="margin:auto;">
+          <div class="carousel-caption">
+            <h1>ALL IN ONE</h1>
+            <h2>popular social media, trending news, and celebrity gossip</h2>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
   <br>
   <br>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-lg-12">
-      <div class="input-group">
-        <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
-          <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
-        </tags-input>
-        <span class="input-group-btn">
-          <button class="btn btn-primary" type="submit" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </span>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="input-group">
+          <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+            <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+          </tags-input>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <hr>
-
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -58,114 +58,140 @@
       </div>
     </div>
   </div>
-    </br>
-    </br>
-    </br>
-    <section id="mobile" class="download bg-primary text-center">
-      <div class="container-fluid padding-zero">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="section-heading">Coming to mobile devices soon!</h2>
-            <br>
-            <div class="badges">
-              <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-              <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="features" class="features">
+  </br>
+  </br>
+  </br>
+  <section id="mobile" class="download bg-primary text-center">
+    <div class="container-fluid padding-zero">
       <div class="row">
-        <div class="col-lg-12 text-center">
-          <!-- <div class="section-heading"> -->
-            <h2>We connect all of your favorite sources</h2>
-            <hr>
-          <!-- </div> -->
-        </div>
-      </div>
-    </section>
-
-    <div class="container" style="margin-bottom:25px;">
-      <h3><i class="fa fa-twitter fa-2x"></i></h3>
-      <div class="row justify-content-center">
-        <div ng-repeat="post in twitterHome" class="col-md-3">
-          <h3>{{post.username}}</h3>
-          <p>{{post.text}}</p>
-        </div>
-      </div>
-      </br>
-      <div class="row">
-        </br>
         <div class="col-md-12">
-          <h3><i class="fa fa-instagram fa-2x"></i></h3>
-          <div class="row justify-content-center">
-            <img class="col-md-3" ng-repeat="post in instagramHome" src="{{post.image}}">
-          </div>
-        </div>
-      </div>
-       </br>
-      <div class="row">
-        </br>
-        <div class="col-sm-12">
-          <h3><i class="fa fa-youtube fa-2x"></i></h3>
-          <div class="row justify-content-center">
-            <div class="col-md-5" ng-repeat="post in youtubeHome" ng-bind-html="post.video | trust"></div>
+          <h2 class="section-heading">Coming to mobile devices soon!</h2>
+          <br>
+          <div class="badges">
+            <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+            <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
+  <!-- <section id="features" class="features"> -->
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <!-- <div class="section-heading"> -->
+        <h2>We connect all of your favorite sources</h2>
+        <hr>
+      <!-- </div> -->
+    </div>
+  </div>
+  <!-- </section> -->
 
-    <section id="contact" class="contact download bg-primary">
-        <div class="container-fluid padding-zero">
-            <h2><i class="fa fa-heart"></i> us on social media!</h2>
-            <ul class="list-inline list-social">
-                <li class="social-twitter">
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li class="social-facebook">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li class="social-google-plus">
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li class="social-snapchat">
-                    <a href="#"><i class="fa fa-snapchat"></i></a>
-                </li>
-            </ul>
-            <br>
-            <p>For all questions and inquiries, please contact <a href="mailto:Team@superfan.love">Team@superfan.love</a></p>
-
+  <div class="container" style="margin-bottom:25px;">
+    <h3><i class="fa fa-twitter fa-2x"></i></h3>
+    <div class="row justify-content-center">
+      <div ng-repeat="post in twitterHome" class="col-md-3">
+        <h3>{{post.username}}</h3>
+        <p>{{post.text}}</p>
+      </div>
+    </div>
+    </br>
+    <div class="row">
+      </br>
+      <div class="col-md-12">
+        <h3><i class="fa fa-instagram fa-2x"></i></h3>
+        <div class="row justify-content-center">
+          <img class="col-md-3" ng-repeat="post in instagramHome" src="{{post.image}}">
         </div>
-    </section>
+      </div>
+    </div>
+    </br>
+    <div class="row">
+      </br>
+      <h3><i class="fa fa-youtube fa-2x"></i></h3>
+      <div id="Glide" class="glide">
+        <div class="glide__arrows">
+          <button class="glide__arrow prev" data-glide-dir="<" style="color:black;border-color:black;">prev</button>
+          <button class="glide__arrow next" data-glide-dir=">" style="color:black;border-color:black;">next</button>
+        </div>
+        <div class="glide__wrapper">
+          <ul class="glide__track" style="text-align:center;">
+            <li class="glide__slide" ng-bind-html="youtubeHome[0].video | trust"></li>
+            <li class="glide__slide" ng-bind-html="youtubeHome[1].video | trust"></li>
+            <li class="glide__slide" ng-bind-html="youtubeHome[2].video | trust"></li>
+          </ul>
+        </div>
+        <div class="glide__bullets"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $("#Glide").glide({
+      type: "carousel"
+    });
+  </script>
+  <!-- GlideJS carousel section begin -->
+
+    <!-- <div id="Glide" class="glide">
+      <div class="glide__arrows">
+        <button class="glide__arrow prev" data-glide-dir="<">prev</button>
+        <button class="glide__arrow next" data-glide-dir=">">next</button>
+      </div>
+      <div class="glide__wrapper">
+        <ul class="glide__track" style="text-align:center;">
+          <li class="glide__slide" style="width:90%;">
+            <div ng-bind-html="youtubeHome[0].video | trust" style="float:left;margin:5px;"></div>
+            <div ng-bind-html="youtubeHome[1].video | trust" style="float:left;margin:5px;"></div>
+            <div ng-bind-html="youtubeHome[2].video | trust" style="float:left;margin:5px;"></div>
+          </li>
+          <li class="glide__slide">
+            <div ng-bind-html="youtubeHome[0].video | trust" style="float:left;margin:5px;"></div>
+            <div ng-bind-html="youtubeHome[1].video | trust" style="float:left;margin:5px;"></div>
+            <div ng-bind-html="youtubeHome[2].video | trust" style="float:left;margin:5px;"></div>
+          </li>
+          <li class="glide__slide">
+            <div ng-bind-html="youtubeHome[0].video | trust" style="float:left;margin:5px;"></div>
+            <div ng-bind-html="youtubeHome[1].video | trust" style="float:left;margin:5px;"></div>
+            <div ng-bind-html="youtubeHome[2].video | trust" style="float:left;margin:5px;"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="glide__bullets"></div>
+    </div> -->
+
+  
+  <!-- GlideJS carousel section end -->
 
 
-    <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; SUPERFAN 2017</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-      $('.carousel').carousel({
-          interval: 3000 //changes the speed
-      })
-    </script>
+  <section id="contact" class="contact download bg-primary">
+    <div class="container-fluid padding-zero">
+      <h2><i class="fa fa-heart"></i> us on social media!</h2>
+      <ul class="list-inline list-social">
+        <li class="social-twitter">
+          <a href="#"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li class="social-facebook">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li class="social-google-plus">
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </li>
+        <li class="social-snapchat">
+          <a href="#"><i class="fa fa-snapchat"></i></a>
+        </li>
+      </ul>
+      <br>
+      <p>For all questions and inquiries, please contact <a href="mailto:Team@superfan.love">Team@superfan.love</a></p>
+    </div>
+  </section>
+  <hr>
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright &copy; SUPERFAN 2017</p>
+      </div>
+    </div>
+  </footer>
 </div>
