@@ -9,5 +9,6 @@
   function FeedController($scope, $http, $location, twitterDataService, feedService) {
     var vm = this;
     console.log(feedService.feed);
+    $scope.feed = feedService.feed;
   }
 })();
