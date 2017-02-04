@@ -41,7 +41,4 @@
         return $sce.trustAsHtml(htmlCode);
       }
     });
-
-
-
 })();
