@@ -5,7 +5,7 @@
         <!-- Slide 1 -->
         <div uib-slide index=0>
           <img src="img/popular_celebrities_filtered_darker.jpg" height=650px style="margin:auto;">
-  
+
           <div class="carousel-caption">
             <h1 color=#FF69B4>S&nbsp;U&nbsp;P&nbsp;E&nbsp;R&nbsp;F&nbsp;A&nbsp;N</h1>
             <h2>explore celebrities you love</h2>
@@ -91,8 +91,10 @@
     <h3><i class="fa fa-twitter fa-2x"></i></h3>
     <div class="row justify-content-center">
       <div ng-repeat="post in twitterHome" class="col-md-3">
-        <h3>{{post.username}}</h3>
-        <p>{{post.text}}</p>
+        <div class="twt-bg">
+          <h3>{{post.username}}</h3>
+          <p>{{post.text}}</p>
+        </div>
       </div>
     </div>
     </br>
@@ -160,7 +162,7 @@
       <div class="glide__bullets"></div>
     </div> -->
 
-  
+
   <!-- GlideJS carousel section end -->
 
 
