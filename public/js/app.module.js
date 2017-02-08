@@ -36,7 +36,7 @@
 
       return service;
     })
-    .filter("trust", function($sce) {
+    .filter("trustHtml", function($sce) {
       return function(htmlCode){
         return $sce.trustAsHtml(htmlCode);
       }
