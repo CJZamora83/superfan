@@ -37,6 +37,9 @@ tags-input .tags.focused {
 }
 
 /*---------------------------------*/
+.btn-outline-primary, .btn-outline-danger {
+  border-radius: 2px;
+}
 .carousel-control {
   display: none;
 }
