@@ -40,6 +40,11 @@
       return function(htmlCode){
         return $sce.trustAsHtml(htmlCode);
       }
+    })
+    .filter("trustUrl", function($sce) {
+      return function(url){
+        return $sce.trustAsResourceUrl(url);
+      }
     });
 
 

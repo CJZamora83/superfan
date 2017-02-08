@@ -44,7 +44,12 @@
       <div class="col-md-12">
         <h3>Trending</h3>
         <div class="row justify-content-center">
-          <img class="col-md-3" ng-repeat="post in trending" src="{{post.image}}">
+          <div ng-repeat="post in trending">
+            <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
+            <video ng-if="post.video" class="col-md-3" controls>
+              <source src="{{post.video | trustUrl}}" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -53,7 +58,12 @@
       <div class="col-md-12">
         <h3>Most Recent</h3>
         <div class="row justify-content-center">
-          <img class="col-md-3" ng-repeat="post in mostRecent" src="{{post.image}}">
+          <div ng-repeat="post in mostRecent">
+            <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
+            <video ng-if="post.video" class="col-md-3" controls>
+              <source ng-src="{{post.video | trustUrl}}" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -101,7 +111,12 @@
       <div class="col-md-12">
         <h3><i class="fa fa-instagram fa-2x"></i></h3>
         <div class="row justify-content-center">
-          <img class="col-md-3" ng-repeat="post in instagramHome" src="{{post.image}}">
+          <div ng-repeat="post in instagramHome">
+            <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
+            <video ng-if="post.video" class="col-md-3" controls>
+              <source src="{{post.video | trustUrl}}" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
