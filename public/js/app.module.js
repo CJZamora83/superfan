@@ -36,9 +36,14 @@
 
       return service;
     })
-    .filter("trust", function($sce) {
+    .filter("trustHtml", function($sce) {
       return function(htmlCode){
         return $sce.trustAsHtml(htmlCode);
+      }
+    })
+    .filter("trustUrl", function($sce) {
+      return function(url){
+        return $sce.trustAsResourceUrl(url);
       }
     });
 })();
