@@ -1,7 +1,7 @@
 (function() {
 
   angular.module('superfanApp', [
-    "ui.router", 'satellizer', 'ngTagsInput', 'ui.bootstrap'
+    "ui.router", 'satellizer', 'ngTagsInput', 'ui.bootstrap', 'wu.masonry'
     ])
 
     .config(function($httpProvider, $authProvider) {
@@ -46,7 +46,4 @@
         return $sce.trustAsResourceUrl(url);
       }
     });
-
-
-
 })();

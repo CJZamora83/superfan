@@ -14,7 +14,8 @@ function tags (req, res, next) {
     var l = row.length;
     while (l--) {
       celebrities.push({
-        text: row[l].pretty
+        text: row[l].pretty,
+        system: row[l].system
       });
     }
 

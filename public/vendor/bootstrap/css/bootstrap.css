@@ -1590,6 +1590,10 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+@media (min-width: 1500px) {
+  .container {
+    width: 1460px;
+  }
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -1603,6 +1607,11 @@ pre code {
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+}
+@media (min-width: 1500px) {
+  .container {
+    width: 1462px;
   }
 }
 .container-fluid {
