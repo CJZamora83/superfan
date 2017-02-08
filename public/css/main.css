@@ -9,6 +9,23 @@ html {
   }
 }
 
+/*---------------------------------*/
+/*Navbar Search Field*/
+#nav-input .tags {
+  border: 0px !important;
+  min-height: 32px;
+  min-width: 300px;
+}
+
+#nav-input .tags.focused {
+  border: 0px !important;
+  min-height: 32px;
+  min-width: 300px;
+}
+
+/*---------------------------------*/
+
+/*Home Search Field*/
 tags-input .tags {
   border: 1px solid #cccccc !important;
   min-height: 32px;
@@ -19,6 +36,7 @@ tags-input .tags.focused {
   min-height: 32px;
 }
 
+/*---------------------------------*/
 .carousel-control {
   display: none;
 }
