@@ -13,6 +13,10 @@ tags-input .tags.focused {
   border: none !important;
 }
 
+.carousel-control {
+  display: none;
+}
+
 /* tweet css */
 .twt-bg {
   background-color: #00aced;
