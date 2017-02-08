@@ -14,3 +14,13 @@ tags-input .tags.focused {
 }
 
 /* tweet css */
+.twt-bg {
+  background-color: #00aced;
+  color: #FFFFFF;
+  padding: 5px;
+  margin: 1px 1px 1px 1px;
+}
+
+.ig-bg {
+  margin: 1px 1px 1px 1px;
+}

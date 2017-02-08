@@ -4,32 +4,30 @@
       <div class="col-md-4">
         <div class="form-group">
           <label for="exampleSelect1">Filter Content By</label>
-            <select class="form-control" id="exampleSelect1">
-              <option>All</option>
-              <option>Most Recent</option>
-              <option>Trending</option>
-            </select>
+          <select class="form-control" id="exampleSelect1">
+            <option>All</option>
+            <option>Most Recent</option>
+            <option>Trending</option>
+          </select>
         </div>
       </div>
     </div>
   </div>
 
   <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div masonry>
-        <div class="masonry-brick" ng-repeat="brick in feed">
-          <img ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
-          <div ng-if="brick.favorites" style="width:200px;height:200px;" alt="A masonry brick">
-            <h3>{{ brick.username }}</h3>
-            <p>{{ brick.text }}</p>
-          </div>
+    <div masonry>
+      <div class="masonry-brick" ng-repeat="brick in feed">
+        <img clas="ig-bg" ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
+        <div class="twt-bg" ng-if="brick.favorites" style="width:200px;height:200px;" alt="A masonry brick">
+          <h3>{{ brick.username }}</h3>
+          <p>{{ brick.text }}</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!--     
+<!--
   <div class="container-fluid">
     <div class="row justify-content-center">
       <img class="col-sm-2 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
@@ -37,15 +35,15 @@
     <div class="row justify-content-center">
       <img class="col-md-2 img-fluid" ng-repeat="post in trending" src="{{post.image}}">
     </div>
-  </div> 
+  </div>
 -->
 
 <!-- 
 tweet.handle
-gram.username 
+gram.username
 -->
 
-<!--            
+<!--
   <div id="content"></div>
 
   <script type="text/javascript">
@@ -70,7 +68,7 @@ gram.username
 
     xhr.open('GET','https://rss2json.com/api.json?rss_url=http%3A%2F%2Fwww.tmz.com%2Frss.xml',true);
     xhr.send();
-  </script> 
+  </script>
 -->
 
 <!-- Masonry docs: https://github.com/desandro/masonry -->
