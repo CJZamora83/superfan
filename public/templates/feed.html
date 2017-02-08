@@ -17,8 +17,8 @@
   <div class="container-fluid">
     <div masonry>
       <div class="masonry-brick" ng-repeat="brick in feed">
-        <img clas="ig-bg" ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
-        <div class="twt-bg" ng-if="brick.favorites" style="width:318px;" alt="A masonry brick">
+        <img class="ig-bg" ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
+        <div class="twt-bg" ng-if="brick.favorites" style="width:318px;height:100%;" alt="A masonry brick">
           <h3>{{ brick.username }}</h3>
           <p>{{ brick.text }}</p>
         </div>
