@@ -11,19 +11,19 @@
     $stateProvider
       .state("homePage", {
         url: "/",
-        templateUrl: "/templates/home.html",
+        templateUrl: "/html/home.html",
         controller: "CarouselCtrl",
         controllerAs: "vm"
       })
       .state("user_login", {
         url: "/user_login",
-        templateUrl: "/templates/user_login.html",
+        templateUrl: "/html/user_login.html",
         controller: "LoginController",
         controllerAs: "vm"
       })
       .state("feed", {
         url: "/feed",
-        templateUrl: "/templates/feed.html",
+        templateUrl: "/html/feed.html",
         controller: "FeedController",
         controllerAs: "vm"
       })
