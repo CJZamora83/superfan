@@ -26,7 +26,7 @@
   <br>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-10">
+      <div class="col-lg-8 col-lg-offset-2">
         <div class="input-group">
           <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
             <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
@@ -36,7 +36,6 @@
           </span>
         </div>
       </div>
-    </div>
   </div>
   <hr>
   <div class="container">
@@ -72,7 +71,7 @@
   </br>
   </br>
   <section id="mobile" class="download bg-primary text-center">
-    <div class="container-fluid padding-zero">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
           <h2 class="section-heading">Coming to mobile devices soon!</h2>
