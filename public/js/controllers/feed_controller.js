@@ -11,19 +11,13 @@
     $scope.feed = feedService.feed;
     $scope.brickLimit = 50;
 
-    console.log($scope.feed);
-    // $(window).scroll(function() {
-    //   console.log('scroll height')
-    //   console.log($(window).scrollTop())
-    //   console.log('page scrolled')
-    //   console.log(($(document).height() - $(window).height()) - 300);
-    //   console.log('brick limit')
-    //   console.log($scope.brickLimit);
-    //   if($(window).scrollTop() > (($(document).height() - $(window).height()) - 300)) {
-    //     // ajax call get data from server and append to the div
-    //     console.log('hit');
-    //     $scope.brickLimit += 30;
-    //   }
-    // })
+    $(window).scroll(function() {
+      if($(window).scrollTop() > (($(document).height() - $(window).height()) - 300) && ($scope.feed.length >= $scope.brickLimit)) {
+        // ajax call get data from server and append to the div
+        $scope.$apply(function () {
+          $scope.brickLimit += 30;
+        })
+      }
+    })
   }
 })();
