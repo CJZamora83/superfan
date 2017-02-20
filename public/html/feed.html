@@ -14,13 +14,25 @@
     </div>
   </div>
 
-  <div class="container-fluid">
-    <div masonry>
-      <div class="masonry-brick" ng-repeat="brick in feed">
-        <img class="ig-bg" ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
-        <div class="twt-bg" ng-if="brick.favorites" style="width:318px;height:100%;" alt="A masonry brick">
-          <h3>{{ brick.username }}</h3>
-          <p>{{ brick.text }}</p>
+  <div class="container-fluid" style="width:100%;">
+    <div class="col-md-12">
+      <!-- <masonry reload-on-show reload-on-resize style="width:100%;">
+        <div class="masonry-brick" ng-repeat="brick in feed | limitTo:brickLimit">
+          <img class="ig-bg" ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
+          <div class="twt-bg" ng-if="brick.favorites" style="width:320px;height:100%;">
+            <h3>{{ brick.username }}</h3>
+            <p>{{ brick.text }}</p>
+          </div>
+        </div>
+      </masonry> -->
+      <div masonry='{"itemSelector" : ".tile"}'>
+        <!-- items -->
+        <div masonry-tile class="tile" ng-repeat="brick in feed">
+          <img class="ig-bg" ng-show="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
+          <div class="twt-bg" ng-show="brick.favorites" style="width:320px;height:100%;">
+            <h3>{{ brick.username }}</h3>
+            <p>{{ brick.text }}</p>
+          </div>
         </div>
       </div>
     </div>
