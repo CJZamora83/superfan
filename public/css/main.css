@@ -11,6 +11,10 @@ html {
 
 /*---------------------------------*/
 /*Navbar Search Field*/
+.input-group {
+  width: 100% !important;
+  }
+
 #nav-input .tags {
   border: 0px !important;
   min-height: 32px;
@@ -37,6 +41,9 @@ tags-input .tags.focused {
 }
 
 /*---------------------------------*/
+.btn-outline-primary, .btn-outline-danger {
+  border-radius: 2px;
+}
 .carousel-control {
   display: none;
 }
