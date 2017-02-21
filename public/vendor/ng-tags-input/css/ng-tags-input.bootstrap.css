@@ -5,6 +5,7 @@ tags-input {
   min-height: 34px;
   width: 75% !important;
   margin: 0 auto;
+  align-self: center;
 }
 tags-input .host {
   margin: 0;

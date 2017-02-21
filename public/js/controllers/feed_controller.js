@@ -8,7 +8,16 @@
 
   function FeedController($scope, $http, $location, twitterDataService, feedService) {
     var vm = this;
-    console.log(feedService.feed);
     $scope.feed = feedService.feed;
+    $scope.brickLimit = 50;
+
+    $(window).scroll(function() {
+      if($(window).scrollTop() > (($(document).height() - $(window).height()) - 300) && ($scope.feed.length >= $scope.brickLimit)) {
+        // ajax call get data from server and append to the div
+        $scope.$apply(function () {
+          $scope.brickLimit += 30;
+        })
+      }
+    })
   }
 })();
