@@ -43,65 +43,51 @@
 <body ng-controller="MainController">
 
     <!-- Navigation -->
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light">
-  <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <img src="/img/sf_logo.jpg">
-  </button>
-    <a class="navbar-brand" href="#">
-      <img src="/img/sf_logo.jpg" >
-    </a>
-  <form class="form-inline">
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-      <button class="btn btn-outline-success" type="button">Save</button>
-    <button class="btn btn-sm align-middle btn-outline-danger" type="button">X</button>
-    </div>
-  </form>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="nav justify-content-end">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Mobile App</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login In</a>
-      </li>
-    </ul>
-  </nav>
- <!--  <nav class="navbar navbar-toggleable-md navbar-light">
-    <a class="navbar-brand" href="#">
-      <img src="/img/sf_logo.jpg" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    </a>
-  <form class="form-inline">
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-    </div>
-  </form>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mobile App</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Log In</a>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
-  <!-- End Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" ui-sref="homePage"><img src="/img/sf_logo.jpg"></a>
+                <a class="navbar-brand page-scroll" ui-sref="homePage"><img src="/public/img/sf_logo.jpg"></a>
+
+            </div>
+            <div class="navbar-header" style="width: 70%;">
+              <form ng-hide="!feedPage" class="form-inline float-xs-left">
+                <div class="input-group">
+                  <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+                    <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+                  </tags-input>
+                  <span class="input-group-btn">
+                    <button class="btn btn-outline-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <button class="btn btn-outline-danger" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#features">Features</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#mobile">Mobile App</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll">Sign Up</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#log_in">Log In</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 
     <div class="content" ui-view>
       <!-- templates go here -->
