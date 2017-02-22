@@ -53,14 +53,17 @@
     </a>
   </div>
   <div class="d-flex justify-content-md-start">
-  <form class="form-inline">
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-      <button class="btn btn-outline-primary" type="button">+</button>
-    <button class="btn btn-sm align-middle btn-outline-danger" type="button">X</button>
-    </div>
-  </form>
+    <form ng-hide="!feedPage" class="form-inline float-xs-left">
+      <div class="input-group">
+        <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+          <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+        </tags-input>
+        <span class="input-group-btn">
+          <button class="btn btn-outline-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <button class="btn btn-outline-danger" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </span>
+      </div>
+    </form>
   </div>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav navbar-brand">
@@ -79,33 +82,6 @@
       </ul>
       </div>
   </nav>
- <!--  <nav class="navbar navbar-toggleable-md navbar-light">
-    <a class="navbar-brand" href="#">
-      <img src="/img/sf_logo.jpg" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    </a>
-  <form class="form-inline">
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-    </div>
-  </form>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mobile App</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Log In</a>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
   <!-- End Navigation -->
 
     <div class="content" ui-view>

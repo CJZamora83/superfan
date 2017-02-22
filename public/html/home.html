@@ -2,9 +2,17 @@
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
       <img class="d-block img-fluid" src="../img/popular_celebrities_filtered_darker.jpg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display">SUPERFAN</h1>
+            <h3>explore celebrities you love</h3>
+        </div>
     </div>
     <div class="carousel-item">
       <img class="d-block img-fluid" src="../img/selena_filtered_darker.jpg" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display">ALL IN ONE</h1>
+            <h3>popular social media, trending news, and celebrity gossip</h3>
+        </div>
     </div>
   </div>
 </div>
@@ -13,30 +21,6 @@ $('.carousel').carousel({
   interval: 4000
 })
 </script>
-<!--
-  <div ng-controller="CarouselCtrl">
-    <div>
-      <div uib-carousel active="0" interval="4500" wrap=true>
-        Slide 1
-        <div uib-slide index=0>
-          <img src="img/popular_celebrities_filtered_darker.jpg" height=650px style="margin:auto;">
-
-          <div class="carousel-caption">
-            <h1 color=#FF69B4>S&nbsp;U&nbsp;P&nbsp;E&nbsp;R&nbsp;F&nbsp;A&nbsp;N</h1>
-            <h2>explore celebrities you love</h2>
-          </div>
-        </div>
-        Slide 2
-        <div uib-slide index=1>
-          <img src="img/selena_filtered_darker.jpg" height=650px style="margin:auto;">
-          <div class="carousel-caption">
-            <h1>ALL IN ONE</h1>
-            <h2>popular social media, trending news, and celebrity gossip</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <br>
   <br>
   <div class="container">
@@ -53,14 +37,14 @@ $('.carousel').carousel({
       </div>
   </div>
   <hr>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
         <h3>Trending</h3>
-        <div class="row justify-content-center">
+        <div class="row">
           <div ng-repeat="post in trending">
-            <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
-            <video ng-if="post.video" class="col-md-3" controls>
+            <img ng-if="!post.video" class="col" src="{{post.image}}">
+            <video ng-if="post.video" class="col" controls>
               <source src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
           </div>
@@ -68,13 +52,13 @@ $('.carousel').carousel({
       </div>
     </div>
     </br>
-    <div class="row">
-      <div class="col-md-12">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
         <h3>Most Recent</h3>
-        <div class="row justify-content-center">
+        <div class="row">
           <div ng-repeat="post in mostRecent">
-            <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
-            <video ng-if="post.video" class="col-md-3" controls>
+            <img ng-if="!post.video" class="col" src="{{post.image}}">
+            <video ng-if="post.video" class="col" controls>
               <source ng-src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
           </div>
@@ -113,10 +97,10 @@ $('.carousel').carousel({
   </div>
   <!-- </section> -->
 
-  <div class="container" style="margin-bottom:25px;">
+  <div class="container-fluid" style="margin-bottom:25px;">
     <h3><i class="fa fa-twitter fa-2x"></i></h3>
-    <div class="row justify-content-center">
-      <div ng-repeat="post in twitterHome" class="col-md-3">
+    <div class="row align-items-center">
+      <div ng-repeat="post in twitterHome" class="col">
         <div class="twt-bg" style="height:320px;">
           <h3>{{ post.username }}</h3>
           <p>{{ post.text }}</p>
@@ -124,14 +108,14 @@ $('.carousel').carousel({
       </div>
     </div>
     </br>
-    <div class="row">
+    <div class="row align-items-center">
       </br>
-      <div class="col-md-12">
+      <div class="col-lg-12">
         <h3><i class="fa fa-instagram fa-2x"></i></h3>
-        <div class="row justify-content-center">
+        <div class="row">
           <div ng-repeat="post in instagramHome">
-            <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
-            <video ng-if="post.video" class="col-md-3" controls>
+            <img ng-if="!post.video" class="col" src="{{post.image}}">
+            <video ng-if="post.video" class="col" controls>
               <source src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
           </div>
@@ -198,7 +182,7 @@ $('.carousel').carousel({
 
 
   <section id="contact" class="contact download bg-primary">
-    <div class="container-fluid padding-zero">
+    <div class="container-fluid">
       <h2><i class="fa fa-heart"></i> us on social media!</h2>
       <ul class="list-inline list-social">
         <li class="social-twitter">
