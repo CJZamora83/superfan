@@ -38,10 +38,10 @@ $('.carousel').carousel({
   </div>
   <hr>
   <div class="container-fluid">
-    <div class="row align-items-center">
+    <div class="row">
+            <h3>Trending</h3>
       <div class="col-lg-12">
-        <h3>Trending</h3>
-        <div class="row">
+        <div class="row justify-content-center">
           <div ng-repeat="post in trending">
             <img ng-if="!post.video" class="col" src="{{post.image}}">
             <video ng-if="post.video" class="col" controls>
@@ -55,10 +55,10 @@ $('.carousel').carousel({
       </div>
     </div>
     </br>
-    <div class="row align-items-center">
+    <div class="row">
       <div class="col-lg-12">
         <h3>Most Recent</h3>
-        <div class="row">
+        <div class="row justify-content-center">
           <div ng-repeat="post in mostRecent">
             <img ng-if="!post.video" class="col" src="{{post.image}}">
             <video ng-if="post.video" class="col" controls>
@@ -105,7 +105,7 @@ $('.carousel').carousel({
 
   <div class="container-fluid" style="margin-bottom:25px;">
     <h3><i class="fa fa-twitter fa-2x"></i></h3>
-    <div class="row align-items-center">
+    <div class="row justify-content-center">
       <div ng-repeat="post in twitterHome" class="col">
         <div class="twt-bg" style="height:320px;">
           <h3>{{ post.username }}</h3>
@@ -117,11 +117,11 @@ $('.carousel').carousel({
       </div>
     </div>
     </br>
-    <div class="row align-items-center">
+    <div class="row">
       </br>
       <div class="col-lg-12">
         <h3><i class="fa fa-instagram fa-2x"></i></h3>
-        <div class="row">
+        <div class="row justify-content-center">
           <div ng-repeat="post in instagramHome">
             <img ng-if="!post.video" class="col" src="{{post.image}}">
             <video ng-if="post.video" class="col" controls>
