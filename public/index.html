@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -43,49 +43,46 @@
 <body ng-controller="MainController">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" ui-sref="homePage">SUPERFAN&copy;</a>
-            </div>
-            <div class="navbar-header" style="width: 70%;">
-              <form class="form-inline float-xs-left">
-                <div class="input-group">
-                  <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
-                    <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
-                  </tags-input>
-                  <span class="input-group-btn">
-                    <button class="btn btn-outline-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    <button class="btn btn-outline-danger" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
-                  </span>
-                </div>
-              </form>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#features">Features</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#mobile">Mobile App</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll">Sign Up</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#log_in">Log In</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+<nav class="navbar fixed-top navbar-toggleable-md">
+<div class="d-flex justify-content-md-start">
+  <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <img src="/img/sf_logo.jpg">
+  </button>
+    <a class="navbar-brand" href="#">
+      <img src="/img/sf_logo.jpg">
+    </a>
+  </div>
+  <div class="d-flex justify-content-md-start">
+    <form ng-hide="!feedPage" class="form-inline">
+      <div class="input-group">
+        <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+          <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+        </tags-input>
+        <span class="input-group-btn">
+          <button class="btn btn-outline-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <button class="btn btn-outline-danger" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </span>
+      </div>
+    </form>
+  </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav navbar-brand">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Mobile App</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login In</a>
+        </li>
+      </ul>
+      </div>
+  </nav>
+  <!-- End Navigation -->
 
     <div class="content" ui-view>
       <!-- templates go here -->
@@ -96,21 +93,34 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- angular-masonry directive -->
+    <!-- <script src="vendor/bower_components/jquery-bridget/jquery-bridget.js"></script> -->
+    <!-- <script src="vendor/bower_components/ev-emitter/ev-emitter.js"></script> -->
+    <!-- <script src="vendor/bower_components/desandro-matches-selector/matches-selector.js"></script> -->
+    <!-- <script src="vendor/bower_components/fizzy-ui-utils/utils.js"></script> -->
+    <!-- <script src="vendor/bower_components/get-size/get-size.js"></script> -->
+    <!-- <script src="vendor/bower_components/outlayer/item.js"></script> -->
+    <!-- <script src="vendor/bower_components/outlayer/outlayer.js"></script> -->
+    <!-- <script src="vendor/bower_components/masonry/masonry.js"></script> -->
 
     <!-- Theme JavaScript/CDN's -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.14.1/satellizer.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
+    <script src="vendor/bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="vendor/angular-masonry-directive-master/src/angular-masonry-directive.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
     <script src="vendor/ng-tags-input/js/ng-tags-input.js" type="text/javascript"></script>
     <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
     <script src="vendor/glidejs/dist/glide.js" type="text/javascript"></script>
-    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
-    <script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
-    <script src="vendor/masonry-docs/js/angular-masonry.js"></script>
 
     <!-- Our Javascript -->
     <script src="js/app.module.js" type="text/javascript"></script>

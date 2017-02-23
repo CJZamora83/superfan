@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="superfanApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SUPERFAN</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- NG-Tags-Input CSS -->
+    <link href="vendor/ng-tags-input/css/ng-tags-input.bootstrap.css" rel="stylesheet">
+    <link href="vendor/ng-tags-input/css/ng-tags-input.css" rel="stylesheet">
+
+    <!-- GlideJS CSS -->
+    <link href="vendor/glidejs/dist/css/glide.core.css" rel="stylesheet">
+    <link href="vendor/glidejs/dist/css/glide.theme.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+    <script src="https://use.fontawesome.com/878d1f0b49.js"></script>
+
+    <!-- Our CSS -->
+    <link href="css/half-slider.css" rel="stylesheet">
+    <link href="/public/vendor/masonry-docs/css/masonry-docs.css">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body ng-controller="MainController">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" ui-sref="homePage"><img src="/img/sf_logo.jpg"></a>
+                <a class="navbar-brand page-scroll" ui-sref="homePage"><img src="/public/img/sf_logo.jpg"></a>
+
+            </div>
+            <div class="navbar-header" style="width: 70%;">
+              <form ng-hide="!feedPage" class="form-inline float-xs-left">
+                <div class="input-group">
+                  <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+                    <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+                  </tags-input>
+                  <span class="input-group-btn">
+                    <button class="btn btn-outline-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <button class="btn btn-outline-danger" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#features">Features</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#mobile">Mobile App</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll">Sign Up</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#log_in">Log In</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="content" ui-view>
+      <!-- templates go here -->
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendor/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+
+    <!-- angular-masonry directive -->
+    <!-- <script src="vendor/bower_components/jquery-bridget/jquery-bridget.js"></script> -->
+    <!-- <script src="vendor/bower_components/ev-emitter/ev-emitter.js"></script> -->
+    <!-- <script src="vendor/bower_components/desandro-matches-selector/matches-selector.js"></script> -->
+    <!-- <script src="vendor/bower_components/fizzy-ui-utils/utils.js"></script> -->
+    <!-- <script src="vendor/bower_components/get-size/get-size.js"></script> -->
+    <!-- <script src="vendor/bower_components/outlayer/item.js"></script> -->
+    <!-- <script src="vendor/bower_components/outlayer/outlayer.js"></script> -->
+    <!-- <script src="vendor/bower_components/masonry/masonry.js"></script> -->
+
+    <!-- Theme JavaScript/CDN's -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.14.1/satellizer.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
+    <script src="vendor/bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="vendor/angular-masonry-directive-master/src/angular-masonry-directive.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="vendor/ng-tags-input/js/ng-tags-input.js" type="text/javascript"></script>
+    <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
+    <script src="vendor/glidejs/dist/glide.js" type="text/javascript"></script>
+
+    <!-- Our Javascript -->
+    <script src="js/app.module.js" type="text/javascript"></script>
+    <script src="js/app.routes.js" type="text/javascript"></script>
+    <script src="js/services/user.dataservice.js" type="text/javascript"></script>
+    <script src="js/services/twitter.dataService.js" type="text/javascript"></script>
+    <script src="js/controllers/main_controller.js" type="text/javascript"></script>
+    <script src="js/controllers/login_controller.js" type="text/javascript"></script>
+    <script src="js/controllers/feed_controller.js" type="text/javascript"></script>
+    <script src="js/controllers/carousel_controller.js" type="text/javascript"></script>
+</body>
+
+</html>

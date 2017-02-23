@@ -59,3 +59,7 @@ tags-input .tags.focused {
 .ig-bg {
   margin: 1px 1px 1px 1px;
 }
+
+.bg-primary {
+  background-color: #76d7c4 !important;
+  }
