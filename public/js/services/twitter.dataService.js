@@ -23,8 +23,8 @@
           console.log(res);
         }, function(err) {
           console.log(err);
-        })
-    }
+        });
+    };
 
     function oauth(body) {
       return $http
@@ -36,8 +36,8 @@
           }
         }, function(err) {
           console.log(err);
-        })
-    }
+        });
+    };
 
     // you can either call the getSearchResults method or use a callback to
     // get the results
@@ -50,8 +50,8 @@
         }
       }, function(err) {
         console.log(err);
-      })
-    }
+      });
+    };
 
     function invalJwt() {
       return $http
@@ -59,14 +59,14 @@
           console.log(res);
         }, function(err) {
           console.log(err);
-        })
-    }
+        });
+    };
 
     function getSearchResults() {
       return results;
-    }
+    };
 
     return service;
-  }
+  };
 
 })();

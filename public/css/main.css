@@ -62,4 +62,18 @@ tags-input .tags.focused {
 
 .bg-primary {
   background-color: #76d7c4 !important;
-  }
+}
+
+/* hover effect (also in main_controller.js) */
+
+div.hover div.overlay {
+  display:none;
+}
+
+div.hover:hover div.overlay {
+  position: relative;
+  display: block;
+  height: 100%;
+  background-color: black;
+  opacity: .65;
+}​

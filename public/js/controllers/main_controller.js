@@ -61,6 +61,12 @@
       interval: 3000 //changes the speed
     });
 
+    $(".hover").hover(function () {
+      $(this).find(".overlay").fadeIn();
+    }, function () {
+      $(this).find(".overlay").fadeOut();
+    });
+
     vm.isLoggedIn = function() {
       return $auth.isAuthenticated();
     };
