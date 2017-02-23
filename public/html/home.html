@@ -41,28 +41,34 @@
   <hr>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="row">
         <h3>Trending</h3>
         <div class="row justify-content-center">
-          <div ng-repeat="post in trending">
+          <div ng-repeat="post in trending" class="hover">
             <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
             <video ng-if="post.video" class="col-md-3" controls>
               <source src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
+            <div class="overlay col-md-3">
+              <h6>{{ post.username }}</h6>
+            </div>
           </div>
         </div>
       </div>
     </div>
     </br>
     <div class="row">
-      <div class="col-md-12">
+      <div class="row">
         <h3>Most Recent</h3>
         <div class="row justify-content-center">
-          <div ng-repeat="post in mostRecent">
+          <div ng-repeat="post in mostRecent" class="hover">
             <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
             <video ng-if="post.video" class="col-md-3" controls>
               <source ng-src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
+            <div class="overlay col-md-3">
+              <h6>hey</h6>
+            </div>
           </div>
         </div>
       </div>
@@ -102,24 +108,30 @@
   <div class="container" style="margin-bottom:25px;">
     <h3><i class="fa fa-twitter fa-2x"></i></h3>
     <div class="row justify-content-center">
-      <div ng-repeat="post in twitterHome" class="col-md-3">
+      <div ng-repeat="post in twitterHome" class="col-md-3 hover">
         <div class="twt-bg" style="height:320px;">
           <h3>{{ post.username }}</h3>
           <p>{{ post.text }}</p>
+        </div>
+        <div class="overlay col-md-3">
+          <h6>hey</h6>
         </div>
       </div>
     </div>
     </br>
     <div class="row">
       </br>
-      <div class="col-md-12">
+      <div class="row">
         <h3><i class="fa fa-instagram fa-2x"></i></h3>
         <div class="row justify-content-center">
-          <div ng-repeat="post in instagramHome">
+          <div ng-repeat="post in instagramHome" class="hover">
             <img ng-if="!post.video" class="col-md-3" src="{{post.image}}">
             <video ng-if="post.video" class="col-md-3" controls>
               <source src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
+            <div class="overlay col-md-3">
+              <h6>hey</h6>
+            </div>
           </div>
         </div>
       </div>

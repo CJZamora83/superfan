@@ -59,3 +59,40 @@ tags-input .tags.focused {
 .ig-bg {
   margin: 1px 1px 1px 1px;
 }
+
+/* hover effect (also in main_controller.js) */
+
+div.hover div.overlay {
+  display:none;
+}
+
+div.hover:hover div.overlay {
+  position: relative;
+  display: block;
+  height: 100%;
+  background-color: black;
+  opacity: .65;
+}​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
