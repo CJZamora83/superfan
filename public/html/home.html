@@ -47,6 +47,9 @@ $('.carousel').carousel({
             <video ng-if="post.video" class="col" controls>
               <source src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
+            <div class="overlay col-md-3">
+              <h6>{{ post.username }}</h6>
+            </div>
           </div>
         </div>
       </div>
@@ -61,6 +64,9 @@ $('.carousel').carousel({
             <video ng-if="post.video" class="col" controls>
               <source ng-src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
+            <div class="overlay col-md-3">
+              <h6>hey</h6>
+            </div>
           </div>
         </div>
       </div>
@@ -105,6 +111,9 @@ $('.carousel').carousel({
           <h3>{{ post.username }}</h3>
           <p>{{ post.text }}</p>
         </div>
+        <div class="overlay col-md-3">
+          <h6>hey</h6>
+        </div>
       </div>
     </div>
     </br>
@@ -118,6 +127,9 @@ $('.carousel').carousel({
             <video ng-if="post.video" class="col" controls>
               <source src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
+            <div class="overlay col-md-3">
+              <h6>hey</h6>
+            </div>
           </div>
         </div>
       </div>
