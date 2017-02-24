@@ -1,3 +1,9 @@
+<div class="input-group z-input">
+  <input type="text" class="form-control" placeholder="Taylor Swift...">
+    <span class="input-group-btn">
+    <button class="btn btn-secondary" type="button">Search!</button>
+    </span>
+</div>
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
@@ -23,7 +29,7 @@ $('.carousel').carousel({
 </script>
   <br>
   <br>
-  <div class="container-fluid">
+<!--   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-lg-offset-2">
         <div class="input-group">
@@ -35,13 +41,15 @@ $('.carousel').carousel({
           </span>
         </div>
       </div>
-  </div>
+  </div> -->
   <hr>
   <div class="container-fluid">
     <div class="row">
-            <h3>Trending</h3>
+              <h3>Trending</h3>
       <div class="col-lg-12">
+
         <div class="row justify-content-center">
+          </br>
           <div ng-repeat="post in trending">
             <img ng-if="!post.video" class="col" src="{{post.image}}">
             <video ng-if="post.video" class="col" controls>
@@ -123,8 +131,8 @@ $('.carousel').carousel({
         <h3><i class="fa fa-instagram fa-2x"></i></h3>
         <div class="row justify-content-center">
           <div ng-repeat="post in instagramHome">
-            <img ng-if="!post.video" class="col" src="{{post.image}}">
-            <video ng-if="post.video" class="col" controls>
+            <img ng-if="!post.video" class="col ig" src="{{post.image}}">
+            <video ng-if="post.video" class="col ig" controls>
               <source src="{{post.video | trustUrl}}" type="video/mp4">
             </video>
             <div class="overlay col-md-3">

@@ -1,6 +1,12 @@
 html {
   overflow-x: hidden;
 }
+.z-input {
+  position: absolute;
+  margin-left: 350px;
+  z-index: 1;
+  top: 325px;
+}
 
 /* changes bootstraps col-md-3 width when the screen is greater than 992px */
 @media (min-width: 992px) {
@@ -12,7 +18,7 @@ html {
 /*---------------------------------*/
 /*Navbar Search Field*/
 .input-group {
-  width: 100% !important;
+  width: 50%;
   }
 
 #nav-input .tags {
