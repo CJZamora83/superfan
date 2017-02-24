@@ -83,3 +83,13 @@ div.hover:hover div.overlay {
   background-color: black;
   opacity: .65;
 }​
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
