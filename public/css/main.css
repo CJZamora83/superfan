@@ -2,10 +2,9 @@ html {
   overflow-x: hidden;
 }
 .z-input {
-  position: absolute;
-  margin-left: 350px;
+  margin: 0 auto;
   z-index: 1;
-  top: 325px;
+  top: 300px;
 }
 
 /* changes bootstraps col-md-3 width when the screen is greater than 992px */
