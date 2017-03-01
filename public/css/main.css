@@ -14,11 +14,6 @@
 html {
   overflow-x: hidden;
 }
-.z-input {
-  position: absolute;
-  z-index: 1;
-  top: 300px;
-}
 h1,
 h2,
 h3,
@@ -194,35 +189,21 @@ section.features .feature-item i {
   }
 }
 section.cta {
-  position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/bg-cta.jpg');
-  padding: 250px 0;
-}
-section.cta .cta-content {
-  position: relative;
   z-index: 1;
 }
-section.cta .cta-content h2 {
-  margin-top: 0;
-  margin-bottom: 25px;
-  color: white;
-  max-width: 450px;
-  font-size: 50px;
-}
-@media (min-width: 768px) {
-  section.cta .cta-content h2 {
-    font-size: 80px;
-  }
+.zee {
+  margin: 0 auto;
+  top: 350px;
 }
 section.cta .overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   position: absolute;
   top: 0;
   left: 0;
