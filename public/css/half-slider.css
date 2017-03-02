@@ -53,7 +53,7 @@ p {
   margin-bottom: 20px;
 }
 .navbar-default {
-  background: #FFFFFF;
+  background-color: white;
   border-color: rgba(34, 34, 34, 0.05);
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -66,7 +66,7 @@ p {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
-  color: #1B2631;
+  color: #fdcc52;
 }
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
@@ -74,7 +74,7 @@ p {
 }
 .navbar-default .navbar-header .navbar-toggle {
   font-size: 12px;
-  color: #85929E;
+  color: #222222;
   padding: 8px 10px;
 }
 .navbar-default .nav > li > a {
@@ -85,15 +85,15 @@ p {
 }
 .navbar-default .nav > li > a,
 .navbar-default .nav > li > a:focus {
-  color: #FFFFFF;
+  color: #222222;
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus:hover {
-  color: #FFFFFF;
+  color: #fdcc52;
 }
 .navbar-default .nav > li.active > a,
 .navbar-default .nav > li.active > a:focus {
-  color: #FFFFFF !important;
+  color: #fdcc52 !important;
   background-color: transparent;
 }
 .navbar-default .nav > li.active > a:hover,
@@ -102,30 +102,30 @@ p {
 }
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: #FFFFFF;
+    background-color: transparent;
     border-color: transparent;
   }
   .navbar-default .navbar-header .navbar-brand {
-    color: #1B2631;
+    color: rgba(255, 255, 255, 0.7);
   }
   .navbar-default .navbar-header .navbar-brand:hover,
   .navbar-default .navbar-header .navbar-brand:focus {
-    color: #FFFFFF;
+    color: white;
   }
   .navbar-default .nav > li > a,
   .navbar-default .nav > li > a:focus {
-    color: #1B2631;
+    color: rgba(255, 255, 255, 0.7);
   }
   .navbar-default .nav > li > a:hover,
   .navbar-default .nav > li > a:focus:hover {
-    color: #1B2631;
+    color: white;
   }
   .navbar-default.affix {
-    background-color: #FFFFFF;
+    background-color: white;
     border-color: rgba(34, 34, 34, 0.1);
   }
   .navbar-default.affix .navbar-header .navbar-brand {
-    color: #ffffff;
+    color: #222222;
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
@@ -133,11 +133,11 @@ p {
   }
   .navbar-default.affix .nav > li > a,
   .navbar-default.affix .nav > li > a:focus {
-    color: #ffffff;
+    color: #222222;
   }
   .navbar-default.affix .nav > li > a:hover,
   .navbar-default.affix .nav > li > a:focus:hover {
-    color: #ffffff;
+    color: #fdcc52;
   }
 }
 header {
@@ -303,6 +303,10 @@ section.cta {
 section.cta .cta-content {
   position: relative;
   z-index: 1;
+}
+.zee {
+  margin: 0 auto;
+  top: 300px;
 }
 section.cta .cta-content h2 {
   margin-top: 0;
