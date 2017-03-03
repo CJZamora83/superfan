@@ -22,8 +22,8 @@
         <div masonry='{"itemSelector" : ".tile"}'>
           <!-- items -->
           <div masonry-tile class="tile" ng-repeat="brick in feed | limitTo:brickLimit">
-            <img class="ig-bg" ng-show="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
-            <div class="twt-bg" ng-show="brick.favorites" style="width:320px;height:100%;">
+            <img class="d-inline-block ig-bg" ng-show="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
+            <div class="d-inline-block twt-bg" ng-show="brick.favorites" style="width:320px;height:100%;">
               <h3>{{ brick.username }}</h3>
               <p>{{ brick.text }}</p>
             </div>
