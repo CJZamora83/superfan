@@ -162,9 +162,20 @@ div.hover div.overlay {
 div.hover:hover div.overlay {
   position: relative;
   display: block;
-  height: 100%;
+  margin-top: -320px;
+  height: 320px;
+  width: 320px;
   background-color: black;
-  opacity: .65;
+  opacity: .5;
+}​
+div.hover:hover div.overlay.text-center {
+  position: relative;
+  display: inline-block;
+  margin-top: -320px;
+  height: 320px;
+  width: 320px;
+  background-color: black;
+  opacity: .5;
 }​
 .list-inline {
   padding-left: 0;
