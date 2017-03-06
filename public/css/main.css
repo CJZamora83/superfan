@@ -38,13 +38,11 @@ h6 {
   width: 50%;
   }
 
-#nav-input .tags {
+tags-input div div.tags {
   border: 0px !important;
-  min-height: 32px;
-  min-width: 300px;
 }
 
-#nav-input .tags.focused {
+tags-input div div.tags.focused {
   border: 0px !important;
   min-height: 32px;
   min-width: 300px;

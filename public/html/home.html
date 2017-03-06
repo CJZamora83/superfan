@@ -2,9 +2,11 @@
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="input-group zee">
-          <input type="text" class="form-control" placeholder="Search for...">
+          <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="border:none;">
+            <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+          </tags-input>
           <span class="input-group-btn">
-          <button class="btn btn-primary" type="button">Search!</button>
+            <button class="btn btn-primary" type="button" ng-click="loadFeed()">Search!</button>
           </span>
         </div>
       </div>

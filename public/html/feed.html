@@ -21,11 +21,14 @@
       <div class="col-lg-12">
         <div masonry='{"itemSelector" : ".tile"}'>
           <!-- items -->
-          <div masonry-tile class="tile" ng-repeat="brick in feed | limitTo:brickLimit">
+          <div masonry-tile class="tile hover" ng-repeat="brick in feed | limitTo:brickLimit" style="width:320px;">
             <img class="d-inline-block ig-bg" ng-show="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
             <div class="d-inline-block twt-bg text-center" ng-show="brick.favorites" style="width:320px;height:100%;">
               <h3>{{ brick.username }}</h3>
               <p>{{ brick.text }}</p>
+            </div>
+            <div class="overlay" style="margin-top:-321px;margin-left:1px;">
+              <h6>{{ brick.username }}</h6>
             </div>
           </div>
         </div>
