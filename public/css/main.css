@@ -140,11 +140,11 @@ tags-input .tags.focused {
   background-color: #00aced;
   color: #FFFFFF;
   padding: 75px 25px 75px 25px;
-  margin: 1px 1px 1px 1px;
+  margin: 1px 2px 1px 2px;
 }
 
 .ig-bg {
-  margin: 1px 1px 1px 1px;
+  margin: 1px 2px 1px 2px;
 }
 
 .bg-primary {

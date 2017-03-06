@@ -57,8 +57,8 @@
 <div class="row"><div class="col-md-3 offset-md-2"><h3>Trending</h3></div></div>
   <div class="row justify-content-center">
     <div ng-repeat="post in trending" class="hover">
-      <img ng-if="!post.video" class="d-inline-block" src="{{post.image}}">
-      <video ng-if="post.video" class="d-inline-block" controls>
+      <img ng-if="!post.video" class="d-inline-block ig-bg" src="{{post.image}}">
+      <video ng-if="post.video" class="d-inline-block ig-bg" controls>
         <source src="{{post.video | trustUrl}}" type="video/mp4">
       </video>
       <div class="overlay">
@@ -73,8 +73,8 @@
           <h3>Most Recent</h3>
           <div class="row justify-content-center">
             <div ng-repeat="post in mostRecent" class="hover">
-              <img ng-if="!post.video" class="d-inline-block" src="{{post.image}}">
-              <video ng-if="post.video" class="d-inline-block" style="width:320px;height:320px;" controls>
+              <img ng-if="!post.video" class="d-inline-block ig-bg" src="{{post.image}}">
+              <video ng-if="post.video" class="d-inline-block ig-bg" style="width:320px;height:320px;" controls>
                 <source ng-src="{{post.video | trustUrl}}" type="video/mp4">
               </video>
               <div ng-if="!post.video" class="overlay">
@@ -120,7 +120,7 @@
     <!-- </section> -->
 
     <div class="container-fluid" style="margin-bottom:25px;">
-      <h3><i class="fa fa-twitter fa-2x"></i></h3>
+      <h3><i class="fa fa-twitter"></i></h3>
       <div class="row justify-content-center">
         <div ng-repeat="post in twitterHome" class="col hover">
           <div class="d-inline-block twt-bg text-center" style="height:320px;width:100%;">
@@ -136,11 +136,11 @@
       <div class="row">
         </br>
         <div class="col-lg-12">
-          <h3><i class="fa fa-instagram fa-2x"></i></h3>
+          <h3><i class="fa fa-instagram"></i></h3>
           <div class="row justify-content-center">
             <div ng-repeat="post in instagramHome" class="hover">
-              <img ng-if="!post.video" class="d-inline-block ig" src="{{post.image}}">
-              <video ng-if="post.video" class="d-inline-block ig" controls>
+              <img ng-if="!post.video" class="d-inline-block ig-bg" src="{{post.image}}">
+              <video ng-if="post.video" class="d-inline-block ig-bg" controls>
                 <source src="{{post.video | trustUrl}}" type="video/mp4">
               </video>
               <div ng-if="!post.video" class="overlay">
@@ -156,29 +156,21 @@
       </br>
       <div class="row">
         </br>
-        <h3><i class="fa fa-youtube fa-2x"></i></h3>
-        <div id="Glide" class="glide">
-          <div class="glide__arrows">
-            <button class="glide__arrow prev" data-glide-dir="<" style="color:black;border-color:black;">prev</button>
-            <button class="glide__arrow next" data-glide-dir=">" style="color:black;border-color:black;">next</button>
+        <h3><i class="fa fa-youtube"></i></h3>
+        <div class="col-lg-12">
+          <div class="row justify-content-center">
+            <div class="col-md-4 text-center"><div class="d-inline-block" ng-bind-html="youtubeHome[0].video | trustHtml"></div></div>
+            <div class="col-md-4 text-center"><div class="d-inline-block" ng-bind-html="youtubeHome[1].video | trustHtml"></div></div>
           </div>
-          <div class="glide__wrapper">
-            <ul class="glide__track" style="text-align:center;">
-              <li class="glide__slide" ng-bind-html="youtubeHome[0].video | trustHtml"></li>
-              <li class="glide__slide" ng-bind-html="youtubeHome[1].video | trustHtml"></li>
-              <li class="glide__slide" ng-bind-html="youtubeHome[2].video | trustHtml"></li>
-            </ul>
-          </div>
-          <div class="glide__bullets"></div>
         </div>
       </div>
     </div>
 
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
       $("#Glide").glide({
         type: "carousel"
       });
-    </script>
+    </script> -->
 
     <section id="contact" class="contact download bg-primary">
       <div class="container-fluid">
