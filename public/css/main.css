@@ -32,6 +32,9 @@ h6 {
   }
 }
 
+.cien {
+  margin-top: 50px;
+}
 /*---------------------------------*/
 /*Navbar Search Field*/
 .input-group {
@@ -139,12 +142,12 @@ tags-input .tags.focused {
 .twt-bg {
   background-color: #00aced;
   color: #FFFFFF;
-  padding: 5px;
-  margin: 1px 1px 1px 1px;
+  padding: 75px 25px 75px 25px;
+  margin-right: 3px;
 }
 
 .ig-bg {
-  margin: 1px 1px 1px 1px;
+  margin: 1px 2px 1px 2px;
 }
 
 .bg-primary {
@@ -195,6 +198,8 @@ section h2 {
 section.download {
   padding: 80px 0;
   position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 section.download h2 {
   margin-top: 0;
@@ -221,47 +226,9 @@ section.download .badges .badge-link img {
     font-size: 70px;
   }
 }
-section.features .section-heading {
+section.contact {
+  margin-top: 100px;
   margin-bottom: 100px;
-}
-section.features .section-heading h2 {
-  margin-top: 0;
-}
-section.features .section-heading p {
-  margin-bottom: 0;
-}
-section.features .device-container,
-section.features .feature-item {
-  max-width: 300px;
-  margin: 0 auto;
-}
-section.features .device-container {
-  margin-bottom: 100px;
-}
-@media (min-width: 992px) {
-  section.features .device-container {
-    margin-bottom: 0;
-  }
-}
-section.features .feature-item {
-  text-align: center;
-  margin-bottom: 100px;
-}
-section.features .feature-item h3 {
-  font-size: 30px;
-}
-section.features .feature-item i {
-  font-size: 80px;
-  background: -webkit-linear-gradient(to left, #7b4397, #dc2430);
-  background: linear-gradient(to left, #7b4397, #dc2430);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-@media (min-width: 992px) {
-  section.features .device-container,
-  section.features .feature-item {
-    max-width: none;
-  }
 }
 section.cta {
   -webkit-background-size: cover;
