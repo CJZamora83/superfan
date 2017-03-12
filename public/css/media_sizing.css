@@ -92,3 +92,7 @@
     margin-right: 0 !important;
   }
 }
+
+#feed-container {
+  padding-top: 102px;
+}
