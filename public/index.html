@@ -56,7 +56,7 @@
   <div class="d-flex justify-content-md-start">
     <form ng-hide="!feedPage" class="form-inline">
       <div class="input-group">
-        <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
+        <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="margin-bottom:10px;">
           <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
         </tags-input>
         <span class="input-group-btn">

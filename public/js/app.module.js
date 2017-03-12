@@ -13,6 +13,8 @@
       var service = {};
       service.feed = [];
       service.added = [];
+      service.tagsAdded = [];
+      service.tags = [];
       service.addFeed = function (name) {
         if (service.added.indexOf(name) < 0) {
           service.added.push(name);
@@ -28,11 +30,38 @@
             });
           });
         }
-      }
+      };
+
+      service.removeFeed = function (name) {
+        if (service.added.indexOf(name) >= 0) {
+          var l_ = service.added.length;
+          while (l_--) {
+            if (service.added[l_] === name) {
+              service.added.splice(l_, 1);
+            }
+          }
+
+          var posts = service.feed;
+          var l = posts.length;
+          while (l--) {
+            if (posts[l].systemname === name) {
+              posts.splice(l, 1);
+            }
+          }
+
+          service.feed = service.feed.sort(function (a, b) {
+            return new Date(b.createdAt) - new Date(a.createdAt);
+          });
+        }
+      };
 
       service.getFeed = function () {
         return service.feed;
-      }
+      };
+
+      service.getTags = function () {
+        return service.tags;
+      };
 
       return service;
     })

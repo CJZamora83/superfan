@@ -10,7 +10,7 @@
   function MainController($scope, userDataService, $auth, $state, $http, feedService, $location) {
     var vm = this;
     $scope.feedPage = false;
-    $scope.searchTags = [];
+    $scope.tags = feedService.getTags();
     $scope.feedService = feedService;
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       if (toState.url === '/feed') {

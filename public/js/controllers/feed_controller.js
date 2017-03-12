@@ -10,6 +10,7 @@
     var vm = this;
     $scope.feed = feedService.feed;
     $scope.brickLimit = 50;
+    $scope.tags = feedService.getTags();
 
     $(window).scroll(function() {
       if($(window).scrollTop() > (($(document).height() - $(window).height()) - 300) && ($scope.feed.length >= $scope.brickLimit)) {
