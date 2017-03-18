@@ -1,4 +1,4 @@
-/* Larger Devices, Wider Screens */
+/* Christian's big ass screen */
 @media only screen and (min-width: 1761px) {
   #feed-container {
     position: relative;
@@ -66,7 +66,7 @@
   }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (max-width: 1045px) {
   #feed-container {
     position: relative;
@@ -88,7 +88,7 @@
   }
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (max-width: 700px) {
   #feed-container {
     position: relative;
