@@ -1,5 +1,6 @@
 var Tweet       = require('../models/tweet.js'),
     Gram        = require('../models/gram.js'),
+    Tube        = require('../models/tube.js'),
     Celebrities = require('../models/celebrity.js');
 
 function trending (req, res, next) {
@@ -53,9 +54,20 @@ function search (req, res, next) {
         compiled.push(row2[l]);
       }
 
-      res.json({
-        er: null,
-        results: compiled
+      Tube.find({
+        systemname: {
+          $in: nameArray
+        }
+      }, function (er, row3) {
+        var l_ = row3.length;
+        while (l_--) {
+          compiled.push(row3[l_]);
+        }
+
+        res.json({
+          er: null,
+          results: compiled
+        });
       });
     })
   })
