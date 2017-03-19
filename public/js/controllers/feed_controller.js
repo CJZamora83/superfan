@@ -8,9 +8,16 @@
 
   function FeedController($scope, $http, $location, twitterDataService, feedService) {
     var vm = this;
+    $scope.activeYoutubeVideo = '';
+    $scope.modalShown = false;
     $scope.feed = feedService.feed;
     $scope.brickLimit = 50;
     $scope.tags = feedService.getTags();
+
+    $scope.openYoutubeModal = function (video) {
+      $scope.activeYoutubeVideo = video;
+      $scope.modalShown = !$scope.modalShown;
+    }
 
     $(window).scroll(function() {
       if($(window).scrollTop() > (($(document).height() - $(window).height()) - 300) && ($scope.feed.length >= $scope.brickLimit)) {
