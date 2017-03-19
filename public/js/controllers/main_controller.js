@@ -33,7 +33,23 @@
       return $http.get('/api/celebrities/tags?query=' + queryString);
     };
 
-    $scope.loadFeed = function () {
+    // if there is a systemname,
+    //  the user clicked on an image or tweet
+    // if there isnt a systemname,
+    //  the user clicked the search button
+    $scope.loadFeed = function (systemname, prettyname) {
+      if (systemname) {
+        feedService.addFeed(systemname);
+        // var l = $scope.celebrities.length;
+        // while (l--) {
+
+        // }
+        // $scope.tags.push({
+        //   text: pretty,
+        //   system: systemname
+        // });
+      }
+
       $location.url('/feed');
     };
 
@@ -55,6 +71,10 @@
 
     $http.get('/api/youtube/home').then(function (results) {
       $scope.youtubeHome = results.data;
+    });
+
+    $http.get('/api/celebrities/list').then(function (results) {
+      $scope.celebrities = results.data;
     });
 
     $('.carousel').carousel({

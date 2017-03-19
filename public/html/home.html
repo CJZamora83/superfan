@@ -60,10 +60,10 @@
     <div class="row">
       <div ng-repeat="post in trending" class="hover">
         <img ng-if="!post.video" class="d-inline-block ig-bg" src="{{post.image}}">
-          <video ng-if="post.video" class="d-inline-block ig-bg" controls>
-            <source src="{{post.video | trustUrl}}" type="video/mp4">
-          </video>
-        <div class="overlay">
+        <video ng-if="post.video" class="d-inline-block ig-bg" controls>
+          <source src="{{post.video | trustUrl}}" type="video/mp4">
+        </video>
+        <div ng-if="!post.video" class="overlay" ng-click="loadFeed(post.systemname)">
           <h6>{{ post.username }}</h6>
         </div>
       </div>
@@ -79,12 +79,9 @@
         <video ng-if="post.video" class="d-inline-block ig-bg" style="width:320px;height:320px;" controls>
           <source ng-src="{{post.video | trustUrl}}" type="video/mp4">
         </video>
-        <div ng-if="!post.video" class="overlay">
+        <div ng-if="!post.video" class="overlay" ng-click="loadFeed(post.systemname)">
           <h6>hey</h6>
         </div>
-          <div ng-if="post.video" class="overlay" style="margin-top:-325px;">
-            <h6>hey</h6>
-          </div>
       </div>
     </div>
   </div>
@@ -132,7 +129,7 @@
           </div>
           <i class="fa fa-twitter twitter-bird"></i>
         </div>
-        <div class="overlay text-center" style="width:100%;padding:5px;">
+        <div class="overlay text-center" style="width:100%;padding:5px;" ng-click="loadFeed(post.systemname)">
           <h6>hey</h6>
         </div>
       </div>
@@ -146,10 +143,7 @@
         <video ng-if="post.video" class="d-inline-block ig-bg" controls>
           <source src="{{post.video | trustUrl}}" type="video/mp4">
         </video>
-        <div ng-if="!post.video" class="overlay">
-          <h6>hey</h6>
-        </div>
-        <div ng-if="post.video" class="overlay" style="margin-top:-325px;">
+        <div ng-if="!post.video" class="overlay" ng-click="loadFeed(post.systemname)">
           <h6>hey</h6>
         </div>
       </div>
