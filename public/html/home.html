@@ -132,8 +132,8 @@
           </div>
           <i class="fa fa-twitter twitter-bird"></i>
         </div>
-        <div class="overlay text-center" style="width:100%;padding:5px;">
-          <h6>hey</h6>
+        <div class="overlay text-center" style="width:100%;">
+          <h5>{{ post.username }}</h5>
         </div>
       </div>
     </div>
@@ -147,7 +147,7 @@
           <source src="{{post.video | trustUrl}}" type="video/mp4">
         </video>
         <div ng-if="!post.video" class="overlay">
-          <h6>hey</h6>
+          <h5>{{ post.username }}</h5>
         </div>
         <div ng-if="post.video" class="overlay" style="margin-top:-325px;">
           <h6>hey</h6>
