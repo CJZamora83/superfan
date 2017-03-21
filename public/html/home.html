@@ -65,6 +65,7 @@
           </video>
         <div class="overlay">
           <h6>{{ post.username }}</h6>
+          <h6>{{ post.likes }}</h6>
         </div>
       </div>
     </div>
@@ -80,10 +81,12 @@
           <source ng-src="{{post.video | trustUrl}}" type="video/mp4">
         </video>
         <div ng-if="!post.video" class="overlay">
-          <h6>hey</h6>
+          <h5>{{ post.username }}</h5>
+          <h6>{{ post.likes }}</h6>
         </div>
           <div ng-if="post.video" class="overlay" style="margin-top:-325px;">
-            <h6>hey</h6>
+            <h5>{{ post.username }}</h5>
+            <h6>{{ post.likes }}</h6>
           </div>
       </div>
     </div>
@@ -134,6 +137,8 @@
         </div>
         <div class="overlay text-center" style="width:100%;">
           <h5>{{ post.username }}</h5>
+          <i class="fa fa-retweet" aria-hidden="true"></i><h6>{{ post.retweets }}</h6>
+          <i class="fa fa-heart" aria-hidden="true"></i><h6>{{ post.favorites }}</h6>
         </div>
       </div>
     </div>
@@ -148,9 +153,11 @@
         </video>
         <div ng-if="!post.video" class="overlay">
           <h5>{{ post.username }}</h5>
+          <i class="fa fa-heart" aria-hidden="true"></i><h6>{{ post.likes }}</h6>
         </div>
         <div ng-if="post.video" class="overlay" style="margin-top:-325px;">
-          <h6>hey</h6>
+          <h5>{{ post.username }}</h5>
+          <i class="fa fa-heart" aria-hidden="true"></i><h6>{{ post.likes }}</h6>
         </div>
       </div>
     </div>
