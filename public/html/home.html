@@ -60,10 +60,10 @@
     <div class="row">
       <div ng-repeat="post in trending" class="hover">
         <img ng-if="!post.video" class="d-inline-block ig-bg" src="{{post.image}}">
-        <video ng-if="post.video" class="d-inline-block ig-bg" controls>
-          <source src="{{post.video | trustUrl}}" type="video/mp4">
-        </video>
-        <div ng-if="!post.video" class="overlay" ng-click="loadFeed(post.systemname)">
+          <video ng-if="post.video" class="d-inline-block ig-bg" controls>
+            <source src="{{post.video | trustUrl}}" type="video/mp4">
+          </video>
+        <div class="overlay">
           <h6>{{ post.username }}</h6>
           <h6>{{ post.likes }}</h6>
         </div>
@@ -80,7 +80,6 @@
         <video ng-if="post.video" class="d-inline-block ig-bg" style="width:320px;height:320px;" controls>
           <source ng-src="{{post.video | trustUrl}}" type="video/mp4">
         </video>
-<<<<<<< HEAD
         <div ng-if="!post.video" class="overlay">
           <h5>{{ post.username }}</h5>
           <h6>{{ post.likes }}</h6>
@@ -89,11 +88,6 @@
             <h5>{{ post.username }}</h5>
             <h6>{{ post.likes }}</h6>
           </div>
-=======
-        <div ng-if="!post.video" class="overlay" ng-click="loadFeed(post.systemname)">
-          <h6>hey</h6>
-        </div>
->>>>>>> 6e8bed3a1894ee542ba1ff8aa5693dc1c2c05a30
       </div>
     </div>
   </div>
@@ -141,18 +135,10 @@
           </div>
           <i class="fa fa-twitter twitter-bird"></i>
         </div>
-<<<<<<< HEAD
         <div class="overlay text-center" style="width:100%;">
           <h5>{{ post.username }}</h5>
-<<<<<<< HEAD
           <i class="fa fa-retweet" aria-hidden="true"></i><h6>{{ post.retweets }}</h6>
           <i class="fa fa-heart" aria-hidden="true"></i><h6>{{ post.favorites }}</h6>
-=======
-=======
-        <div class="overlay text-center" style="width:100%;padding:5px;" ng-click="loadFeed(post.systemname)">
-          <h6>hey</h6>
->>>>>>> ba55c1200f004c57ed0cf8f8e300f1b65ca24b98
->>>>>>> 6e8bed3a1894ee542ba1ff8aa5693dc1c2c05a30
         </div>
       </div>
     </div>
@@ -165,21 +151,13 @@
         <video ng-if="post.video" class="d-inline-block ig-bg" controls>
           <source src="{{post.video | trustUrl}}" type="video/mp4">
         </video>
-<<<<<<< HEAD
         <div ng-if="!post.video" class="overlay">
           <h5>{{ post.username }}</h5>
           <i class="fa fa-heart" aria-hidden="true"></i><h6>{{ post.likes }}</h6>
         </div>
         <div ng-if="post.video" class="overlay" style="margin-top:-325px;">
-<<<<<<< HEAD
           <h5>{{ post.username }}</h5>
           <i class="fa fa-heart" aria-hidden="true"></i><h6>{{ post.likes }}</h6>
-=======
-=======
-        <div ng-if="!post.video" class="overlay" ng-click="loadFeed(post.systemname)">
->>>>>>> ba55c1200f004c57ed0cf8f8e300f1b65ca24b98
-          <h6>hey</h6>
->>>>>>> 6e8bed3a1894ee542ba1ff8aa5693dc1c2c05a30
         </div>
       </div>
     </div>
