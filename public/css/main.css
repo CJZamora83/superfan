@@ -175,7 +175,7 @@ div.hover:hover div.overlay {
   margin-top: -320px;
   height: 320px;
   width: 320px;
-  background-color: black;
+  background-color: black !important;
   opacity: .80;
   color: #FFFFFF;
   padding: 10px;
