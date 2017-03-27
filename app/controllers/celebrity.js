@@ -3,7 +3,7 @@ var Celebrities = require('../models/celebrity.js');
 function tags (req, res, next) {
   Celebrities.find({
     pretty: {
-      $regex: req.query.query
+      $regex: new RegExp(req.query.query, 'i')
     }
   }, function (er, row) {
     if (er) {
