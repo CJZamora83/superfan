@@ -38,20 +38,6 @@
   </script>
     <br>
     <br>
-  <!--   <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="input-group">
-            <tags-input ng-model="tags" class="form-text" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" style="margin-bottom:10px;">
-              <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
-            </tags-input>
-            <span class="input-group-btn">
-              <button class="btn btn-primary" type="submit" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
   <div class="home-container">
     <div class="row cien">
@@ -66,9 +52,9 @@
         <div class="overlay">
           <h6>{{ post.username }}</h6>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
-            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true"></i>{{ post.comments}}</h6>
-            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true"></i>{{ post.likes }}</h6>
-            <i style="float:right;" class="fa fa-instagram"></i>
+            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.comments}}</h6>
+            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
+            <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
         </div>
       </div>
@@ -88,18 +74,18 @@
           <h5>{{ post.username }}</h5>
           <h6>{{ post.caption }}</h6>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
-            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true"></i>{{ post.comments}}</h6>
-            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true"></i>{{ post.likes }}</h6>
-            <i style="float:right;" class="fa fa-instagram"></i>
+            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.comments}}</h6>
+            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
+            <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
         </div>
         <div ng-if="post.video" class="overlay" style="margin-top:-325px;">
           <h5>{{ post.username }}</h5>
           <h6>{{ post.caption }}</h6>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
-            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true"></i>{{ post.comments}}</h6>
-            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true"></i>{{ post.likes }}</h6>
-            <i style="float:right;" class="fa fa-instagram"></i>
+            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.comments}}</h6>
+            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
+            <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
         </div>
       </div>
@@ -153,11 +139,11 @@
           <h5>{{ post.username }}</h5>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
             <div style="float:left;">
-              <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true"></i>{{ post.retweets }}</h6>
-              <h6 style="display:inline;"><i class="fa fa-heart" aria-hidden="true"></i>{{ post.favorites }}</h6>
+              <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.retweets }}</h6>
+              <h6 style="display:inline;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.favorites }}</h6>
             </div>
             <div style="float:right;">
-              <i class="fa fa-twitter twitter-bird"></i>
+              <i style="float:right;margin-right:6px;" class="fa fa-twitter twitter-bird"></i>
             </div>
           </div>
         </div>
@@ -176,17 +162,17 @@
           <h5>{{ post.username }}</h5>
           <h6>{{ post.caption }}</h6>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
-            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true"></i>{{ post.comments}}</h6>
-            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true"></i>{{ post.likes }}</h6>
-            <i style="float:right;" class="fa fa-instagram"></i>
+            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.comments}}</h6>
+            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
+            <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
         </div>
         <div ng-if="post.video" class="overlay" style="margin-top:-325px;">
           <h5>{{ post.username }}</h5>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
-            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true"></i>{{ post.comments}}</h6>
-            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true"></i>{{ post.likes }}</h6>
-            <i style="float:right;" class="fa fa-instagram"></i>
+            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.comments}}</h6>
+            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
+            <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
         </div>
       </div>
@@ -199,12 +185,6 @@
       <div class="d-inline-block spread" ng-bind-html="youtubeHome[1].video | trustHtml"></div>
     </div>
   </div>
-
-<!--     <script type="text/javascript">
-      $("#Glide").glide({
-        type: "carousel"
-      });
-    </script> -->
 
     <section id="contact" class="contact download bg-primary">
       <div class="container-fluid">
