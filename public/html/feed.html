@@ -9,7 +9,13 @@
             <div>
               <img class="d-inline-block ig-bg" ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
               <div ng-if="brick.likes" class="overlay" style="margin-top:-321px;margin-left:1px;">
-                <h6>{{ brick.username }}</h6>
+                <h5>{{ brick.username }}</h5>
+                <h6>{{ brick.caption }}</h6>
+                <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
+                  <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.comments}}</h6>
+                  <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.likes }}</h6>
+                  <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
+                </div>
               </div>
             </div>
             <div class="d-inline-block twt-bg text-center" ng-if="brick.favorites" style="width:320px;height:100%;">
@@ -19,6 +25,15 @@
               </div>
               <div class="overlay" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
                 <h6>{{ brick.username }}</h6>
+                <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:100%;">
+                  <div style="float:left;">
+                    <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.retweets }}</h6>
+                    <h6 style="display:inline;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.favorites }}</h6>
+                  </div>
+                  <div style="float:right;">
+                    <i style="float:right;margin-right:6px;" class="fa fa-twitter twitter-bird"></i>
+                  </div>
+          </div>
               </div>
             </div>
             <div class="d-inline-block text-center" ng-if="brick.content" style="width:320px;height:100%;background-color:yellow;">
