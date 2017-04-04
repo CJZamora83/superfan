@@ -1,7 +1,8 @@
 var Tweet       = require('../models/tweet.js'),
     Gram        = require('../models/gram.js'),
     Tube        = require('../models/tube.js'),
-    Celebrities = require('../models/celebrity.js');
+    Celebrities = require('../models/celebrity.js'),
+    Tmz         = require('../models/tmz.js');
 
 function trending (req, res, next) {
   var oneWeekAgo = new Date();
@@ -43,12 +44,20 @@ function search (req, res, next) {
       $in: nameArray
     }
   }, function (er, row1) {
+    if (er) {
+      console.log(er);
+    }
+
     compiled = row1;
     Gram.find({
       systemname: {
         $in: nameArray
       }
     }, function (er, row2) {
+      if (er) {
+        console.log(er);
+      }
+
       var l = row2.length;
       while (l--) {
         compiled.push(row2[l]);
@@ -59,15 +68,34 @@ function search (req, res, next) {
           $in: nameArray
         }
       }, function (er, row3) {
+        if (er) {
+          console.log(er);
+        }
+
         var l_ = row3.length;
         while (l_--) {
           compiled.push(row3[l_]);
         }
 
-        res.json({
-          er: null,
-          results: compiled
-        });
+        Tmz.find({
+          systemname: {
+            $in: nameArray
+          }
+        }, function (er, row4) {
+          if (er) {
+            console.log(er);
+          }
+
+          var l__ = row4.length;
+          while (l__--) {
+            compiled.push(row4[l__]);
+          }
+
+          res.json({
+            er: null,
+            results: compiled
+          });
+        })
       });
     })
   })

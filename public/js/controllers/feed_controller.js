@@ -17,7 +17,7 @@
     $scope.openYoutubeModal = function (video) {
       $scope.activeYoutubeVideo = video;
       $scope.modalShown = !$scope.modalShown;
-    }
+    };
 
     $(window).scroll(function() {
       if($(window).scrollTop() > (($(document).height() - $(window).height()) - 300) && ($scope.feed.length >= $scope.brickLimit)) {

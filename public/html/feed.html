@@ -21,6 +21,15 @@
                 <h6>{{ brick.username }}</h6>
               </div>
             </div>
+            <div class="d-inline-block text-center" ng-if="brick.content" style="width:320px;height:100%;background-color:yellow;">
+              <div class="tweet">
+                <h3>{{ brick.author }}</h3>
+                <p ng-bind-html="brick.content | trustHtml"></p>
+              </div>
+              <div class="overlay" style="position:absolute;height:100%;width:320px;margin-top:0px;top:0px;left:0px;">
+                <h6>{{ brick.author }}</h6>
+              </div>
+            </div>
             <div class="d-inline-block" ng-if="brick.feedImg" style="width:320px;height:180px;">
               <img class="d-inline-block" ng-src="{{ brick.feedImg }}" alt="A masonry brick">
               <div class="overlay" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">

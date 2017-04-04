@@ -8,6 +8,7 @@ var userController = require('../controllers/users.js'),
     youtubeController = require('../controllers/youtube.js'),
     celebrityController = require('../controllers/celebrity.js'),
     instagramController = require('../controllers/instagram.js'),
+    tmzController = require('../controllers/tmz.js'),
     meshedController = require('../controllers/meshed.js');
 
 
@@ -87,6 +88,16 @@ router.get('/youtube/list', youtubeController.list);
 
 // youtube route handler for home page
 router.get('/youtube/home', youtubeController.home);
+
+//||||||||||||||||||||||||||--
+// TMZ SERVICES
+//||||||||||||||||||||||||||--
+
+// youtube search route
+router.get('/tmz/search', tmzController.search);
+
+// list all youtube posts
+router.get('/tmz/list', tmzController.list);
 
 //||||||||||||||||||||||||||--
 // MESHED MEDIA SERVICES
