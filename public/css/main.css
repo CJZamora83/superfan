@@ -159,6 +159,10 @@ tags-input .tags.focused {
   margin: 1px 2px 1px 1px;
 }
 
+.tmz-bg {
+  margin: 1px 1px 1px 1px;
+}
+
 .bg-primary {
   background-color: #76d7c4 !important;
 }
