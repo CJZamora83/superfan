@@ -50,8 +50,8 @@
               <div class="overlay" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
                 <button style="position:absolute;height:50px;width:50px;top:50%;left:50%;margin-left:-25px;margin-top:-25px;border-radius:50px;border:5px solid black;" ng-click="openYoutubeModal(brick.video)"><i>&#9658;</i></button>
                   <div style="float:left;">
-                    <h6 style="display:inline;"><i class="fa fa-thumbs-up" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.feedImg.likes }}</h6>
-                    <h6 style="display:inline;"><i class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.feedImg.dislikes }}</h6>
+                    <h6 style="display:inline;"><i class="fa fa-thumbs-up" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.stats.likes }}</h6>
+                    <h6 style="display:inline;"><i class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.stats.dislikes }}</h6>
                   </div>
                   <div style="float:right;">
                     <i style="float:right;margin-right:6px;" class="fa fa-youtube"></i>
@@ -69,36 +69,5 @@
   </div>
 
 </section>
-
-
-<!--
-  <div id="content"></div>
-
-  <script type="text/javascript">
-    var content = document.getElementById('content');
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function(){
-      if (xhr.readyState==4 && xhr.status==200) {
-        var data = JSON.parse(xhr.responseText);
-        if (data.status == 'ok') {
-          var output = "";
-          for (var i = 0; i < data.items.length; ++i) {
-            output += '<div class="col-md-3"><h4><a href="' +
-              data.items[i].link + '" >' +
-              data.items[i].title + '</h4></div>';
-          }
-
-          content.innerHTML = output;
-        }
-      }
-    };
-
-    xhr.open('GET','https://rss2json.com/api.json?rss_url=http%3A%2F%2Fwww.tmz.com%2Frss.xml',true);
-    xhr.send();
-  </script>
--->
-
-<!-- Masonry docs: https://github.com/desandro/masonry -->
 
 
