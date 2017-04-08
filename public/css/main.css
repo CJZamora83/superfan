@@ -48,7 +48,6 @@ tags-input div div.tags {
 tags-input div div.tags.focused {
   border: 0px !important;
   min-height: 32px;
-  min-width: 300px;
 }
 
 /*---------------------------------*/
@@ -96,6 +95,11 @@ tags-input .tags.focused {
 .navbar .nav > li.active > a:hover,
 .navbar .nav > li.active > a:focus:hover {
   background-color: transparent;
+}
+@media (max-width: 992px) {
+  .navbar-brand {
+    margin-left:12.5px !important;
+  }
 }
 @media (min-width: 768px) {
   .navbar-default {
