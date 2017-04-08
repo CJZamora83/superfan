@@ -8,7 +8,7 @@
           <div masonry-tile class="tile hover" ng-repeat="brick in feed | limitTo:brickLimit" style="width:322px;">
             <div>
               <img class="d-inline-block ig-bg" ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
-              <div ng-if="brick.likes" class="overlay" style="margin-top:-321px;margin-left:1px;">
+              <div ng-if="brick.likes" class="overlay gradient" style="margin-top:-321px;margin-left:1px;">
                 <h5>{{ brick.username }}</h5>
                 <h6>{{ brick.caption }}</h6>
                 <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
@@ -23,17 +23,16 @@
                 <h3>{{ brick.username }}</h3>
                 <p>{{ brick.text }}</p>
               </div>
-              <div class="overlay" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
-                <h6>{{ brick.username }}</h6>
+              <div class="overlay gradient" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
                 <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:100%;">
-                  <div style="float:left;">
+                  <div style="position:absolute;left:0px;bottom:7.5px;">
                     <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.retweets }}</h6>
                     <h6 style="display:inline;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.favorites }}</h6>
                   </div>
-                  <div style="float:right;">
+                  <div style="position:absolute;width:25px;right:0px;bottom:11px;">
                     <i style="float:right;margin-right:6px;" class="fa fa-twitter twitter-bird"></i>
                   </div>
-          </div>
+                </div>
               </div>
             </div>
             <div class="d-inline-block text-center" ng-if="brick.content" style="width:320px;height:100%;background-color:yellow;">
@@ -41,13 +40,13 @@
                 <h3>{{ brick.author }}</h3>
                 <p ng-bind-html="brick.content | trustHtml"></p>
               </div>
-              <div class="overlay" style="position:absolute;height:100%;width:320px;margin-top:0px;top:0px;left:0px;">
+              <div class="overlay gradient" style="position:absolute;height:100%;width:320px;margin-top:0px;top:0px;left:0px;">
                 <h6>{{ brick.author }}</h6>
               </div>
             </div>
             <div class="d-inline-block" ng-if="brick.feedImg" style="width:320px;height:180px;">
               <img class="d-inline-block" ng-src="{{ brick.feedImg }}" alt="A masonry brick">
-              <div class="overlay" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
+              <div class="overlay gradient" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
                 <button style="position:absolute;height:50px;width:50px;top:50%;left:50%;margin-left:-25px;margin-top:-25px;border-radius:50px;border:5px solid black;" ng-click="openYoutubeModal(brick.video)"><i>&#9658;</i></button>
                   <div style="float:left;">
                     <h6 style="display:inline;"><i class="fa fa-thumbs-up" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.feedImg.likes }}</h6>
