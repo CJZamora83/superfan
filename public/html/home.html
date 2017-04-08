@@ -49,7 +49,7 @@
           <video ng-if="post.video" class="d-inline-block ig-bg" style="width:320px;height:320px;" controls>
             <source src="{{post.video | trustUrl}}" type="video/mp4">
           </video>
-        <div class="overlay gradient">
+        <div ng-if="!post.video" class="overlay gradient">
           <h5>{{ post.username }}</h5>
           <h6>{{ post.caption }}</h6>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
@@ -80,7 +80,7 @@
             <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
         </div>
-        <div ng-if="post.video" class="overlay gradient" style="margin-top:-325px;">
+        <!-- <div ng-if="post.video" class="overlay gradient" style="margin-top:-325px;">
           <h5>{{ post.username }}</h5>
           <h6>{{ post.caption }}</h6>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
@@ -88,7 +88,7 @@
             <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
             <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -166,14 +166,14 @@
             <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
         </div>
-        <div ng-if="post.video" class="overlay gradient" style="margin-top:-325px;">
+        <!-- <div ng-if="post.video" class="overlay gradient" style="margin-top:-325px;">
           <h5>{{ post.username }}</h5>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
             <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.comments}}</h6>
             <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
             <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="row cien">
