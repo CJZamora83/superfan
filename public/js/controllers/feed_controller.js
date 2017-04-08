@@ -19,6 +19,11 @@
       $scope.modalShown = !$scope.modalShown;
     };
 
+    $scope.closeYoutubeModal = function () {
+      $scope.activeYoutubeVideo = '';
+      $scope.modalShown = false;
+    };
+
     $(window).scroll(function() {
       if($(window).scrollTop() > (($(document).height() - $(window).height()) - 300) && ($scope.feed.length >= $scope.brickLimit)) {
         // ajax call get data from server and append to the div
