@@ -63,6 +63,11 @@
         return service.tags;
       };
 
+      service.resetTags = function () {
+        service.tags = [];
+        return service.tags;
+      }
+
       return service;
     })
     .filter("trustHtml", function($sce) {

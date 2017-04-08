@@ -33,6 +33,15 @@
       return $http.get('/api/celebrities/tags?query=' + queryString);
     };
 
+    $scope.clearFeed = function () {
+      var l = $scope.tags.length;
+      while (l--) {
+        feedService.removeFeed($scope.tags[l].system);
+      }
+
+      $scope.tags = feedService.resetTags();
+    };
+
     // if there is a systemname,
     //  the user clicked on an image or tweet
     // if there isnt a systemname,

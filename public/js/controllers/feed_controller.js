@@ -10,9 +10,9 @@
     var vm = this;
     $scope.activeYoutubeVideo = '';
     $scope.modalShown = false;
-    $scope.feed = feedService.feed;
     $scope.brickLimit = 50;
     $scope.tags = feedService.getTags();
+    $scope.feed = feedService.feed;
 
     $scope.openYoutubeModal = function (video) {
       $scope.activeYoutubeVideo = video;
