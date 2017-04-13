@@ -39,13 +39,14 @@
     <link href="/public/vendor/masonry-docs/css/masonry-docs.css">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/media_sizing.css" rel="stylesheet">
+    <link href="css/gradient.css" rel="stylesheet">
 </head>
 
 <body ng-controller="MainController">
 
     <!-- Navigation -->
 <nav class="navbar fixed-top navbar-toggleable-md">
-<div class="d-flex justify-content-md-start">
+<div class="container-fluid d-flex justify-content-md-start">
   <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <img src="/img/sf_logo.jpg">
   </button>
@@ -57,12 +58,10 @@
     <form ng-hide="!feedPage" class="form-inline">
       <div class="input-group">
         <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="margin-bottom:10px;">
-          <auto-complete source="loadNavTags($query)" max-results-to-show="100"></auto-complete>
+          <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
         </tags-input>
-        <span class="input-group-btn">
-          <button class="btn btn-outline-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-          <button class="btn btn-outline-danger" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
-        </span>
+        <button class="btn btn-outline-primary btn-sm" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+         <button class="btn btn-outline-danger btn-sm" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
       </div>
     </form>
   </div>
@@ -93,10 +92,10 @@
     <script src="vendor/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
     <!-- angular-masonry directive -->
     <!-- <script src="vendor/bower_components/jquery-bridget/jquery-bridget.js"></script> -->

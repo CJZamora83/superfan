@@ -1,19 +1,7 @@
-<section class="cta">
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="input-group zee">
-          <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;">
-            <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
-          </tags-input>
-          <span class="input-group-btn">
-            <button class="btn btn-primary" type="button" ng-click="loadFeed()">Search!</button>
-          </span>
-        </div>
-      </div>
-    </div>
-  <div class="overlay"></div>
-</section>
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <header class="masthead">
+      <div class="container-fluid">
+        <div class="row">
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
       <div class="carousel-item active">
         <img class="d-block img-fluid" src="../img/popular_celebrities_filtered_darker.jpg" alt="First slide">
@@ -36,6 +24,24 @@
     interval: 4000
   })
   </script>
+        </div>
+      </div>
+    </header>
+<!-- <section class="cta">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="input-group zee">
+          <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;">
+            <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
+          </tags-input>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" ng-click="loadFeed()">Search!</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  <div class="overlay"></div>
+</section> -->
     <br>
     <br>
 
