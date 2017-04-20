@@ -255,9 +255,10 @@ section.cta {
   -o-background-size: cover;
   background-position: center;
   z-index: 1;
+  position: absolute;
+  width: 100%;
 }
 .zee {
-  margin: 0 auto;
   top: 350px;
 }
 
