@@ -43,7 +43,17 @@
 </head>
 
 <body ng-controller="MainController">
+<script>
+  window.onscroll = function() {myFunction()};
 
+  function myFunction() {
+      if (document.body.scrollTop > 350) {
+          document.getElementById("navBar.background-color") = "#FFFFFF";
+      } else {
+          document.getElementById("navBar.background-color") = "transparent";
+      }
+  }
+</script>
     <!-- Navigation -->
 <nav class="navbar fixed-top navbar-toggleable-md">
 <div class="container-fluid d-flex justify-content-md-start">
