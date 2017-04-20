@@ -44,6 +44,7 @@
 
 <body ng-controller="MainController">
   <script>
+<<<<<<< HEAD
 
     var dist = body.scrollTop;
 
@@ -56,9 +57,20 @@
           }
         console.log('scrolling');
     };
+=======
+    window.onscroll = function() {myFunction()};
+
+    function myFunction() {
+        if (document.body.scrollTop > 790) {
+            document.getElementById("navBar").style.backgroundColor = "#FFFFFF";
+        } else {
+            document.getElementById("navBar").style.backgroundColor = "transparent";
+        }
+    }
+>>>>>>> 207a13401c8d9d6949ff7dfacf4afb4b83bf7b5f
   </script>
     <!-- Navigation -->
-<nav class="navbar fixed-top navbar-toggleable-md">
+<nav id="navBar" class="navbar fixed-top navbar-toggleable-md" style="background-color: transparent">
 <div class="container-fluid d-flex justify-content-md-start">
   <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <img src="/img/sf_logo.jpg">
