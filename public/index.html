@@ -43,19 +43,19 @@
 </head>
 
 <body ng-controller="MainController">
-  <script>
-    window.onscroll = function() {myFunction()};
+<script>
+  window.onscroll = function() {myFunction()};
 
-    function myFunction() {
-        if (document.body.scrollTop > 350) {
-            document.getElementById("navBar").style.backgroundColor = "#FFFFFF";
-        } else {
-            document.getElementById("navBar").style.backgroundColor = "transparent";
-        }
-    }
-  </script>
+  function myFunction() {
+      if (document.body.scrollTop > 350) {
+          document.getElementById("navBar.background-color") = "#FFFFFF";
+      } else {
+          document.getElementById("navBar.background-color") = "transparent";
+      }
+  }
+</script>
     <!-- Navigation -->
-<nav id="navBar" class="navbar fixed-top navbar-toggleable-md">
+<nav class="navbar fixed-top navbar-toggleable-md">
 <div class="container-fluid d-flex justify-content-md-start">
   <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <img src="/img/sf_logo.jpg">
