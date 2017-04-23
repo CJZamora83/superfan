@@ -44,12 +44,16 @@
     window.onscroll = function() {myFunction()};
 
     function myFunction() {
-        if (document.body.scrollTop > 790) {
+        if (document.body.scrollTop > 720) {
             document.getElementById("navBar").style.backgroundColor = "#ffffff";
-            document.getElementsByClassName("nav-link").style.color = "#000000";
+            [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+                el.style.color = "#000000";
+            });
         } else {
             document.getElementById("navBar").style.backgroundColor = "transparent";
-            document.getElementsByClassName("nav-link").style.color = "#ffffff";
+            [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+                el.style.color = "#ffffff";
+            });
         }
     }
   </script>
