@@ -7,7 +7,7 @@
 
   MainController.$inject = ['$scope','userDataService', '$auth', '$state', '$http', 'feedService', '$location'];
 
-  function MainController($scope, userDataService, $auth, $state, $http, feedService, $location) {
+  function MainController($scope, userDataService, $auth, $state, $http, feedService, $location, $route) {
     var vm = this;
     $scope.feedPage = false;
     $scope.tags = feedService.getTags();
@@ -17,6 +17,31 @@
         $scope.feedPage = true;
       } else {
         $scope.feedPage = false;
+      }
+
+      $scope.page = toState.url;
+      if (toState.url === '/') {
+        function myFunction() {
+          if (document.body.scrollTop > 720) {
+            document.getElementById("navBar").style.backgroundColor = "#ffffff";
+            [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+                el.style.color = "#000000";
+            });
+          } else {
+            document.getElementById("navBar").style.backgroundColor = "transparent";
+            [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+                el.style.color = "#ffffff";
+            });
+          }
+        };
+
+        window.onscroll = function() {myFunction()};
+      } else {
+        window.onscroll = undefined;
+        document.getElementById("navBar").style.backgroundColor = "#ffffff";
+        [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+            el.style.color = "#000000";
+        });
       }
     });
 

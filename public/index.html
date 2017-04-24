@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" ng-app="superfanApp">
 
 <head>
@@ -23,9 +23,6 @@
     <link href="vendor/ng-tags-input/css/ng-tags-input.bootstrap.css" rel="stylesheet">
     <link href="vendor/ng-tags-input/css/ng-tags-input.css" rel="stylesheet">
 
-    <!-- GlideJS CSS -->
-    <link href="vendor/glidejs/dist/css/glide.core.css" rel="stylesheet">
-    <link href="vendor/glidejs/dist/css/glide.theme.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -61,10 +58,16 @@
     window.onscroll = function() {myFunction()};
 
     function myFunction() {
-        if (document.body.scrollTop > 790) {
-            document.getElementById("navBar").style.backgroundColor = "#FFFFFF";
+        if (document.body.scrollTop > 720) {
+            document.getElementById("navBar").style.backgroundColor = "#ffffff";
+            [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+                el.style.color = "#000000";
+            });
         } else {
             document.getElementById("navBar").style.backgroundColor = "transparent";
+            [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+                el.style.color = "#ffffff";
+            });
         }
     }
 >>>>>>> 207a13401c8d9d6949ff7dfacf4afb4b83bf7b5f
@@ -73,7 +76,7 @@
 <nav id="navBar" class="navbar fixed-top navbar-toggleable-md" style="background-color: transparent">
 <div class="container-fluid d-flex justify-content-md-start">
   <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <img src="/img/sf_logo.jpg">
+    <img src="/img/sf_logo.jpg" style="padding:0px;">
   </button>
     <a class="navbar-brand" href="#">
       <img src="/img/sf_logo.jpg">
@@ -85,24 +88,24 @@
         <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="margin-bottom:10px;">
           <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
         </tags-input>
-        <button class="btn btn-outline-primary btn-sm" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-         <button class="btn btn-outline-danger btn-sm" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <button class="btn btn-outline-primary square" type="button" ng-click="loadFeed()" style="margin-left:1px;margin-right:1px;"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button class="btn btn-outline-danger square" type="button" ng-click="clearFeed()"><i class="fa fa-times" aria-hidden="true"></i></button>
       </div>
     </form>
   </div>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav navbar-brand">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color:#ffffff;">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Mobile App</a>
+          <a class="nav-link" href="#" style="color:#ffffff;">Mobile App</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign Up</a>
+          <a class="nav-link" href="#" style="color:#ffffff;">Sign Up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="#" style="color:#ffffff;">Login</a>
         </li>
       </ul>
       </div>
