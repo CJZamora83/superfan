@@ -78,6 +78,7 @@ tags-input .tags.focused {
 .nav-item > a,
 .nav-item > a:focus {
   color: #1B2631;
+  font-size: 14px;
 }
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus:hover {
@@ -277,7 +278,7 @@ section.cta .overlay {
 }
 section.sources {
   padding: 80px;
-  background-color: #E7DFDD;
+  background-color: #3F3F3F;
 }
 section.contact {
   text-align: center;
@@ -334,5 +335,6 @@ section.contact ul.list-social li.social-snapchat a:hover {
   margin-right: 30px;
 }
 footer {
-  padding: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
