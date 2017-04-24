@@ -137,6 +137,12 @@ tags-input .tags.focused {
     color: #fdcc52;
   }
 }
+
+/*.btn {
+  max-height: 3em;
+  max-width: 3em;
+}*/
+
 /* tweet css */
 .twt-bg {
   background-color: #00aced;

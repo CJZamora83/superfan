@@ -1,5 +1,9 @@
 /* Christian's big ass screen */
 @media only screen and (min-width: 1761px) {
+  tags-input {
+    width: 1000px;
+  }
+
   #feed-container {
     position: relative;
     left: 50%;
@@ -18,6 +22,10 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1760px) {
+    tags-input {
+    width: 800px;
+  }
+
   #feed-container {
     position: relative;
     left: 50%;
@@ -35,6 +43,10 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 1650px) {
+    tags-input {
+    width: 700px;
+  }
+
   #feed-container {
     position: relative;
     left: 50%;
@@ -52,6 +64,10 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 1325px) {
+  tags-input {
+    width: 500px;
+  }
+
   #feed-container {
     position: relative;
     left: 50%;
@@ -69,6 +85,9 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 1045px) {
+  tags-input {
+    width: 500px;
+  }
   #feed-container {
     position: relative;
     left: 50%;
@@ -91,6 +110,10 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 700px) {
+  tags-input {
+    width: 500px;
+  }
+
   #feed-container {
     position: relative;
     left: 50%;
