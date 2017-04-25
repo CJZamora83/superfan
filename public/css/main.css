@@ -56,9 +56,9 @@ tags-input .tags.focused {
   min-height: 32px;
 }
 /*---------------------------------*/
-.btn-outline-primary, .btn-outline-danger {
+/*.btn-outline-primary, .btn-outline-danger {
   border-radius: 2px;
-}
+}*/
 .carousel-control {
   display: none;
 }
