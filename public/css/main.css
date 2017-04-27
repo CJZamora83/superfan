@@ -65,6 +65,14 @@ tags-input .tags.focused {
 .fixed-top {
   background-color: #FFFFFF;
 }
+
+.logo {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.btn {
+  radius: 50%;
+}
 .navbar {
   padding-top: 0;
   padding-bottom: 0px;
