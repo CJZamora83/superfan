@@ -32,7 +32,8 @@ function home (req, res, next) {
   Gram.find({
     createdAt: {
       $gte: twoWeeksAgo
-    }
+    },
+    video: null
   }, {}, {sort: {likes: -1, createdAt: -1}, limit: 4}, function (er, row) {
     if (er) {
       console.log(er);

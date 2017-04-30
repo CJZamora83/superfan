@@ -12,8 +12,9 @@ function trending (req, res, next) {
   Gram.find({
     createdAt: { 
       $gte: oneWeekAgo
-    }
-  }, {}, {sort: {likes: -1, createdAt: -1}, limit: 4}, function (er, row) {
+    },
+    video: null
+  }, {}, { sort: { likes: -1, createdAt: -1 }, limit: 4 }, function (er, row) {
     if (er) {
       console.log(er);
       res.json(er);
@@ -24,7 +25,7 @@ function trending (req, res, next) {
 }
 
 function mostRecent (req, res, next) {
-  Gram.find({}, {}, {sort: {createdAt: -1}, limit: 4}, function (er, row) {
+  Gram.find({ video: null }, {}, { sort: { createdAt: -1 }, limit: 4 }, function (er, row) {
     if (er) {
       console.log(er);
       res.json(er);
