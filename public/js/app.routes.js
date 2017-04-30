@@ -8,10 +8,20 @@
   AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider", "$authProvider", '$locationProvider'];
 
   function AppRoutes($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
+    var homeTemplate;
+    var feedTemplate;
+    if (window.innerWidth > 400) {
+      homeTemplate = "/html/home.html";
+      feedTemplate = "/html/feed.html";
+    } else if (window.innerWidth <= 400) {
+      homeTemplate = "/html/mobile_home.html";
+      feedTemplate = "/html/mobile_feed.html";
+    }
+
     $stateProvider
       .state("homePage", {
         url: "/",
-        templateUrl: "/html/home.html",
+        templateUrl: homeTemplate,
         controller: "CarouselCtrl",
         controllerAs: "vm"
       })
@@ -23,7 +33,7 @@
       })
       .state("feed", {
         url: "/feed",
-        templateUrl: "/html/feed.html",
+        templateUrl: feedTemplate,
         controller: "FeedController",
         controllerAs: "vm"
       })
