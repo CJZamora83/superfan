@@ -180,9 +180,13 @@
     <div class="row cien">
       <h3><i class="fa fa-youtube"></i></h3>
     </div>
-    <div class="row justify-content-center">
-      <div class="d-inline-block spread" ng-bind-html="youtubeHome[0].video | trustHtml"></div>
-      <div class="d-inline-block spread" ng-bind-html="youtubeHome[1].video | trustHtml"></div>
+    <div class="row">
+      <div ng-repeat="tube in youtubeHome" class="hover">
+        <img class="d-inline-block hover yt-bg" src="{{ tube.feedImg }}">
+        <div class="overlay gradient" style="height:180px;margin-top:-180px;">
+          
+        </div>
+      </div>
     </div>
   </div>
   </section>
