@@ -20,10 +20,10 @@
             </div>
             <div class="d-inline-block twt-bg text-center" ng-if="brick.favorites" style="width:320px;height:100%;">
               <div class="tweet">
-                <h3>{{ brick.username }}</h3>
                 <p>{{ brick.text }}</p>
               </div>
               <div class="overlay gradient" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
+                <h5>{{ brick.username }}</h5>
                 <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:100%;">
                   <div style="position:absolute;left:0px;bottom:7.5px;">
                     <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.retweets }}</h6>
@@ -40,21 +40,24 @@
                 <h3>TMZ</h3>
                 <p ng-bind-html="brick.content | trustHtml"></p>
               </div>
-<!--               <div class="overlay gradient" style="position:absolute;height:100%;width:320px;margin-top:0px;top:0px;left:0px;">
+              <!-- <div class="overlay gradient" style="position:absolute;height:100%;width:320px;margin-top:0px;top:0px;left:0px;">
                 <h6>{{ brick.author }}</h6>
               </div> -->
             </div>
             <div class="d-inline-block" ng-if="brick.feedImg" style="width:320px;height:180px;">
               <img class="d-inline-block" ng-src="{{ brick.feedImg }}" alt="A masonry brick">
               <div class="overlay gradient" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
+                <h5>{{ brick.username }}</h5>
                 <button style="position:absolute;height:50px;width:50px;top:50%;left:50%;margin-left:-25px;margin-top:-25px;border-radius:50px;border:5px solid black;" ng-click="openYoutubeModal(brick.video)"><i>&#9658;</i></button>
-                  <div style="float:left;">
+                <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
+                  <div style="float:left;padding-bottom:5px;">
                     <h6 style="display:inline;"><i class="fa fa-thumbs-up" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.stats.likes }}</h6>
                     <h6 style="display:inline;"><i class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.stats.dislikes }}</h6>
                   </div>
                   <div style="float:right;">
                     <i style="float:right;margin-right:6px;" class="fa fa-youtube"></i>
                   </div>
+                </div>
               </div>
             </div>
           </div>
