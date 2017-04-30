@@ -13,6 +13,11 @@
     $scope.brickLimit = 50;
     $scope.tags = feedService.getTags();
     $scope.feed = feedService.feed;
+    var ready = true;
+
+    $('.grid').imagesLoaded(function() {
+      $('.grid').masonry('layout');
+    });
 
     $scope.openYoutubeModal = function (video) {
       $scope.activeYoutubeVideo = video;
@@ -25,10 +30,18 @@
     };
 
     $(window).scroll(function() {
-      if($(window).scrollTop() > (($(document).height() - $(window).height()) - 300) && ($scope.feed.length >= $scope.brickLimit)) {
-        // ajax call get data from server and append to the div
+      if($(window).scrollTop() > (($(document).height() - $(window).height()) - 2500) && ($scope.feed.length >= $scope.brickLimit) && ready) {
+        ready = false;
         $scope.$apply(function () {
-          $scope.brickLimit += 30;
+          $scope.brickLimit += 50;
+          setTimeout(function () {
+            $('.grid').imagesLoaded(function() {
+              $('.grid').masonry('layout');
+              setTimeout(function () {
+                ready = true;
+              }, 2500);
+            });
+          });
         })
       }
     })
