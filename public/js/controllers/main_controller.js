@@ -9,6 +9,7 @@
 
   function MainController($scope, userDataService, $auth, $state, $http, feedService, $location, $route) {
     var vm = this;
+    var celebritiesPretty = {};
     $scope.feedPage = false;
     $scope.tags = feedService.getTags();
     $scope.feedService = feedService;
@@ -35,7 +36,7 @@
           }
         };
 
-        window.onscroll = function() {myFunction()};
+        window.onscroll = function() { myFunction() };
       } else {
         window.onscroll = undefined;
         document.getElementById("navBar").style.backgroundColor = "#ffffff";
@@ -71,17 +72,13 @@
     //  the user clicked on an image or tweet
     // if there isnt a systemname,
     //  the user clicked the search button
-    $scope.loadFeed = function (systemname, prettyname) {
+    $scope.loadFeed = function (systemname) {
       if (systemname) {
         feedService.addFeed(systemname);
-        // var l = $scope.celebrities.length;
-        // while (l--) {
-
-        // }
-        // $scope.tags.push({
-        //   text: pretty,
-        //   system: systemname
-        // });
+        $scope.tags.push({
+          text: celebritiesPretty[systemname],
+          system: systemname
+        });
       }
 
       $location.url('/feed');
@@ -109,6 +106,13 @@
 
     $http.get('/api/celebrities/list').then(function (results) {
       $scope.celebrities = results.data;
+
+      var celebrity;
+      var l = $scope.celebrities.length;
+      while(l--) {
+        celebrity = $scope.celebrities[l];
+        celebritiesPretty[celebrity.system] = celebrity.pretty;
+      }
     });
 
     $('.carousel').carousel({
