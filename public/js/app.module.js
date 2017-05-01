@@ -55,6 +55,66 @@
         }
       };
 
+      service.sortFeed = function (type) {
+        if (type === 'most recent') {
+          service.feed = service.feed.sort(function (a, b) {
+            return new Date(b.createdAt) - new Date(a.createdAt);
+          })
+        } else if (type === 'trending') {
+          // rss dont have trending stats so
+          // loop through take rss out
+          // sort based on trending
+          // loop over the rss posts that were taken out
+          //      and randomly put them in the Math.random(), Math.ceil()
+          //      and the length of the existing array of other posts
+          var tmz = [];
+          for (var l in service.feed) {
+            if (service.feed[l].author) {
+              tmz.push(service.feed.splice(l,1));
+            }
+          }
+
+          service.feed = service.feed.sort(function (a, b) {
+            var aNum = 0;
+            var bNum = 0;
+            if (a.comments) {
+              // instagram
+              aNum = (a.likes || 0);
+            } else if (a.retweets) {
+              // twitter
+              aNum = (a.retweets || 0) + (a.favorites || 0);
+            } else if (a.stats) {
+              // youtube
+              aNum = ((a.stats.comments || 0) + (a.stats.favorites || 0) + (a.stats.views || 0) + (a.stats.likes || 0)) - (a.stats.dislikes || 0);
+            }
+
+            if (b.comments) {
+              // instagram
+              bNum = (b.likes || 0);
+            } else if (b.retweets) {
+              // twitter
+              bNum = (b.retweets || 0) + (b.favorites || 0);
+            } else if (b.stats) {
+              // youtube
+              bNum = ((b.stats.comments || 0) + (b.stats.favorites || 0) + (b.stats.views || 0) + (b.stats.likes || 0)) - (b.stats.dislikes || 0);
+            }
+
+            return bNum - aNum;
+          });
+
+          for (var l in tmz) {
+            service.feed.splice(Math.ceil(Math.random() * service.feed.length), 0, tmz[l]);
+          }
+        }
+
+        return service.feed;
+      };
+
+      service.filterFeed = function (type) {
+        // filter out based on the type
+        // first brainstorm: sort out content type, youtube,instagram,twitter,etc.
+      }
+
       service.getFeed = function () {
         return service.feed;
       };
