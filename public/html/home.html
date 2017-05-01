@@ -112,11 +112,11 @@
       <div ng-repeat="post in twitterHome" class="d-inline-block hover" style="height:322px;">
         <div class="d-inline-block twt-bg text-center" style="height:320px;width:320px;">
           <div class="tweet">
+            <h5>{{ post.username }}</h5>
             <p>{{ post.text }}</p>
           </div>
         </div>
         <div class="overlay text-center gradient" style="height:320px;width:320px;">
-          <h5>{{ post.username }}</h5>
           <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
             <div style="position:absolute;left:0px;bottom:7.5px;">
               <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.retweets }}</h6>
