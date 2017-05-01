@@ -25,6 +25,10 @@
     left: 50%;
     margin-left: -840px;
   }
+
+  #navBar {
+    position: fixed !important;
+  }
 }
 
 /* Large Devices, Wide Screens */

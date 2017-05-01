@@ -13,12 +13,15 @@
     $scope.feedPage = false;
     $scope.tags = feedService.getTags();
     $scope.feedService = feedService;
+    $scope.scrolled = false;
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       if (toState.url === '/feed') {
         $scope.feedPage = true;
       } else {
         $scope.feedPage = false;
       }
+
+      $scope.scrolled = false;
 
       $scope.page = toState.url;
       if (toState.url === '/') {
@@ -28,10 +31,18 @@
             [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
                 el.style.color = "#000000";
             });
+
+            $scope.$apply(function () {
+              $scope.feedPage = true;
+            });
           } else {
             document.getElementById("navBar").style.backgroundColor = "transparent";
             [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
                 el.style.color = "#ffffff";
+            });
+
+            $scope.$apply(function () {
+              $scope.feedPage = false;
             });
           }
         };
