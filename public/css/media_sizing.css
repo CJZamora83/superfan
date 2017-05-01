@@ -18,6 +18,13 @@
     margin-left: -645px;
     width: 1290px;
   }
+
+  .site, #navBar {
+    position: absolute;
+    width: 1680px;
+    left: 50%;
+    margin-left: -840px;
+  }
 }
 
 /* Large Devices, Wide Screens */
