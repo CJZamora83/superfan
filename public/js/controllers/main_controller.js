@@ -25,6 +25,11 @@
 
       $scope.page = toState.url;
       if (toState.url === '/') {
+        document.getElementById("navBar").style.backgroundColor = "transparent";
+        [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+            el.style.color = "#ffffff";
+        });
+
         function myFunction() {
           if (document.body.scrollTop > 720) {
             document.getElementById("navBar").style.backgroundColor = "#ffffff";
