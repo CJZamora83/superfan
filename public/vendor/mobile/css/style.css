@@ -232,8 +232,11 @@ body{
 }
 /*-- //introduction --*/
 /*-- about --*/
-.about,.contact{
+.contact{
     background: #062F4F;
+}
+.about{
+    background: #8e3cfe;
 }
 .about-heading h3{
 	color:#FFFFFF;
