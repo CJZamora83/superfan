@@ -3,17 +3,21 @@
 
     angular
       .module("superfanApp")
+      .run(['$anchorScroll', function($anchorScroll) {
+        $anchorScroll.yOffset = 50;
+      }])
       .controller("MainController", MainController);
 
-  MainController.$inject = ['$scope','userDataService', '$auth', '$state', '$http', 'feedService', '$location'];
+  MainController.$inject = ['$scope','userDataService', '$auth', '$state', '$http', 'feedService', '$location', '$anchorScroll'];
 
-  function MainController($scope, userDataService, $auth, $state, $http, feedService, $location, $route) {
+  function MainController($scope, userDataService, $auth, $state, $http, feedService, $location, $route, $anchorScroll) {
     var vm = this;
     var celebritiesPretty = {};
     $scope.feedPage = false;
     $scope.tags = feedService.getTags();
     $scope.feedService = feedService;
     $scope.scrolled = false;
+    $scope.$anchorScroll = $anchorScroll;
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       if (toState.url === '/feed') {
         $scope.feedPage = true;
@@ -61,6 +65,20 @@
         });
       }
     });
+
+    // $scope.gotoAnchor = function(id) {
+    //   var newHash = id;
+    //   if ($location.hash() !== newHash) {
+    //     // set the $location.hash to `newHash` and
+    //     // $anchorScroll will automatically scroll to it
+    //     $location.hash(newHash);
+    //   $scope.$anchorScroll;
+    //   } else {
+    //     // call $anchorScroll() explicitly,
+    //     // since $location.hash hasn't changed
+    //     $anchorScroll();
+    //   }
+    // };
 
     vm.userDS = userDataService;
 

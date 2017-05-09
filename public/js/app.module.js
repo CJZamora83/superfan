@@ -139,5 +139,11 @@
       return function(url){
         return $sce.trustAsResourceUrl(url);
       }
+    })
+    .filter("renderUrl", function () {
+      return function(text) {
+        text = text.replace( , )
+        return text
+      }
     });
 })();
