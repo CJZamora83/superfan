@@ -156,7 +156,7 @@ body{
     width: 31%;
     margin: 0 auto;
     text-align: center;
-    border: solid 16px #FFFFFF;
+    border: solid 8px #FFFFFF;
 }
 .w3ls-text h2{
     margin: 0;
@@ -985,7 +985,7 @@ footer p a:hover{
 }
 @media(max-width:480px){
 	.w3ls-text {
-		border: solid 10px #FFFFFF;
+		border: solid 8px #FFFFFF;
 	}
 	.w3ls-text h2 {
 		font-size: 3em;
