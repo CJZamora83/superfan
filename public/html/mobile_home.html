@@ -182,8 +182,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h3>We Connect Your Favorite Sources</h3>
         <div class="w3ls-border"> </div>
       </div>
-      <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-          <ul id="myTab" class="nav nav-tabs" role="tablist">
+      <div class="bs-example bs-example-tabs text-center" role="tabpanel" data-example-id="togglable-tabs">
+          <ul id="myTab" class="nav nav-tabs mobile" role="tablist">
             <li role="presentation" class="active"><a href="#home-main" id="home-tab" role="tab" data-toggle="tab" aria-controls="home-main" aria-expanded="true">All</a></li>
             <li role="presentation"><a href="#instagram" role="tab" id="instagram-tab" data-toggle="tab" aria-controls="instagram">Instagram</a></li>
             <li role="presentation"><a href="#twitter" role="tab" id="twitter-tab" data-toggle="tab" aria-controls="twitter">Twitter</a></li>
@@ -198,16 +198,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div> -->
             <div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
               <div class="w3_tab_img">
-                <div class="col-sm-6 w3_tab_img_left">
+                <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_left">
                   <div class="demo">
-                    <a class="cm-overlay" href="images/g1.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g1.jpg" alt=" " class="img-responsive" />
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Lorem</h5>
-                    <p>Consectetur</p>
+                    <img class="d-inline-block ig-bg" src="{{post.image}}">
                   </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -216,28 +209,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <!-- Second Panel -->
             <div role="tabpanel" class="tab-pane fade" id="instagram" aria-labelledby="instagram-tab">
               <div class="w3_tab_img">
-                <div class="col-sm-3 w3_tab_img_left">
+                <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_center">
                   <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g2.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g2.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Vivamus</h5>
-                    <p>Eleifend</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g3.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g3.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Cras</h5>
-                    <p>Pulvinar</p>
+                    <img class="d-inline-block ig-bg" src="{{post.image}}">
                   </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -246,52 +220,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <!-- Third Panel -->
             <div role="tabpanel" class="tab-pane fade" id="twitter" aria-labelledby="twitter-tab">
               <div class="w3_tab_img">
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g4.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g4.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Maecenas</h5>
-                    <p>Blandit</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g5.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g5.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Sodales</h5>
-                    <p>Vivamus</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g6.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g6.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Vivamus</h5>
-                    <p>Eleifend</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g7.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g7.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Maecenas</h5>
-                    <p>Blandit</p>
+                <div ng-repeat="post in twitterHome" class="col-sm-6 w3_tab_img_center">
+                  <div class="d-inline-block twt-bg text-center" style="height:320px;width:320px;">
+                    <div class="tweet">
+                      <h5>{{ post.username }}</h5>
+                      <p>{{ post.text }}</p>
+                    </div>
                   </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -300,40 +234,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- Fourth Panel -->
             <div role="tabpanel" class="tab-pane fade" id="youtube" aria-labelledby="youtube-tab">
               <div class="w3_tab_img">
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g1.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g1.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Morbi</h5>
-                    <p>Ornare </p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g2.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g2.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Cras</h5>
-                    <p>Pulvinar</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g3.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g3.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Donec</h5>
-                    <p>Vulputate</p>
+                <div ng-repeat="post in youtubeHome" class="col-sm-3 w3_tab_img_left hover">
+                  <img class="d-inline-block hover yt-bg" src="{{ post.feedImg }}">
+                  <div class="overlay gradient" style="height:180px;margin-top:-180px;">
+                    <h5>{{ post.username }}</h5>
+                    <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
+                      <div style="float:left;padding-bottom:5px;">
+                        <h6 style="display:inline;"><i class="fa fa-thumbs-up" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.stats.likes }}</h6>
+                        <h6 style="display:inline;"><i class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.stats.dislikes }}</h6>
+                      </div>
+                      <div style="float:right;">
+                        <i style="float:right;margin-right:6px;" class="fa fa-youtube"></i>
+                      </div>
+                    </div>
+                    <a ng-click="loadFeed(post.systemname)" style="position:absolute;display:block;top:0px;left:0px;height:100%;width:100%;z-index:15;"></a>
                   </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -376,20 +290,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="w3l-heading about-heading">
           <h3>Follow Us</h3>
           <div class="w3ls-border about-border"> </div>
-          <ul class="list-inline list-social text-center" style="margin-top:10px;">
-            <li class="social-twitter">
+          <ul class="list-inline" style="margin-top:10px;">
+            <li>
               <a href="https://twitter.com/thesuperfanapp" target="_blank"><i class="fa fa-twitter"></i></a>
             </li>
-            <li class="social-facebook">
+            <li>
               <a href="https://www.facebook.com/superfanapp/" target="_blank"><i class="fa fa-facebook"></i></a>
             </li>
-            <li class="social-google-plus">
+            <li>
               <a href="https://www.instagram.com/superfanapp/" target="_blank"><i class="fa fa-instagram"></i></a>
             </li>
             <li class="mail-envelope">
               <a href="mailto:team@superfan.love" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             </li>
-        </ul>
+          </ul>
     </section>
   </div>
   <!-- footer -->
