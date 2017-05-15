@@ -209,26 +209,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <!-- Second Panel -->
             <div role="tabpanel" class="tab-pane fade" id="instagram" aria-labelledby="instagram-tab">
               <div class="w3_tab_img">
-                <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_center">
-                  <div class="demo">
-                    <img class="d-inline-block ig-bg" src="{{post.image}}">
-                  </div>
-                </div>
-                <div class="clearfix"> </div>
+                <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_center hover">
+        <img class="d-inline-block ig-bg" src="{{post.image}}">
+        <div class="overlay gradient">
+          <h5>{{ post.username }}</h5>
+          <h6>{{ post.caption }}</h6>
+          <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
+            <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.comments}}</h6>
+            <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
+            <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
+          </div>
+          <a ng-click="loadFeed(post.systemname)" style="position:absolute;display:block;top:0px;left:0px;height:100%;width:100%;z-index:15;"></a>
+        </div>
+      </div>
               </div>
             </div>
       <!-- Third Panel -->
             <div role="tabpanel" class="tab-pane fade" id="twitter" aria-labelledby="twitter-tab">
               <div class="w3_tab_img">
-                <div ng-repeat="post in twitterHome" class="col-sm-6 w3_tab_img_center">
-                  <div class="d-inline-block twt-bg text-center" style="height:320px;width:320px;">
-                    <div class="tweet">
-                      <h5>{{ post.username }}</h5>
-                      <p>{{ post.text }}</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="clearfix"> </div>
+<div ng-repeat="post in twitterHome" class="col-sm-6 w3_tab_img_center hover" style="height:322px;">
+  <div class="d-inline-block twt-bg text-center" style="height:320px;width:320px;">
+    <div class="tweet">
+      <h5>{{ post.username }}</h5>
+      <p>{{ post.text }}</p>
+    </div>
+  </div>
+  <div class="overlay text-center gradient" style="height:320px;width:320px;">
+    <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
+      <div style="position:absolute;left:0px;bottom:7.5px;">
+        <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.retweets }}</h6>
+        <h6 style="display:inline;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.favorites }}</h6>
+      </div>
+      <div style="position:absolute;width:25px;right:0px;bottom:11px;">
+        <i style="float:right;margin-right:6px;" class="fa fa-twitter twitter-bird"></i>
+      </div>
+    </div>
+    <a ng-click="loadFeed(post.systemname)" style="position:absolute;display:block;top:0px;left:0px;height:100%;width:100%;z-index:15;"></a>
+  </div>
+</div>
               </div>
             </div>
         <!-- Fourth Panel -->
@@ -273,6 +291,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
           </div>
       </div>
+    </div>
       <script src="../vendor/mobile/js/jquery.tools.min.js"></script>
       <script src="../vendor/mobile/js/jquery.mobile.custom.min.js"></script>
       <script src="../vendor/mobile/s/jquery.cm-overlay.js"></script>
