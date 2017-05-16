@@ -15,7 +15,7 @@
     $scope.feed = feedService.feed;
     var ready = true;
 
-    if ($scope.mobile) {
+    if (!$scope.mobile) {
       $('.grid').imagesLoaded(function() {
         $('.grid').masonry('layout');
       });
