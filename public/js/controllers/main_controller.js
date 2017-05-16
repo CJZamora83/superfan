@@ -18,7 +18,8 @@
 
     if (window.innerWidth > 400) {
       $scope.mobile = false;
-    } else if (window.innerWidth <= 400) {
+    }
+     else if (window.innerWidth <= 400) {
       $scope.mobile = true;
     }
 
