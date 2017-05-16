@@ -15,9 +15,12 @@
     $scope.feed = feedService.feed;
     var ready = true;
 
-    $('.grid').imagesLoaded(function() {
-      $('.grid').masonry('layout');
-    });
+    if (!$scope.mobile) {
+      $('.grid').imagesLoaded(function() {
+        $('.grid').masonry('layout');
+      });
+      // heres a comment
+    }
 
     $scope.openYoutubeModal = function (video) {
       $scope.activeYoutubeVideo = video;
