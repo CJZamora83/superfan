@@ -14,6 +14,14 @@
     $scope.tags = feedService.getTags();
     $scope.feedService = feedService;
     $scope.scrolled = false;
+    $scope.mobile = false;
+
+    if (window.innerWidth > 400) {
+      $scope.mobile = false;
+    } else if (window.innerWidth <= 400) {
+      $scope.mobile = true;
+    }
+
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       if (toState.url === '/feed') {
         $scope.feedPage = true;
