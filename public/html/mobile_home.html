@@ -196,7 +196,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="w3_tab_img">
               <div ng-repeat="post in trending" class="col-sm-6 w3_tab_img_left">
                 <div class="demo">
-                  <a class="cm-overlay" href="{{post.image}}">
+                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
                     <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
                     </figure>
                   </a>
@@ -214,7 +214,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="w3_tab_img">
               <div ng-repeat="post in mostRecent" class="col-sm-6 w3_tab_img_left">
                 <div class="demo">
-                  <a class="cm-overlay" href="{{post.image}}">
+                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
                     <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
                     </figure>
                   </a>
@@ -231,7 +231,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="w3_tab_img">
               <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_left">
                 <div class="demo">
-                  <a class="cm-overlay" href="{{post.image}}">
+                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
                     <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
                     </figure>
                   </a>
@@ -248,11 +248,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="w3_tab_img">
               <div ng-repeat="post in twitterHome" class="col-sm-6 w3_tab_img_left">
                 <div class="demo twt-bg">
-                  <a class="cm-overlay" href="../vendor/mobile/images/g4.jpg">
+                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
                     <figure class="imghvr-shutter-in-out-diag-2">
                       <div class="tweet">
                         <h5>{{ post.username }}</h5>
-                        <p>{{ post.text }}</p>
+                        <p style="overflow-wrap:break-word;">{{ post.text }}</p>
                       </div>
                     </figure>
                   </a>
@@ -269,7 +269,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="w3_tab_img">
               <div ng-repeat="post in youtubeHome" class="col-sm-3 w3_tab_img_left">
                 <div class="demo">
-                  <a class="cm-overlay" href="{{post.feedImg}}">
+                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
                     <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.feedImg}}" alt=" " class="img-responsive">
                     </figure>
                   </a>
