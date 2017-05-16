@@ -29,6 +29,8 @@
       $scope.modalShown = false;
     };
 
+    console.log($scope.modalShown)
+
     $(window).scroll(function() {
       if($(window).scrollTop() > (($(document).height() - $(window).height()) - 2500) && ($scope.feed.length >= $scope.brickLimit) && ready) {
         ready = false;
