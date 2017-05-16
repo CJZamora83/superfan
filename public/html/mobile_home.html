@@ -66,23 +66,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <span class="icon-bar"></span>
               </button>
               <div class="agileits-logo">
-                <h1><a ui-sref="homePage"><img src="../img/sf_nav_logo.png" alt="" /></a></h1>
+                <h1<a ui-sref="homePage"><img src="../img/sf_nav_logo.png" alt="" /></a></h1>
               </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-<<<<<<< HEAD
-            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1" style="z-index: 2;">
-=======
             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1" style="z-index: 1;">
->>>>>>> 4847f5c5805bcd7d8028f38abdff06c6497b557e
               <nav>
                 <ul class="nav navbar-nav">
                   <li class="active"><a ui-sref="homePage">Home</a></li>
-                  <li><a href="#about" class="scroll">Mobile App</a></li>
                   <li><a ui-sref="feed" class="scroll">Feed</a></li>
-                  <!-- <li><a href="#team" class="scroll">Sign Up</a></li> -->
-                  <!-- <li><a href="#news" class="scroll">Login</a></li> -->
+                  <li><a href="#mobile" class="scroll">Mobile App</a></li>
                 </ul>
               </nav>
             </div>
@@ -112,6 +106,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </div>
       <div class="introduction-info">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus iaculis lacus in pharetra. Morbi tincidunt nisi et bibendum varius. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin vulputate arcu consequat enim vulputate posuere. Aenean malesuada quam vitae mi ullamcorper, vel lobortis risus rutrum.</p>
+        <div class="input-group">
+          <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;"">
+            <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
+          </tags-input>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" ng-click="loadFeed()">Search!</button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
