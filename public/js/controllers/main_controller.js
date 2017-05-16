@@ -127,6 +127,7 @@
 
     $http.get('/api/youtube/home').then(function (results) {
       $scope.youtubeHome = results.data;
+      console.log(results.data)
     });
 
     $http.get('/api/celebrities/list').then(function (results) {

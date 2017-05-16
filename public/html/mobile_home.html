@@ -183,94 +183,106 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </div>
       <div class="bs-example bs-example-tabs text-center" role="tabpanel" data-example-id="togglable-tabs">
         <ul id="myTab" class="nav nav-tabs mobile" role="tablist">
-          <li role="presentation" class="active"><a href="#home-main" id="home-tab" role="tab" data-toggle="tab" aria-controls="home-main" aria-expanded="true">All</a></li>
-          <li role="presentation"><a href="#instagram" role="tab" id="instagram-tab" data-toggle="tab" aria-controls="instagram">Instagram</a></li>
-          <li role="presentation"><a href="#twitter" role="tab" id="twitter-tab" data-toggle="tab" aria-controls="twitter">Twitter</a></li>
-          <li role="presentation"><a href="#youtube" role="tab" id="youtube-tab" data-toggle="tab" aria-controls="youtube">YouTube</a></li>
-          <li role="presentation"><a href="#tmz" role="tab" id="tmz-tab" data-toggle="tab" aria-controls="tmz">TMZ</a></li>
+          <li role="presentation" style="width:16% !important;" class="active"><a href="#trending" role="tab" id="trending-tab" data-toggle="tab" aria-controls="trending" aria-expanded="true">Trending</a></li>
+          <li role="presentation" style="width:22.5% !important;"><a href="#mostrecent" role="tab" id="mostrecent-tab" data-toggle="tab" aria-controls="mostrecent">Most Recent</a></li>
+          <li role="presentation" style="width:20% !important;"><a href="#instagram" role="tab" id="instagram-tab" data-toggle="tab" aria-controls="instagram">Instagram</a></li>
+          <li role="presentation" style="width:15% !important;"><a href="#twitter" role="tab" id="twitter-tab" data-toggle="tab" aria-controls="twitter">Twitter</a></li>
+          <li role="presentation" style="width:17.5% !important;"><a href="#youtube" role="tab" id="youtube-tab" data-toggle="tab" aria-controls="youtube">YouTube</a></li>
+          <li role="presentation" style="width:11% !important;"><a href="#tmz" role="tab" id="tmz-tab" data-toggle="tab" aria-controls="tmz">TMZ</a></li>
         </ul>
         <div id="myTabContent" class="tab-content">
           <!-- First Panel -->
-         <!--  <div ng-repeat="post in instagramHome" class="hover">
-            <img class="d-inline-block ig-bg" src="{{post.image}}">
-            <a ng-click="loadFeed(post.systemname)" style="position:absolute;display:block;top:0px;left:0px;height:100%;width:100%;z-index:15;"></a>
-          </div> -->
-          <div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
+          <div role="tabpanel" class="tab-pane fade in active" id="trending" aria-labelledby="trending-tab">
             <div class="w3_tab_img">
-              <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_left">
+              <div ng-repeat="post in trending" class="col-sm-6 w3_tab_img_left">
                 <div class="demo">
-                  <img class="d-inline-block ig-bg" src="{{post.image}}">
+                  <a class="cm-overlay" href="{{post.image}}">
+                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
+                    </figure>
+                  </a>
+                </div>
+                <div class="agile-gallery-info">
+                  <h5>{{post.username}}</h5>
+                  <p>{{post.comments}} - {{post.likes}}</p>
                 </div>
               </div>
               <div class="clearfix"> </div>
             </div>
           </div>
           <!-- Second Panel -->
-          <div role="tabpanel" class="tab-pane fade" id="instagram" aria-labelledby="instagram-tab">
+          <div role="tabpanel" class="tab-pane fade" id="mostrecent" aria-labelledby="mostrecent-tab">
             <div class="w3_tab_img">
-              <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_center hover">
-                <img class="d-inline-block ig-bg" src="{{post.image}}">
-                <div class="overlay gradient">
-                  <h5>{{ post.username }}</h5>
-                  <h6>{{ post.caption }}</h6>
-                  <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
-                    <h6 style="float:left;"><i class="fa fa-comments" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.comments}}</h6>
-                    <h6 style="float:left;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.likes }}</h6>
-                    <i style="float:right;margin-right:6px;" class="fa fa-instagram"></i>
-                  </div>
-                  <a ng-click="loadFeed(post.systemname)" style="position:absolute;display:block;top:0px;left:0px;height:100%;width:100%;z-index:15;"></a>
+              <div ng-repeat="post in mostRecent" class="col-sm-6 w3_tab_img_left">
+                <div class="demo">
+                  <a class="cm-overlay" href="{{post.image}}">
+                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
+                    </figure>
+                  </a>
+                </div>
+                <div class="agile-gallery-info">
+                  <h5>{{post.username}}</h5>
+                  <p>{{post.comments}} - {{post.likes}}</p>
                 </div>
               </div>
             </div>
           </div>
           <!-- Third Panel -->
-          <div role="tabpanel" class="tab-pane fade" id="twitter" aria-labelledby="twitter-tab">
+          <div role="tabpanel" class="tab-pane fade" id="instagram" aria-labelledby="instagram-tab">
             <div class="w3_tab_img">
-              <div ng-repeat="post in twitterHome" class="col-sm-6 w3_tab_img_center hover" style="height:322px;">
-                <div class="d-inline-block twt-bg text-center" style="height:320px;width:320px;">
-                  <div class="tweet">
-                    <h5>{{ post.username }}</h5>
-                    <p>{{ post.text }}</p>
-                  </div>
+              <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_left">
+                <div class="demo">
+                  <a class="cm-overlay" href="{{post.image}}">
+                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
+                    </figure>
+                  </a>
                 </div>
-                <div class="overlay text-center gradient" style="height:320px;width:320px;">
-                  <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
-                    <div style="position:absolute;left:0px;bottom:7.5px;">
-                      <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.retweets }}</h6>
-                      <h6 style="display:inline;"><i class="fa fa-heart" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.favorites }}</h6>
-                    </div>
-                    <div style="position:absolute;width:25px;right:0px;bottom:11px;">
-                      <i style="float:right;margin-right:6px;" class="fa fa-twitter twitter-bird"></i>
-                    </div>
-                  </div>
-                  <a ng-click="loadFeed(post.systemname)" style="position:absolute;display:block;top:0px;left:0px;height:100%;width:100%;z-index:15;"></a>
+                <div class="agile-gallery-info">
+                  <h5>{{post.username}}</h5>
+                  <p>{{post.comments}} - {{post.likes}}</p>
                 </div>
               </div>
             </div>
           </div>
           <!-- Fourth Panel -->
+          <div role="tabpanel" class="tab-pane fade" id="twitter" aria-labelledby="twitter-tab">
+            <div class="w3_tab_img">
+              <div ng-repeat="post in twitterHome" class="col-sm-6 w3_tab_img_left">
+                <div class="demo twt-bg">
+                  <a class="cm-overlay" href="../vendor/mobile/images/g4.jpg">
+                    <figure class="imghvr-shutter-in-out-diag-2">
+                      <div class="tweet">
+                        <h5>{{ post.username }}</h5>
+                        <p>{{ post.text }}</p>
+                      </div>
+                    </figure>
+                  </a>
+                </div>
+                <div class="agile-gallery-info">
+                  <h5>{{post.username}}</h5>
+                  <p>{{post.retweets}} - {{post.favorites}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fifth Panel -->
           <div role="tabpanel" class="tab-pane fade" id="youtube" aria-labelledby="youtube-tab">
             <div class="w3_tab_img">
-              <div ng-repeat="post in youtubeHome" class="col-sm-3 w3_tab_img_left hover">
-                <img class="d-inline-block hover yt-bg" src="{{ post.feedImg }}">
-                <div class="overlay gradient" style="height:180px;margin-top:-180px;">
-                  <h5>{{ post.username }}</h5>
-                  <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:320px;">
-                    <div style="float:left;padding-bottom:5px;">
-                      <h6 style="display:inline;"><i class="fa fa-thumbs-up" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.stats.likes }}</h6>
-                      <h6 style="display:inline;"><i class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ post.stats.dislikes }}</h6>
-                    </div>
-                    <div style="float:right;">
-                      <i style="float:right;margin-right:6px;" class="fa fa-youtube"></i>
-                    </div>
-                  </div>
-                  <a ng-click="loadFeed(post.systemname)" style="position:absolute;display:block;top:0px;left:0px;height:100%;width:100%;z-index:15;"></a>
+              <div ng-repeat="post in youtubeHome" class="col-sm-3 w3_tab_img_left">
+                <div class="demo">
+                  <a class="cm-overlay" href="{{post.feedImg}}">
+                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.feedImg}}" alt=" " class="img-responsive">
+                    </figure>
+                  </a>
+                </div>
+                <div class="agile-gallery-info">
+                  <h5>{{post.username}}</h5>
+                  <p>{{post.stats.likes}} - {{post.stats.dislikes}}</p>
                 </div>
               </div>
               <div class="clearfix"> </div>
             </div>
           </div>
-          <!-- Fifth Panel -->
+          <!-- Sixth Panel -->
           <div role="tabpanel" class="tab-pane fade" id="tmz" aria-labelledby="tmz-tab">
             <div class="w3_tab_img">
               <div class="col-sm-3 w3_tab_img_left">
