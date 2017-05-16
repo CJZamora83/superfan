@@ -15,9 +15,11 @@
     $scope.feed = feedService.feed;
     var ready = true;
 
-    $('.grid').imagesLoaded(function() {
-      $('.grid').masonry('layout');
-    });
+    if ($scope.mobile) {
+      $('.grid').imagesLoaded(function() {
+        $('.grid').masonry('layout');
+      });
+    }
 
     $scope.openYoutubeModal = function (video) {
       $scope.activeYoutubeVideo = video;
@@ -28,8 +30,6 @@
       $scope.activeYoutubeVideo = '';
       $scope.modalShown = false;
     };
-
-    console.log($scope.modalShown)
 
     $(window).scroll(function() {
       if($(window).scrollTop() > (($(document).height() - $(window).height()) - 2500) && ($scope.feed.length >= $scope.brickLimit) && ready) {
