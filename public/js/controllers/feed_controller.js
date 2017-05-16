@@ -19,6 +19,7 @@
       $('.grid').imagesLoaded(function() {
         $('.grid').masonry('layout');
       });
+      // heres a comment
     }
 
     $scope.openYoutubeModal = function (video) {
