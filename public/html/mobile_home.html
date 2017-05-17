@@ -77,6 +77,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <li class="active"><a ui-sref="homePage">Home</a></li>
                   <li><a ui-sref="feed" class="scroll">Feed</a></li>
                   <li><a href="#mobile" class="scroll">Mobile App</a></li>
+                  <li>
+                    <div class="input-group" style="width:100%;margin-bottom: 5px;">
+                      <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;"">
+                        <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
+                      </tags-input>
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </span>
+                    </div>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -106,7 +116,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </div>
       <div class="introduction-info">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus iaculis lacus in pharetra. Morbi tincidunt nisi et bibendum varius. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin vulputate arcu consequat enim vulputate posuere. Aenean malesuada quam vitae mi ullamcorper, vel lobortis risus rutrum.</p>
-        <div class="input-group">
+        <div class="input-group" style="width:100%;">
           <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;"">
             <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
           </tags-input>
@@ -190,7 +200,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <div class="bs-example bs-example-tabs text-center" role="tabpanel" data-example-id="togglable-tabs">
         <ul id="myTab" class="nav nav-tabs mobile" role="tablist">
           <li role="presentation" style="width:16% !important;" class="active"><a href="#trending" role="tab" id="trending-tab" data-toggle="tab" aria-controls="trending" aria-expanded="true">Trending</a></li>
-          <li role="presentation" style="width:22.5% !important;"><a href="#mostrecent" role="tab" id="mostrecent-tab" data-toggle="tab" aria-controls="mostrecent">Most Recent</a></li>
+          <li role="presentation" style="width:22.5% !important;"><a href="#mostrecent" role="tab" id="mostrecent-tab" data-toggle="tab" aria-controls="mostrecent">Latest</a></li>
           <li role="presentation" style="width:20% !important;"><a href="#instagram" role="tab" id="instagram-tab" data-toggle="tab" aria-controls="instagram">Instagram</a></li>
           <li role="presentation" style="width:15% !important;"><a href="#twitter" role="tab" id="twitter-tab" data-toggle="tab" aria-controls="twitter">Twitter</a></li>
           <li role="presentation" style="width:17.5% !important;"><a href="#youtube" role="tab" id="youtube-tab" data-toggle="tab" aria-controls="youtube">YouTube</a></li>

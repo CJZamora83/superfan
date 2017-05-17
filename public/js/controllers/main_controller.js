@@ -16,10 +16,10 @@
     $scope.scrolled = false;
     $scope.mobile = false;
 
-    if (window.innerWidth > 400) {
+    if (window.innerWidth > 750) {
       $scope.mobile = false;
     }
-     else if (window.innerWidth <= 400) {
+     else if (window.innerWidth <= 750) {
       $scope.mobile = true;
     }
 
@@ -39,14 +39,14 @@
           [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
               el.style.color = "#ffffff";
           });
-  
+
           function myFunction() {
             if (document.body.scrollTop > 720) {
               document.getElementById("navBar").style.backgroundColor = "#ffffff";
               [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
                   el.style.color = "#000000";
               });
-  
+
               $scope.$apply(function () {
                 $scope.feedPage = true;
               });
@@ -55,13 +55,13 @@
               [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
                   el.style.color = "#ffffff";
               });
-  
+
               $scope.$apply(function () {
                 $scope.feedPage = false;
               });
             }
           };
-  
+
           window.onscroll = function() { myFunction() };
         } else {
           window.onscroll = undefined;
