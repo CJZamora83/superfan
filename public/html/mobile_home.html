@@ -78,7 +78,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <li><a ui-sref="feed" class="scroll">Feed</a></li>
                   <li><a href="#mobile" class="scroll">Mobile App</a></li>
                   <li>
-                    <div class="input-group" style="width:100%;margin-bottom: 5px;">
+                    <div class="input-group" style="width:95%;margin-bottom: 5px;margin-left: 5px;">
                       <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;"">
                         <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
                       </tags-input>
