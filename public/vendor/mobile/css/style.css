@@ -125,11 +125,11 @@ body{
     margin: 0;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #fff;
+    color: #000000;
     border: solid 4px rgba(255, 255, 255, 0);
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #ffffff;
+    color: #000000;
     border: solid 4px #ffffff;
     background: none;
 }
@@ -912,7 +912,7 @@ footer p a:hover{
 	.navbar-nav > li {
 	    float: none;
 		text-align: center;
-		background: #8e3cfe;
+		background: #FFFFFF;
 		display: block;
 	}
 	.navbar-nav > li > a {
