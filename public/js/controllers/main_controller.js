@@ -15,12 +15,15 @@
     $scope.feedService = feedService;
     $scope.scrolled = false;
     $scope.mobile = false;
+    $scope.mobileNavSearchToggle = false;
 
     if (window.innerWidth > 750) {
       $scope.mobile = false;
+      $scope.mobileNavSearchToggle = false;
     }
      else if (window.innerWidth <= 750) {
       $scope.mobile = true;
+      $scope.mobileNavSearchToggle = false;
     }
 
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {

@@ -1,48 +1,47 @@
-<head>
-  <title>SUPERFAN</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
-  <meta name="keywords" content="Rock Music Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-  <!-- bootstrap-css -->
-  <link href="../vendor/mobile/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-  <!--// bootstrap-css -->
-  <!-- css -->
-  <link rel="stylesheet" href="../vendor/mobile/css/style.css" type="text/css" media="all" />
-  <!--// css -->
-  <!-- gallery -->
-  <link type="text/css" rel="stylesheet" href="../vendor/mobile/css/cm-overlay.css" />
-  <!-- //gallery -->
-  <!-- font-awesome icons -->
-  <link href="../vendor/mobile/css/font-awesome.css" rel="stylesheet">
-  <!-- //font-awesome icons -->
-  <!-- font -->
-  <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-  <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
-  <!-- //font -->
-  <script src="../vendor/mobile/js/jquery-1.11.1.min.js"></script>
-  <script src="../vendor/mobile/js/bootstrap.js"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      $(".scroll").click(function(event){
-        event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-      });
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="../vendor/mobile/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="../vendor/mobile/css/style.css" type="text/css" media="all" />
+<!--// css -->
+<!-- gallery -->
+<link type="text/css" rel="stylesheet" href="../vendor/mobile/css/cm-overlay.css" />
+<!-- //gallery -->
+<!-- font-awesome icons -->
+<link href="../vendor/mobile/css/font-awesome.css" rel="stylesheet">
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script src="../vendor/mobile/js/jquery-1.11.1.min.js"></script>
+<script src="../vendor/mobile/js/bootstrap.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
     });
+  });
+</script>
+<!-- animation -->
+<link href="../vendor/mobile/css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="../vendor/mobile/js/wow.min.js"></script>
+  <script>
+     new WOW().init();
   </script>
-  <!-- animation -->
-  <link href="../vendor/mobile/css/animate.css" rel="stylesheet" type="text/css" media="all">
-  <script src="../vendor/mobile/js/wow.min.js"></script>
-    <script>
-       new WOW().init();
-    </script>
-  <!-- //animation -->
-
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
+<!-- //animation -->
+<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1" style="position:relative;left:0px;height:100%;">
+  <nav>
+    <ul class="nav navbar-nav">
+      <li class="active"><a ui-sref="homePage">Home</a></li>
+      <li><a ui-sref="feed" class="scroll">Feed</a></li>
+      <li><a href="#mobile" class="scroll">Mobile App</a></li>
+    </ul>
+  </nav>
+</div>
+<div>
   <!-- banner -->
   <div class="banner jarallax">
     <div class="agileinfo-dot">
@@ -51,45 +50,25 @@
           <nav class="navbar navbar-default fixed-top">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+              <button type="button" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
+                <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" /></a>
               </button>
-              <div class="agileits-logo">
-                <h1<a ui-sref="homePage"><img src="../img/sf_nav_logo.png" alt="" /></a></h1>
+              <div ng-show="mobileNavSearchToggle" class="input-group" style="width:95%;margin-bottom:5px;margin-left:5px;">
+                <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self:center !important;">
+                  <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100" style="z-index:10;"></auto-complete>
+                </tags-input>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </span>
               </div>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-              <nav style="height:100vh;">
-                <ul class="nav navbar-nav">
-                  <li class="active"><a ui-sref="homePage">Home</a></li>
-                  <li><a ui-sref="feed" class="scroll">Feed</a></li>
-                  <li><a href="#mobile" class="scroll">Mobile App</a></li>
-                  <li style="height:100%">
-                    <div class="input-group" style="width:95%;margin-bottom: 5px;margin-left: 5px;">
-                      <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;"">
-                        <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100" style="z-index:10;"></auto-complete>
-                      </tags-input>
-                      <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <!-- /.navbar-collapse -->
           </nav>
         </div>
       </div>
       <div class="w3layouts-banner-info">
         <div class="container">
           <div class="w3ls-text">
-            <h2>SUP ER FAN</h2>
+            <h2>SUPER FAN</h2>
           </div>
           <div class="w3-arrow bounce animated">
             <a href="#indro" class="scroll"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -98,28 +77,50 @@
       </div>
     </div>
   </div>
-  <!-- //banner -->
-  <!-- introduction -->
-  <div class="introduction" id="indro">
-    <div class="container">
-      <div class="w3l-heading">
-        <h3>Introduction</h3>
-        <div class="w3ls-border"> </div>
-      </div>
-      <div class="introduction-info">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus iaculis lacus in pharetra. Morbi tincidunt nisi et bibendum varius. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin vulputate arcu consequat enim vulputate posuere. Aenean malesuada quam vitae mi ullamcorper, vel lobortis risus rutrum.</p>
-        <div class="input-group" style="width:100%;">
-          <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;"">
-            <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
-          </tags-input>
-          <span class="input-group-btn">
-            <button class="btn btn-primary" type="button" ng-click="loadFeed()">Search!</button>
-          </span>
+  <div class="input-group" style="width:90%;margin:0 auto;">
+    <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;"">
+      <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
+    </tags-input>
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="button" ng-click="loadFeed()">Search!</button>
+    </span>
+  </div>
+  <div style="max-width:90%;margin:0 auto;">
+    <h3 style="text-align:center;">Trending Celebrities</h3>
+    <div class="w3_tab_img">
+      <div ng-repeat="post in trending" class="col-sm-6 w3_tab_img_left">
+        <div class="demo">
+          <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
+            <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
+            </figure>
+          </a>
+        </div>
+        <div class="agile-gallery-info">
+          <h5 style="align-self: center;text-align:center;">{{post.username}}</h5>
+          <p style="text-align:center;"><i class="fa fa-comments" aria-hidden="true"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.likes}}</p>
         </div>
       </div>
+      <div class="clearfix"> </div>
+    </div>
+    <hr style="height:2px;width:80%;background-color:black;">
+    <h3 style="text-align:center;">Most Recent</h3>
+    <div class="w3_tab_img">
+      <div ng-repeat="post in mostRecent" class="col-sm-6 w3_tab_img_left">
+        <div class="demo">
+          <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
+            <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
+            </figure>
+          </a>
+        </div>
+        <div class="agile-gallery-info">
+          <h5 style="align-self: center;text-align:center;">{{post.username}}</h5>
+          <p style="text-align:center;"><i class="fa fa-comments" aria-hidden="true"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.likes}}</p>
+        </div>
+      </div>
+      <div class="clearfix"> </div>
     </div>
   </div>
-  <!-- //introduction -->
+  <!-- //gallery -->
   <!-- about -->
   <div class="about" id="about">
     <div class="container">
@@ -134,9 +135,8 @@
               <span class="glyphicon glyphicon-asterisk effect-1" aria-hidden="true"></span>
             </div>
             <div class="col-xs-9 about-grid-right">
-              <h4>Cum soluta nobis est</h4>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus
-              reiciendis maiores alias consequatur aut</p>
+              <h4>Live Celebrity Feeds</h4>
+              <p>Our technology scours the web in real-time to find the latest celebrity content from a variety of sources</p>
             </div>
             <div class="clearfix"> </div>
           </div>
@@ -145,9 +145,9 @@
               <span class="glyphicon glyphicon-road effect-1" aria-hidden="true"></span>
             </div>
             <div class="col-xs-9 about-grid-right">
-              <h4>Soluta nobis est cum</h4>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus
-              reiciendis maiores alias consequatur aut</p>
+              <h4>QUICK & EASY TO USE</h4>
+              <p style="padding-left:0px;margin-left:0px;">1. Enter Celebrity Name(s)</p>
+              <p style="padding-left:0px;margin-left:0px;">2. Enter Celebrity Feed</p>
             </div>
             <div class="clearfix"> </div>
           </div>
@@ -159,20 +159,8 @@
               <span class="glyphicon glyphicon-plane effect-1" aria-hidden="true"></span>
             </div>
             <div class="col-xs-9 about-grid-right">
-              <h4>Eligendi cum soluta nobis</h4>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus
-              reiciendis maiores alias consequatur aut</p>
-            </div>
-            <div class="clearfix"> </div>
-          </div>
-          <div class="col-md-6 about-grid">
-            <div class="col-xs-3 about-grid-left">
-              <span class="glyphicon glyphicon-bed effect-1" aria-hidden="true"></span>
-            </div>
-            <div class="col-xs-9 about-grid-right">
-              <h4>Nobis cum soluta est</h4>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus
-              reiciendis maiores alias consequatur aut</p>
+              <h4>CUSTOMIZE YOUR FEED</h4>
+              <p>You're always in control - choose the sources you want to see</p>
             </div>
             <div class="clearfix"> </div>
           </div>
@@ -182,145 +170,16 @@
     </div>
   </div>
   <!-- //about -->
-  <!-- gallery -->
-  <div class="gallery" id="events">
-    <div class="container">
-      <div class="w3l-heading">
-        <h3>We Connect Your Favorite Sources</h3>
-        <div class="w3ls-border"> </div>
-      </div>
-      <div class="bs-example bs-example-tabs text-center" role="tabpanel" data-example-id="togglable-tabs">
-        <ul id="myTab" class="nav nav-tabs mobile" role="tablist">
-          <li role="presentation" style="width:16% !important;" class="active"><a href="#trending" role="tab" id="trending-tab" data-toggle="tab" aria-controls="trending" aria-expanded="true">Trending</a></li>
-          <li role="presentation" style="width:22.5% !important;"><a href="#mostrecent" role="tab" id="mostrecent-tab" data-toggle="tab" aria-controls="mostrecent">Latest</a></li>
-          <li role="presentation" style="width:20% !important;"><a href="#instagram" role="tab" id="instagram-tab" data-toggle="tab" aria-controls="instagram">Instagram</a></li>
-          <li role="presentation" style="width:15% !important;"><a href="#twitter" role="tab" id="twitter-tab" data-toggle="tab" aria-controls="twitter">Twitter</a></li>
-          <li role="presentation" style="width:17.5% !important;"><a href="#youtube" role="tab" id="youtube-tab" data-toggle="tab" aria-controls="youtube">YouTube</a></li>
-          <li role="presentation" style="width:11% !important;"><a href="#tmz" role="tab" id="tmz-tab" data-toggle="tab" aria-controls="tmz">TMZ</a></li>
-        </ul>
-        <div id="myTabContent" class="tab-content">
-          <!-- First Panel -->
-          <div role="tabpanel" class="tab-pane fade in active" id="trending" aria-labelledby="trending-tab">
-            <div class="w3_tab_img">
-              <div ng-repeat="post in trending" class="col-sm-6 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
-                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
-                    </figure>
-                  </a>
-                </div>
-                <div class="agile-gallery-info">
-                  <h5 style="align-self: center;">{{post.username}}</h5>
-                  <p><i class="fa fa-comments" aria-hidden="true"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.likes}}</p>
-                </div>
-              </div>
-              <div class="clearfix"> </div>
-            </div>
-          </div>
-          <!-- Second Panel -->
-          <div role="tabpanel" class="tab-pane fade" id="mostrecent" aria-labelledby="mostrecent-tab">
-            <div class="w3_tab_img">
-              <div ng-repeat="post in mostRecent" class="col-sm-6 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
-                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
-                    </figure>
-                  </a>
-                </div>
-                <div class="agile-gallery-info">
-                  <h5 style="align-self: center;">{{post.username}}</h5>
-                  <p><i class="fa fa-comments" aria-hidden="true" style="margin-right:1px;"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true" style="margin-right:1px;"></i>{{post.likes}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Third Panel -->
-          <div role="tabpanel" class="tab-pane fade" id="instagram" aria-labelledby="instagram-tab">
-            <div class="w3_tab_img">
-              <div ng-repeat="post in instagramHome" class="col-sm-6 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
-                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
-                    </figure>
-                  </a>
-                </div>
-                <div class="agile-gallery-info">
-                  <h5 style="align-self: center;">{{post.username}}</h5>
-                  <p><i class="fa fa-comments" aria-hidden="true" style="margin-right:1px;"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true" style="margin-right:1px;"></i>{{post.likes}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fourth Panel -->
-          <div role="tabpanel" class="tab-pane fade" id="twitter" aria-labelledby="twitter-tab">
-            <div class="w3_tab_img">
-              <div ng-repeat="post in twitterHome" class="col-sm-6 w3_tab_img_left">
-                <div class="demo twt-bg">
-                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <div class="tweet">
-                        <h5>{{ post.username }}</h5>
-                        <p style="overflow-wrap:break-word;">{{ post.text }}</p>
-                      </div>
-                    </figure>
-                  </a>
-                </div>
-                <div class="agile-gallery-info">
-                  <h5>{{post.username}}</h5>
-                  <p><i class="fa fa-retweet" aria-hidden="true" style="margin-right:1px;"></i>{{post.retweets}}&nbsp;<i class="fa fa-heart" aria-hidden="true" style="margin-right:1px;"></i>{{post.favorites}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fifth Panel -->
-          <div role="tabpanel" class="tab-pane fade" id="youtube" aria-labelledby="youtube-tab">
-            <div class="w3_tab_img">
-              <div ng-repeat="post in youtubeHome" class="col-sm-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
-                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.feedImg}}" alt=" " class="img-responsive">
-                    </figure>
-                  </a>
-                </div>
-                <div class="agile-gallery-info">
-                  <h5 style="align-self: center;">{{post.username}}</h5>
-                  <h6><i class="fa fa-thumbs-up" aria-hidden="true"  style="margin-right:1px;"></i>{{post.stats.likes}}&nbsp;<i class="fa fa-thumbs-down" aria-hidden="true"  style="margin-right:1px;"></i>{{post.stats.dislikes}}&nbsp;{{post.stats.views}} Views</h6>
-                </div>
-              </div>
-              <div class="clearfix"> </div>
-            </div>
-          </div>
-          <!-- Sixth Panel -->
-          <div role="tabpanel" class="tab-pane fade" id="tmz" aria-labelledby="tmz-tab">
-            <div class="w3_tab_img">
-              <div class="col-sm-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="../vendor/mobile/images/g4.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g4.jpg" alt=" " class="img-responsive">
-                    </figure>
-                  </a>
-                </div>
-                <div class="agile-gallery-info">
-                  <h5>Lorem</h5>
-                  <p>Consectetur</p>
-                </div>
-              </div>
-              <div class="clearfix"> </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div style="padding-top:5px;padding-bottom:5px;">
+    <hr style="height:1px;">
+    <p style="text-align:center;font-size:10;padding-bottom:2.5px;margin-bottom:2.5px;">DON'T SEE YOUR FAVORITE CELEBRITY?</p>
+    <p style="text-align:center;font-size:10;padding-top:0px;margin-top:0px;">ENTER THEIR NAME BELOW AND WE'LL MAKE SURE TO ADD THEM!</p>
+    <div style="margin:0 auto;width:90%;padding:5px;border:2px solid rgba(211,211,211,.8);border-radius:15px;">
+      <input type="text" style="display:inline;border:none;width:80%;">
+      <input type="submit" value="SUBMIT" style="font-size:9px;display:inline;height:25px;width:50px;background-color:blue;color:white;">
     </div>
-    <script src="../vendor/mobile/js/jquery.tools.min.js"></script>
-    <script src="../vendor/mobile/js/jquery.mobile.custom.min.js"></script>
-    <script src="../vendor/mobile/js/jquery.cm-overlay.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('.cm-overlay').cmOverlay();
-      });
-    </script>
+    <hr style="height:1px;">
   </div>
-  <!-- //gallery -->
   <!-- contact -->
   <section id="contact" class="contact bg-contact">
     <div class="container-fluid">
@@ -342,6 +201,7 @@
           </li>
         </ul>
       </div>
+      <h6 style="text-align:center;"><a href="mailto:team@superfan.love">team@superfan.love</a></h6>
     </div>
   </section>
   <!-- footer -->
@@ -381,3 +241,4 @@
       });
   </script>
 <!-- //here ends scrolling icon -->
+</div>
