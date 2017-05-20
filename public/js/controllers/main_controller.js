@@ -125,6 +125,7 @@
 
     $http.get('/api/twitter/home').then(function (results) {
       $scope.twitterHome = results.data;
+      console.log($scope.twitterHome);
     });
 
     $http.get('/api/youtube/home').then(function (results) {

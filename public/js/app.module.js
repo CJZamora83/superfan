@@ -22,12 +22,17 @@
             var posts = results.data.results;
             var l = posts.length;
             while (l--) {
+              if (posts[l].entities) {
+                console.log(posts[l]);
+              }
               service.feed.push(posts[l]);
             }
 
             service.feed = service.feed.sort(function (a, b) {
               return new Date(b.createdAt) - new Date(a.createdAt);
             });
+
+            console.log(service.feed);
           });
         }
       };
@@ -78,6 +83,26 @@
     .filter("trustUrl", function($sce) {
       return function(url){
         return $sce.trustAsResourceUrl(url);
+      }
+    })
+    .filter("twitterUrl", function() {
+      return function (text, post){
+        console.log(post.entities);
+        if (post.entities) {
+          if (post.entities.basic) {
+            if (post.entities.basic.urls.length > 0) {
+              var l = post.entities.basic.urls.length;
+              var replacement
+              while (l--) {
+                replacement = '<a href="' + post.entities.basic.urls[l].expanded_url + '" target="_blank">' + post.entities.basic.urls[l].display_url + '</a>';
+                text = text.replace(post.entities.basic.urls[l].url, replacement);
+              }
+            }
+          }
+        }
+
+        console.log(text)
+        return text;
       }
     });
 })();

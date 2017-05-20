@@ -6,8 +6,8 @@
         <div masonry='{"itemSelector" : ".tile"}'>
           <!-- items -->
           <div masonry-tile class="tile hover" ng-repeat="brick in feed | limitTo:brickLimit" style="width:322px;">
-            <div>
-              <img class="d-inline-block ig-bg" ng-if="brick.likes" ng-src="{{ brick.image }}" alt="A masonry brick">
+            <div ng-if="brick.likes">
+              <img class="d-inline-block ig-bg" ng-src="{{ brick.image }}" alt="A masonry brick">
               <div ng-if="brick.likes" class="overlay gradient" style="margin-top:-321px;margin-left:1px;">
                 <h5>{{ brick.username }}</h5>
                 <h6>{{ brick.caption }}</h6>
@@ -20,10 +20,10 @@
             </div>
             <div class="d-inline-block twt-bg text-center" ng-if="brick.favorites" style="width:320px;height:100%;">
               <div class="tweet">
-                <p>{{ brick.text }}</p>
+                <p ng-bind-html="brick.text | twitterUrl:brick | trustHtml"></p>
                 <h5>{{ brick.username }}</h5>
               </div>
-              <div class="overlay gradient" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
+              <div ng-hide="brick.entities.basic.urls.length > 0" class="overlay gradient" style="position:absolute;height:100%;width:100%;margin-top:0px;top:0px;left:0px;">
                 <div style="position:absolute;padding:2.5px;bottom:0px;left:0px;width:100%;">
                   <div style="position:absolute;left:0px;bottom:7.5px;">
                     <h6 style="display:inline;"><i class="fa fa-retweet" aria-hidden="true" style="margin-left:6px;margin-right:3px;"></i>{{ brick.retweets }}</h6>
