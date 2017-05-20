@@ -22,17 +22,12 @@
             var posts = results.data.results;
             var l = posts.length;
             while (l--) {
-              if (posts[l].entities) {
-                console.log(posts[l]);
-              }
               service.feed.push(posts[l]);
             }
 
             service.feed = service.feed.sort(function (a, b) {
               return new Date(b.createdAt) - new Date(a.createdAt);
             });
-
-            console.log(service.feed);
           });
         }
       };
@@ -87,7 +82,6 @@
     })
     .filter("twitterUrl", function() {
       return function (text, post){
-        console.log(post.entities);
         if (post.entities) {
           if (post.entities.basic) {
             if (post.entities.basic.urls.length > 0) {
@@ -101,7 +95,6 @@
           }
         }
 
-        console.log(text)
         return text;
       }
     });
