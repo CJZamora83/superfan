@@ -41,38 +41,10 @@
 </head>
 
 <body ng-controller="MainController">
-  <script>
 
-    // var dist = body.scrollTop;
-
-    //   window.onscroll = function() {
-    //       if (dist > 350) {
-    //           nav.backgroundColor = "#FFFFFF";
-    //       }
-    //       else {
-    //           nav.backgroundColor = "transparent";
-    //       }
-    //     console.log('scrolling');
-    // };
-    // window.onscroll = function() {myFunction()};
-
-    // function myFunction() {
-    //     if (document.body.scrollTop > 720) {
-    //         document.getElementById("navBar").style.backgroundColor = "#ffffff";
-    //         [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
-    //             el.style.color = "#000000";
-    //         });
-    //     } else {
-    //         document.getElementById("navBar").style.backgroundColor = "transparent";
-    //         [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
-    //             el.style.color = "#ffffff";
-    //         });
-    //     }
-    // }
-  </script>
     <!-- Navigation -->
 <div class="site">
-    <nav id="navBar" class="navbar fixed-top navbar-toggleable-md" style="background-color: transparent">
+    <nav ng-if="!mobile" id="navBar" class="navbar fixed-top navbar-toggleable-md" style="background-color: transparent">
         <div class="container-fluid d-flex justify-content-md-start">
             <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <img src="/img/sf_nav_logo.png" style="margin-top:5px;margin-bottom:10px;">

@@ -16,9 +16,11 @@
     $scope.sortSelect = 'most recent';
     var ready = true;
 
-    $('.grid').imagesLoaded(function() {
-      $('.grid').masonry('layout');
-    });
+    if (!$scope.mobile) {
+      $('.grid').imagesLoaded(function() {
+        $('.grid').masonry('layout');
+      });
+    }
 
     $scope.openYoutubeModal = function (video) {
       $scope.activeYoutubeVideo = video;
@@ -40,7 +42,7 @@
               $('.grid').masonry('layout');
               setTimeout(function () {
                 ready = true;
-              }, 2500);
+              }, 5000);
             });
           });
         })

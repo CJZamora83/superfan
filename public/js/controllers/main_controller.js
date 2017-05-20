@@ -18,6 +18,18 @@
     $scope.feedService = feedService;
     $scope.scrolled = false;
     $scope.$anchorScroll = $anchorScroll;
+    $scope.mobile = false;
+    $scope.mobileNavSearchToggle = false;
+
+    if (window.innerWidth > 750) {
+      $scope.mobile = false;
+      $scope.mobileNavSearchToggle = false;
+    }
+     else if (window.innerWidth <= 750) {
+      $scope.mobile = true;
+      $scope.mobileNavSearchToggle = false;
+    }
+
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       if (toState.url === '/feed') {
         $scope.feedPage = true;
@@ -28,41 +40,43 @@
       $scope.scrolled = false;
 
       $scope.page = toState.url;
-      if (toState.url === '/') {
-        document.getElementById("navBar").style.backgroundColor = "transparent";
-        [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
-            el.style.color = "#ffffff";
-        });
+      if (!$scope.mobile) {
+        if (toState.url === '/') {
+          document.getElementById("navBar").style.backgroundColor = "transparent";
+          [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+              el.style.color = "#ffffff";
+          });
 
-        function myFunction() {
-          if (document.body.scrollTop > 720) {
-            document.getElementById("navBar").style.backgroundColor = "#ffffff";
-            [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
-                el.style.color = "#000000";
-            });
+          function myFunction() {
+            if (document.body.scrollTop > 720) {
+              document.getElementById("navBar").style.backgroundColor = "#ffffff";
+              [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+                  el.style.color = "#000000";
+              });
 
-            $scope.$apply(function () {
-              $scope.feedPage = true;
-            });
-          } else {
-            document.getElementById("navBar").style.backgroundColor = "transparent";
-            [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
-                el.style.color = "#ffffff";
-            });
+              $scope.$apply(function () {
+                $scope.feedPage = true;
+              });
+            } else {
+              document.getElementById("navBar").style.backgroundColor = "transparent";
+              [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+                  el.style.color = "#ffffff";
+              });
 
-            $scope.$apply(function () {
-              $scope.feedPage = false;
-            });
-          }
-        };
+              $scope.$apply(function () {
+                $scope.feedPage = false;
+              });
+            }
+          };
 
-        window.onscroll = function() { myFunction() };
-      } else {
-        window.onscroll = undefined;
-        document.getElementById("navBar").style.backgroundColor = "#ffffff";
-        [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
-            el.style.color = "#000000";
-        });
+          window.onscroll = function() { myFunction() };
+        } else {
+          window.onscroll = undefined;
+          document.getElementById("navBar").style.backgroundColor = "#ffffff";
+          [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
+              el.style.color = "#000000";
+          });
+        }
       }
     });
 
@@ -132,10 +146,12 @@
 
     $http.get('/api/twitter/home').then(function (results) {
       $scope.twitterHome = results.data;
+      console.log($scope.twitterHome);
     });
 
     $http.get('/api/youtube/home').then(function (results) {
       $scope.youtubeHome = results.data;
+      console.log(results.data)
     });
 
     $http.get('/api/celebrities/list').then(function (results) {

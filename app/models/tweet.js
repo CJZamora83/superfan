@@ -7,7 +7,9 @@ var tweetSchema = new mongoose.Schema({
   createdAt: Date,
   text: String,
   favorites: Number,
-  retweets: Number
+  retweets: Number,
+  entities: Object,
+  quote: Object
 });
 
 var Tweet = mongoose.model('Tweet', tweetSchema);

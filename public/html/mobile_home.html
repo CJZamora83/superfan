@@ -1,17 +1,3 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>SUPERFAN</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<meta name="keywords" content="Rock Music Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
 <link href="../vendor/mobile/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -46,51 +32,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      new WOW().init();
   </script>
 <!-- //animation -->
-
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<![endif]-->
-</head>
-<body>
+<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1" style="position:relative;left:0px;height:100%;">
+  <nav>
+    <ul class="nav navbar-nav">
+      <li class="active"><a ui-sref="homePage">Home</a></li>
+      <li><a ui-sref="feed" class="scroll">Feed</a></li>
+      <li><a href="#mobile" class="scroll">Mobile App</a></li>
+    </ul>
+  </nav>
+</div>
+<div>
   <!-- banner -->
   <div class="banner jarallax">
     <div class="agileinfo-dot">
       <div class="header">
         <div class="container">
-          <nav class="navbar navbar-default">
+          <nav class="navbar navbar-default fixed-top">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+              <button type="button" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
+                <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" /></a>
               </button>
-              <div class="agileits-logo">
-                <h1><a href="index.html"><img src="../img/sf_nav_logo.png" alt="" /></a></h1>
+              <div ng-show="mobileNavSearchToggle" class="input-group" style="width:95%;margin-bottom:5px;margin-left:5px;">
+                <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self:center !important;">
+                  <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100" style="z-index:10;"></auto-complete>
+                </tags-input>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </span>
               </div>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-              <nav>
-                <ul class="nav navbar-nav">
-                  <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="#about" class="scroll">Mobile App</a></li>
-                  <li><a href="#events" class="scroll">Feed</a></li>
-                  <!-- <li><a href="#team" class="scroll">Sign Up</a></li> -->
-                  <!-- <li><a href="#news" class="scroll">Login</a></li> -->
-                </ul>
-              </nav>
-            </div>
-            <!-- /.navbar-collapse -->
           </nav>
         </div>
       </div>
       <div class="w3layouts-banner-info">
         <div class="container">
-          <div class="w3ls-text">
-            <h2>SUP ER FAN</h2>
+          <div class="w3ls-text" style="padding:15px;">
+            <h2><span style="display:block;">SUPER</span><span style="display:block;">FAN</span></h2>
           </div>
           <div class="w3-arrow bounce animated">
             <a href="#indro" class="scroll"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -99,20 +77,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
     </div>
   </div>
-  <!-- //banner -->
-  <!-- introduction -->
-  <div class="introduction" id="indro">
-    <div class="container">
-      <div class="w3l-heading">
-        <h3>Introduction</h3>
-        <div class="w3ls-border"> </div>
+  <h5 style="text-align:center;">ENTER CELEBRITY NAMES HERE</h5>
+  <div class="input-group" style="width:90%;margin:0 auto;">
+    <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;">
+      <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
+    </tags-input>
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="button" ng-click="loadFeed()">Search!</button>
+    </span>
+  </div>
+  <hr style="width:90%;height:1px;background-color:black;">
+  <hr style="height:2px;background-color:black;">
+  <div style="max-width:90%;margin:0 auto;">
+    <h3 style="text-align:center;">Trending Celebrities</h3>
+    <div class="w3_tab_img">
+      <div ng-repeat="post in trending" class="col-sm-6 w3_tab_img_left">
+        <div class="demo">
+          <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
+            <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
+            </figure>
+          </a>
+        </div>
+        <div class="agile-gallery-info">
+          <h5 style="align-self: center;text-align:center;overflow-wrap:break-word;">{{post.username}}</h5>
+          <p style="text-align:center;"><i class="fa fa-comments" aria-hidden="true"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.likes}}</p>
+        </div>
       </div>
-      <div class="introduction-info">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus iaculis lacus in pharetra. Morbi tincidunt nisi et bibendum varius. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin vulputate arcu consequat enim vulputate posuere. Aenean malesuada quam vitae mi ullamcorper, vel lobortis risus rutrum.</p>
+      <div class="clearfix"> </div>
+    </div>
+    <hr style="height:2px;width:80%;background-color:black;">
+    <h3 style="text-align:center;">Most Recent</h3>
+    <div class="w3_tab_img">
+      <div ng-repeat="post in mostRecent" class="col-sm-6 w3_tab_img_left">
+        <div class="demo">
+          <a class="cm-overlay"  ng-click="loadFeed(post.systemname)">
+            <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
+            </figure>
+          </a>
+        </div>
+        <div class="agile-gallery-info">
+          <h5 style="align-self: center;text-align:center;overflow-wrap:break-word;">{{post.username}}</h5>
+          <p style="text-align:center;"><i class="fa fa-comments" aria-hidden="true"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.likes}}</p>
+        </div>
       </div>
+      <div class="clearfix"> </div>
     </div>
   </div>
-  <!-- //introduction -->
+  <!-- //gallery -->
   <!-- about -->
   <div class="about" id="about">
     <div class="container">
@@ -127,9 +138,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <span class="glyphicon glyphicon-asterisk effect-1" aria-hidden="true"></span>
             </div>
             <div class="col-xs-9 about-grid-right">
-              <h4>Cum soluta nobis est</h4>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus
-              reiciendis maiores alias consequatur aut</p>
+              <h4>Live Celebrity Feeds</h4>
+              <p>Our technology scours the web in real-time to find the latest celebrity content from a variety of sources</p>
             </div>
             <div class="clearfix"> </div>
           </div>
@@ -138,9 +148,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <span class="glyphicon glyphicon-road effect-1" aria-hidden="true"></span>
             </div>
             <div class="col-xs-9 about-grid-right">
-              <h4>Soluta nobis est cum</h4>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus
-              reiciendis maiores alias consequatur aut</p>
+              <h4>QUICK & EASY TO USE</h4>
+              <p style="padding-left:0px;margin-left:0px;">1. Enter Celebrity Name(s)</p>
+              <p style="padding-left:0px;margin-left:0px;">2. Enter Celebrity Feed</p>
             </div>
             <div class="clearfix"> </div>
           </div>
@@ -152,20 +162,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <span class="glyphicon glyphicon-plane effect-1" aria-hidden="true"></span>
             </div>
             <div class="col-xs-9 about-grid-right">
-              <h4>Eligendi cum soluta nobis</h4>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus
-              reiciendis maiores alias consequatur aut</p>
-            </div>
-            <div class="clearfix"> </div>
-          </div>
-          <div class="col-md-6 about-grid">
-            <div class="col-xs-3 about-grid-left">
-              <span class="glyphicon glyphicon-bed effect-1" aria-hidden="true"></span>
-            </div>
-            <div class="col-xs-9 about-grid-right">
-              <h4>Nobis cum soluta est</h4>
-              <p>Itaque earum rerum hic tenetur a sapiente delectus
-              reiciendis maiores alias consequatur aut</p>
+              <h4>CUSTOMIZE YOUR FEED</h4>
+              <p>You're always in control - choose the sources you want to see</p>
             </div>
             <div class="clearfix"> </div>
           </div>
@@ -175,224 +173,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
   </div>
   <!-- //about -->
-  <!-- gallery -->
-  <div class="gallery" id="events">
-    <div class="container">
-      <div class="w3l-heading">
-        <h3>We Connect Your Favorite Sources</h3>
-        <div class="w3ls-border"> </div>
-      </div>
-      <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-          <ul id="myTab" class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#home-main" id="home-tab" role="tab" data-toggle="tab" aria-controls="home-main" aria-expanded="true">All</a></li>
-            <li role="presentation"><a href="#instagram" role="tab" id="instagram-tab" data-toggle="tab" aria-controls="instagram">Instagram</a></li>
-            <li role="presentation"><a href="#twitter" role="tab" id="twitter-tab" data-toggle="tab" aria-controls="twitter">Twitter</a></li>
-            <li role="presentation"><a href="#youtube" role="tab" id="youtube-tab" data-toggle="tab" aria-controls="youtube">YouTube</a></li>
-            <li role="presentation"><a href="#tmz" role="tab" id="tmz-tab" data-toggle="tab" aria-controls="tmz">TMZ</a></li>
-          </ul>
-          <div id="myTabContent" class="tab-content">
-        <!-- First Panel -->
-<!--        <div ng-repeat="post in instagramHome" class="hover">
-        <img class="d-inline-block ig-bg" src="{{post.image}}">
-          <a ng-click="loadFeed(post.systemname)" style="position:absolute;display:block;top:0px;left:0px;height:100%;width:100%;z-index:15;"></a>
-      </div> -->
-            <div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
-              <div class="w3_tab_img">
-                <div class="col-sm-6 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="images/g1.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g1.jpg" alt=" " class="img-responsive" />
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Lorem</h5>
-                    <p>Consectetur</p>
-                  </div>
-                </div>
-                <div class="clearfix"> </div>
-              </div>
-            </div>
-      <!-- Second Panel -->
-            <div role="tabpanel" class="tab-pane fade" id="instagram" aria-labelledby="instagram-tab">
-              <div class="w3_tab_img">
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g2.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g2.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Vivamus</h5>
-                    <p>Eleifend</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g3.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g3.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Cras</h5>
-                    <p>Pulvinar</p>
-                  </div>
-                </div>
-                <div class="clearfix"> </div>
-              </div>
-            </div>
-      <!-- Third Panel -->
-            <div role="tabpanel" class="tab-pane fade" id="twitter" aria-labelledby="twitter-tab">
-              <div class="w3_tab_img">
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g4.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g4.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Maecenas</h5>
-                    <p>Blandit</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g5.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g5.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Sodales</h5>
-                    <p>Vivamus</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g6.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g6.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Vivamus</h5>
-                    <p>Eleifend</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g7.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g7.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Maecenas</h5>
-                    <p>Blandit</p>
-                  </div>
-                </div>
-                <div class="clearfix"> </div>
-              </div>
-            </div>
-        <!-- Fourth Panel -->
-            <div role="tabpanel" class="tab-pane fade" id="youtube" aria-labelledby="youtube-tab">
-              <div class="w3_tab_img">
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g1.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g1.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Morbi</h5>
-                    <p>Ornare </p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g2.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g2.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Cras</h5>
-                    <p>Pulvinar</p>
-                  </div>
-                </div>
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g3.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g3.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Donec</h5>
-                    <p>Vulputate</p>
-                  </div>
-                </div>
-                <div class="clearfix"> </div>
-              </div>
-            </div>
-        <!-- Fifth Panel -->
-            <div role="tabpanel" class="tab-pane fade" id="tmz" aria-labelledby="tmz-tab">
-              <div class="w3_tab_img">
-                <div class="col-sm-3 w3_tab_img_left">
-                  <div class="demo">
-                    <a class="cm-overlay" href="../vendor/mobile/images/g4.jpg">
-                      <figure class="imghvr-shutter-in-out-diag-2"><img src="../vendor/mobile/images/g4.jpg" alt=" " class="img-responsive">
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="agile-gallery-info">
-                    <h5>Lorem</h5>
-                    <p>Consectetur</p>
-                  </div>
-                </div>
-                <div class="clearfix"> </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <script src="../vendor/mobile/js/jquery.tools.min.js"></script>
-      <script src="../vendor/mobile/js/jquery.mobile.custom.min.js"></script>
-      <script src="../vendor/mobile/s/jquery.cm-overlay.js"></script>
-      <script>
-        $(document).ready(function(){
-          $('.cm-overlay').cmOverlay();
-        });
-      </script>
+  <div style="padding-top:5px;padding-bottom:5px;">
+    <hr style="height:1px;">
+    <p style="text-align:center;font-size:10;padding-bottom:2.5px;margin-bottom:2.5px;">DON'T SEE YOUR FAVORITE CELEBRITY?</p>
+    <p style="text-align:center;font-size:10;padding-top:0px;margin-top:0px;">ENTER THEIR NAME BELOW AND WE'LL MAKE SURE TO ADD THEM!</p>
+    <div style="margin:0 auto;width:90%;padding:5px;border:2px solid rgba(211,211,211,.8);border-radius:15px;">
+      <input type="text" style="display:inline;border:none;width:80%;">
+      <input type="submit" value="SUBMIT" style="font-size:9px;display:inline;height:25px;width:50px;background-color:blue;color:white;">
     </div>
+    <hr style="height:1px;">
   </div>
-  <!-- //gallery -->
   <!-- contact -->
-      <section id="contact" class="contact bg-contact">
-      <div class="container-fluid">
-        <div class="w3l-heading about-heading">
-          <h3>Follow Us</h3>
-          <div class="w3ls-border about-border"> </div>
-          <ul class="list-inline list-social text-center" style="margin-top:10px;">
-            <li class="social-twitter">
-              <a href="https://twitter.com/thesuperfanapp" target="_blank"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li class="social-facebook">
-              <a href="https://www.facebook.com/superfanapp/" target="_blank"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li class="social-google-plus">
-              <a href="https://www.instagram.com/superfanapp/" target="_blank"><i class="fa fa-instagram"></i></a>
-            </li>
+  <section id="contact" class="contact bg-contact">
+    <div class="container-fluid">
+      <div class="w3l-heading about-heading">
+        <h3>Follow Us</h3>
+        <div class="w3ls-border about-border"> </div>
+        <ul class="list-inline" style="margin-top:10px;">
+          <li>
+            <a href="https://twitter.com/thesuperfanapp" target="_blank"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/superfanapp/" target="_blank"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/superfanapp/" target="_blank"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li class="mail-envelope">
+            <a href="mailto:team@superfan.love" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          </li>
         </ul>
-    </section>
-  </div>
+      </div>
+      <h6 style="text-align:center;"><a href="mailto:team@superfan.love">team@superfan.love</a></h6>
+    </div>
+  </section>
   <!-- footer -->
   <footer>
     <div class="container">
-      <p>© 2017 SUPERFAN. All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> </p>
+      <p>© 2017 SUPERFAN. All Rights Reserved</p>
     </div>
   </footer>
   <!-- //footer -->
@@ -406,7 +224,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       imgHeight: 768
     })
   </script>
-  <script src="js/responsiveslides.min.js"></script>
+  <script src="../vendor/mobile/js/responsiveslides.min.js"></script>
   <script type="text/javascript" src="../vendor/mobile/js/move-top.js"></script>
   <script type="text/javascript" src="../vendor/mobile/js/easing.js"></script>
   <!-- here stars scrolling icon -->
@@ -426,5 +244,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       });
   </script>
 <!-- //here ends scrolling icon -->
-</body>
-</html>
+</div>

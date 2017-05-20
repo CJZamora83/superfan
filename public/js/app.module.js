@@ -140,10 +140,22 @@
         return $sce.trustAsResourceUrl(url);
       }
     })
-    .filter("renderUrl", function () {
-      return function(text) {
-        text = text.replace( , )
-        return text
+    .filter("twitterUrl", function() {
+      return function (text, post){
+        if (post.entities) {
+          if (post.entities.basic) {
+            if (post.entities.basic.urls.length > 0) {
+              var l = post.entities.basic.urls.length;
+              var replacement
+              while (l--) {
+                replacement = '<a href="' + post.entities.basic.urls[l].expanded_url + '" target="_blank">' + post.entities.basic.urls[l].display_url + '</a>';
+                text = text.replace(post.entities.basic.urls[l].url, replacement);
+              }
+            }
+          }
+        }
+
+        return text;
       }
     });
 })();

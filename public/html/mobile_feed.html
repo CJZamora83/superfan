@@ -1,1 +1,124 @@
-<h1 style="padding-top:250px;">Hey im the mobile feed template</h1>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="../vendor/mobile/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="../vendor/mobile/css/style.css" type="text/css" media="all" />
+<!--// css -->
+<!-- gallery -->
+<link type="text/css" rel="stylesheet" href="../vendor/mobile/css/cm-overlay.css" />
+<!-- //gallery -->
+<!-- font-awesome icons -->
+<link href="../vendor/mobile/css/font-awesome.css" rel="stylesheet">
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script src="../vendor/mobile/js/jquery-1.11.1.min.js"></script>
+<script src="../vendor/mobile/js/bootstrap.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+    });
+  });
+</script>
+<!-- animation -->
+<link href="../vendor/mobile/css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="../vendor/mobile/js/wow.min.js"></script>
+  <script>
+     new WOW().init();
+  </script>
+<section>
+  <!-- <div class="container-fluid" style="width:100%;"> -->
+  <div id="feed-container">
+    <div class="row justify-content-center">
+      <div class="col-sm-10">
+        <div class="w3_tab_img">
+          <div ng-repeat="post in feed" class="col-sm-6 w3_tab_img_left">
+            <div ng-if="post.likes">
+              <div class="demo">
+                <a class="cm-overlay">
+                  <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.image}}" alt=" " class="img-responsive">
+                  </figure>
+                </a>
+              </div>
+              <div class="agile-gallery-info">
+                <h5 style="align-self: center;text-align:center;overflow-wrap:break-word;">{{post.username}}</h5>
+                <p style="text-align:center;"><i class="fa fa-comments" aria-hidden="true"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.likes}}</p>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <div ng-if="post.favorites">
+              <div class="demo">
+                <div class="twt-bg">
+                  <p style="text-align:center;overflow-wrap:break-word">{{ post.text }}</p>
+                </div>
+              </div>
+              <div class="agile-gallery-info">
+                <h5 style="align-self: center;text-align:center;overflow-wrap:break-word;">{{post.username}}</h5>
+                <p style="text-align:center;"><i class="fa fa-retweets" aria-hidden="true"></i>{{post.retweets}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.favorites}}</p>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <div ng-if="post.feedImg">
+              <div class="demo">
+                <a class="cm-overlay">
+                  <figure class="imghvr-shutter-in-out-diag-2"><img src="{{post.feedImg}}" alt=" " class="img-responsive">
+                  </figure>
+                </a>
+              </div>
+              <div class="agile-gallery-info">
+                <h5 style="align-self: center;text-align:center;overflow-wrap:break-word;">{{post.username}}</h5>
+                <p style="text-align:center;"><i class="fa fa-likes" aria-hidden="true"></i>{{post.stats.likes}}&nbsp;<i class="fa fa-dislikes" aria-hidden="true"></i>{{post.stats.dislikes}}</p>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <div ng-if="post.content">
+              <div class="demo">
+                <div class="tmz-bg">
+                  <p style="text-align:center;" ng-bind-html="post.content | trustHtml"></p>
+                </div>
+              </div>
+              <div class="agile-gallery-info">
+                <h5 style="align-self: center;text-align:center;">TMZ!</h5>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="../vendor/mobile/js/jarallax.js"></script>
+<script src="../vendor/mobile/js/SmoothScroll.min.js"></script>
+<script type="text/javascript">
+  /* init Jarallax */
+  $('.jarallax').jarallax({
+    speed: 0.5,
+    imgWidth: 1366,
+    imgHeight: 768
+  })
+</script>
+<script src="../vendor/mobile/js/responsiveslides.min.js"></script>
+<script type="text/javascript" src="../vendor/mobile/js/move-top.js"></script>
+<script type="text/javascript" src="../vendor/mobile/js/easing.js"></script>
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    /*
+      var defaults = {
+      containerID: 'toTop', // fading element id
+      containerHoverID: 'toTopHover', // fading element hover id
+      scrollSpeed: 1200,
+      easingType: 'linear'
+      };
+    */
+    $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+</script>
+

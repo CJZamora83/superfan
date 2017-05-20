@@ -24,6 +24,38 @@ h6 {
   font-weight: 200;
   letter-spacing: 1px;
 }
+
+/*mobile logo*/
+.mobile-logo-button {
+  border:none !important;
+  height:30px;
+  width:40px;
+}
+
+.mobile-logo-button:active {
+  border:none !important;
+  height:30px;
+  width:40px;
+}
+
+.mobile-logo-button:link {
+  border:none !important;
+  height:30px;
+  width:40px;
+}
+
+.mobile-logo-button:hover {
+  border:none !important;
+  height:30px;
+  width:40px;
+}
+
+.mobile-logo-button:visited {
+  border:none !important;
+  height:30px;
+  width:40px;
+}
+
 /* changes bootstraps col-md-3 width when the screen is greater than 992px */
 @media (min-width: 992px) {
   .col-md-3 {
@@ -212,6 +244,7 @@ div.hover:hover div.overlay {
   opacity: .80;
   color: #FFFFFF;
   padding: 10px;
+  pointer-events:none;
 }​
 div.hover:hover div.overlay.text-center {
   position: relative;
