@@ -148,7 +148,7 @@
               var l = post.entities.basic.urls.length;
               var replacement
               while (l--) {
-                replacement = '<a href="' + post.entities.basic.urls[l].expanded_url + '" target="_blank">' + post.entities.basic.urls[l].display_url + '</a>';
+                replacement = '<a href="' + post.entities.basic.urls[l].expanded_url + '" target="_blank" style="position:relative;z-index:1;">' + post.entities.basic.urls[l].display_url + '</a>';
                 text = text.replace(post.entities.basic.urls[l].url, replacement);
               }
             }

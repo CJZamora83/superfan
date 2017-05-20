@@ -244,7 +244,6 @@ div.hover:hover div.overlay {
   opacity: .80;
   color: #FFFFFF;
   padding: 10px;
-  pointer-events:none;
 }​
 div.hover:hover div.overlay.text-center {
   position: relative;
