@@ -21,12 +21,26 @@
     $scope.mobile = false;
     $scope.mobileNavSearchToggle = false;
 
-    if (window.innerWidth > 750) {
-      $scope.mobile = false;
-      $scope.mobileNavSearchToggle = false;
+    function detectmob() { 
+      if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+      ){
+        return true;
+      }else {
+        return false;
+      }
     }
-     else if (window.innerWidth <= 750) {
+
+    if (detectmob()) {
       $scope.mobile = true;
+      $scope.mobileNavSearchToggle = false;
+    } else {
+      $scope.mobile = false;
       $scope.mobileNavSearchToggle = false;
     }
 

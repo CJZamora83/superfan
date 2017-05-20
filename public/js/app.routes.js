@@ -10,12 +10,27 @@
   function AppRoutes($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
     var homeTemplate = "/html/home.html";
     var feedTemplate = "/html/feed.html";
-    if (window.innerWidth > 400) {
-      homeTemplate = "/html/home.html";
-      feedTemplate = "/html/feed.html";
-    } else if (window.innerWidth <= 400) {
+    function detectmob() { 
+      if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+      ){
+        return true;
+      }else {
+        return false;
+      }
+    }
+
+    if (detectmob()) {
       homeTemplate = "/html/mobile_home.html";
       feedTemplate = "/html/mobile_feed.html";
+    } else {
+      homeTemplate = "/html/home.html";
+      feedTemplate = "/html/feed.html";
     }
 
     $stateProvider
