@@ -77,14 +77,17 @@
       </div>
     </div>
   </div>
+  <h5 style="text-align:center;">ENTER CELEBRITY NAMES HERE</h5>
   <div class="input-group" style="width:90%;margin:0 auto;">
-    <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;"">
+    <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self: center !important;">
       <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
     </tags-input>
     <span class="input-group-btn">
       <button class="btn btn-primary" type="button" ng-click="loadFeed()">Search!</button>
     </span>
   </div>
+  <hr style="width:90%;height:1px;background-color:black;">
+  <hr style="height:2px;background-color:black;">
   <div style="max-width:90%;margin:0 auto;">
     <h3 style="text-align:center;">Trending Celebrities</h3>
     <div class="w3_tab_img">
