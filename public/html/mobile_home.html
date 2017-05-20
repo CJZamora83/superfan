@@ -32,7 +32,7 @@
      new WOW().init();
   </script>
 <!-- //animation -->
-<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1" style="position:relative;left:0px;height:100%;">
+<div ng-show="showMenu" class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1" style="position:relative;left:0px;height:100%;">
   <nav>
     <ul class="nav navbar-nav">
       <li class="active"><a ui-sref="homePage">Home</a></li>
@@ -50,7 +50,7 @@
           <nav class="navbar navbar-default fixed-top">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
+              <button type="button" ng-click="showMenu = !showMenu;" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
                 <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" /></a>
               </button>
               <div ng-show="mobileNavSearchToggle" class="input-group" style="width:95%;margin-bottom:5px;margin-left:5px;">
@@ -99,7 +99,7 @@
           </a>
         </div>
         <div class="agile-gallery-info">
-          <h5 style="align-self: center;text-align:center;">{{post.username}}</h5>
+          <h5 style="align-self: center;text-align:center;overflow-wrap:break-word;">{{post.username}}</h5>
           <p style="text-align:center;"><i class="fa fa-comments" aria-hidden="true"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.likes}}</p>
         </div>
       </div>
@@ -116,7 +116,7 @@
           </a>
         </div>
         <div class="agile-gallery-info">
-          <h5 style="align-self: center;text-align:center;">{{post.username}}</h5>
+          <h5 style="align-self: center;text-align:center;overflow-wrap:break-word;">{{post.username}}</h5>
           <p style="text-align:center;"><i class="fa fa-comments" aria-hidden="true"></i>{{post.comments}}&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>{{post.likes}}</p>
         </div>
       </div>

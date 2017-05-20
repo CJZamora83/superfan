@@ -16,14 +16,17 @@
     $scope.scrolled = false;
     $scope.mobile = false;
     $scope.mobileNavSearchToggle = false;
+    $scope.showMenu = false;
 
     if (window.innerWidth > 750) {
       $scope.mobile = false;
       $scope.mobileNavSearchToggle = false;
+      $scope.showMenu = false;
     }
      else if (window.innerWidth <= 750) {
       $scope.mobile = true;
       $scope.mobileNavSearchToggle = false;
+      $scope.showMenu = false;
     }
 
     $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
