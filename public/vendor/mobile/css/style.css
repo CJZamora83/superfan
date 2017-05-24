@@ -278,7 +278,7 @@ body{
     top: -7px;
     left: -7px;
     padding: 7px;
-    box-shadow: 0 0 0 2px #000000;
+    box-shadow: 0 0 0 2px #FFFFFF;
     -webkit-transition: -webkit-transform 0.5s, opacity 0.2s;
     -webkit-transform: scale(0.8);
     -moz-transition: -moz-transform 0.5s, opacity 0.2s;
@@ -289,8 +289,8 @@ body{
     opacity: 0;
 }
 .about-grid:hover span{
-	background: #000000;
-    color: #fff !important;
+	background: #ffffff;
+    color: red !important;
 }
 .about-grid:hover span:after {
   -webkit-transform: scale(1);
@@ -1180,3 +1180,5 @@ footer p a:hover{
 }
 /*-- //responsive --*/
 
+.superteam:hover   {color:#FFFFFF;font-weight: bold;text-decoration: none;}
+.superteam:active  {color:#FFFFFF;font-weight: bold;text-decoration: none;}
