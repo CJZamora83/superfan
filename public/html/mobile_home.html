@@ -51,7 +51,9 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
-                <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" /></a>
+                <div style="width:50%;">
+                  <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" />
+                </div>
               </button>
               <div ng-show="mobileNavSearchToggle" class="input-group" style="width:95%;margin-bottom:5px;margin-left:5px;">
                 <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self:center !important;">
@@ -71,7 +73,7 @@
             <h2><span style="display:block;">SUP</span><span style="display:block;">ER</span><span style="display:block;">FAN</span></h2>
           </div>
           <div class="w3-arrow bounce animated">
-            <a href="#indro" class="scroll"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <a href="#trending" class="scroll"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -88,7 +90,7 @@
     </span>
   </div>
 <hr style="height:2px;width:80%;background-color:black;">
-  <div style="max-width:90%;margin:0 auto;">
+  <div id="trending" style="max-width:90%;margin:0 auto;">
     <h3 style="text-align:center;">Trending</h3>
     <div class="w3_tab_img">
       <div ng-repeat="post in trending" class="col-sm-6 w3_tab_img_left">
