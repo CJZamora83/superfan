@@ -42,33 +42,34 @@
   </nav>
 </div>
 <div>
-      <div class="header">
-        <div class="container">
-          <nav class="navbar navbar-default fixed-top">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
-                <div style="width:50%;">
-                  <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" />
-                </div>
-              </button>
-              <div ng-show="mobileNavSearchToggle" class="input-group" style="width:95%;margin-bottom:5px;margin-left:5px;">
-                <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self:center !important;">
-                  <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100" style="z-index:10;"></auto-complete>
-                </tags-input>
-                <span class="input-group-btn">
-                  <button class="btn btn-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </span>
-              </div>
+  <div class="header">
+    <div class="container">
+      <nav class="navbar navbar-default fixed-top">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
+            <div style="width:50%;">
+              <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" />
             </div>
-          </nav>
+          </button>
         </div>
-      </div>
+      </nav>
+    </div>
+  </div>
+</div>
 <link href="../vendor/mobile/css/animate.css" rel="stylesheet" type="text/css" media="all">
 <script src="../vendor/mobile/js/wow.min.js"></script>
   <script>
      new WOW().init();
   </script>
+  <div class="input-group" style="width:85%;margin:auto;">
+    <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self:center !important;">
+      <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100" style="z-index:10;"></auto-complete>
+    </tags-input>
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </span>
+  </div>
 <section>
   <!-- <div class="container-fluid" style="width:100%;"> -->
   <div id="feed-container">
