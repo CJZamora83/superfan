@@ -25,48 +25,45 @@
     });
   });
 </script>
-<script type="text/javascript">
-  (function($) {
-      $(document).ready(function(){
-          $(window).scroll(function(){
-              if ($(this).scrollTop() > 120) {
-                  $('#navvy').fadeIn(800);
-              } else {
-                  $('#navvy').fadeOut(800);
-              }
-          });
-      });
-  })(jQuery);
-</script>
+<!-- animation -->
+<link href="../vendor/mobile/css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="../vendor/mobile/js/wow.min.js"></script>
+  <script>
+     new WOW().init();
+  </script>
+<!-- //animation -->
 <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1" style="position:relative;left:0px;height:100%;">
   <nav>
     <ul class="nav navbar-nav">
       <li class="active"><a ui-sref="homePage">Home</a></li>
-      <li><a ui-sref="feed" class="scroll">Feed</a></li>
+      <!-- <li><a ui-sref="feed" class="scroll">Feed</a></li> -->
       <li><a href="#mobile" class="scroll">Mobile App</a></li>
     </ul>
   </nav>
 </div>
-  <nav  id="navvy" class="navbar navbar-default fixed-top">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
-        <div style="width:50%;">
-          <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" />
-          <i class="fa fa-chevron-down" style="color:#FFFFFF;" aria-hidden="true"></i></a>
+<div>
+      <div class="header">
+        <div class="container">
+          <nav class="navbar navbar-default fixed-top">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed mobile-logo-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="float:left;">
+                <div style="width:50%;">
+                  <img src="../img/sf_nav_logo.png" alt="" style="width:40px;height:30px;" />
+                </div>
+              </button>
+              <div ng-show="mobileNavSearchToggle" class="input-group" style="width:95%;margin-bottom:5px;margin-left:5px;">
+                <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self:center !important;">
+                  <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100" style="z-index:10;"></auto-complete>
+                </tags-input>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </span>
+              </div>
+            </div>
+          </nav>
         </div>
-      </button>
-      <div ng-show="mobileNavSearchToggle" class="input-group" style="width:95%;margin-bottom:5px;margin-left:5px;">
-        <tags-input type="text" ng-model="tags" style="margin-bottom: 5px;" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;align-self:center !important;">
-          <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100" style="z-index:10;"></auto-complete>
-        </tags-input>
-        <span class="input-group-btn">
-          <button class="btn btn-primary" type="button" ng-click="loadFeed()"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </span>
       </div>
-    </div>
-  </nav>
-<!-- animation -->
 <link href="../vendor/mobile/css/animate.css" rel="stylesheet" type="text/css" media="all">
 <script src="../vendor/mobile/js/wow.min.js"></script>
   <script>
