@@ -236,7 +236,7 @@ body{
     background: #062F4F;
 }
 .about{
-    background: #8e3cfe;
+    background: #DB0A5B;
 }
 .about-heading h3{
 	color:#FFFFFF;
@@ -250,7 +250,7 @@ body{
 /*-- Effect 1--*/
 .about-grid-left span{
 	font-size: 2em;
-    color: #8e3cfe;
+    color: #DB0A5B;
     display: inline-block;
     border-radius: 50%;
     text-decoration: none;
