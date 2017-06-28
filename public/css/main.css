@@ -386,6 +386,12 @@ section.contact ul.list-social li.social-snapchat a {
 section.contact ul.list-social li.social-snapchat a:hover {
   background-color: #000000;
 }
+section.contact ul.list-social li.social-mail a {
+  background-color: #DB0A5B;
+}
+section.contact ul.list-social li.social-mail a:hover {
+  background-color: #DB0A5B;
+}
 .spread {
   margin-left: 30px;
   margin-right: 30px;
