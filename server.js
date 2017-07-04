@@ -1,11 +1,12 @@
 var express      = require('express');
 var path         = require('path');
-// var favicon      = require('serve-favicon');
+var favicon      = require('serve-favicon');
 var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
 var cors         = require('cors');
+var compression  = require('compression');
 
 require('dotenv').load();
 
@@ -19,6 +20,9 @@ var env      = require('./app/config/environment'),
 var app = express();
 
 app.use(cors());
+
+// gzip compression
+app.use(compression());
 
 // Configure the application (and set it's title!).
 app.set('title', env.TITLE);
