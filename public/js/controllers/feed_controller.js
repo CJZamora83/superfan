@@ -8,7 +8,7 @@
 
   function FeedController($scope, $http, $location, twitterDataService, feedService) {
     var vm = this;
-    $scope.activeYoutubeVideo = '';
+    $scope.activeBrick = {};
     $scope.modalShown = false;
     $scope.brickLimit = 50;
     $scope.tags = feedService.getTags();
@@ -22,13 +22,14 @@
       });
     }
 
-    $scope.openYoutubeModal = function (video) {
-      $scope.activeYoutubeVideo = video;
-      $scope.modalShown = !$scope.modalShown;
+    $scope.openModal = function (brick) {
+      $scope.activeBrick = brick;
+      console.log($scope.activeBrick)
+      $scope.modalShown = true;
     };
 
-    $scope.closeYoutubeModal = function () {
-      $scope.activeYoutubeVideo = '';
+    $scope.closeModal = function () {
+      $scope.activeBrick = {};
       $scope.modalShown = false;
     };
 

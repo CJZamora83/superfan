@@ -17,7 +17,7 @@
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="position:absolute !important;width:1680px;left:50%;margin-left:-840px;">
     <div class="carousel-inner" role="listbox">
       <div class="carousel-item active">
-        <img class="d-block img-fluid" src="../img/popular_celebrities_filtered_darker.jpg" alt="First slide">
+        <img class="d-block img-fluid" src="../img/popular_celebrities_filtered_darker.png" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
             <h1 class="display-1">SUPERFAN</h1>
               <h3>explore celebrities you love</h3>
@@ -104,9 +104,16 @@
         <!-- </div> -->
       </div>
     </div>
+    </br>
+    </br>
   <div class="home-container">
-    <div class="row cien">
+    <div class="row">
+      <div class="col">
       <h3><i class="fa fa-twitter"></i></h3>
+      </div>
+      <div class="col text-right">
+      <span style="padding-right:20px;"><a ng-click="loadFeed(post.systemname)">See More</a></span>
+      </div>
     </div>
     <div class="row">
       <div ng-repeat="post in twitterHome" class="d-inline-block hover" style="height:322px;">
@@ -172,21 +179,24 @@
   </div>
   </section>
       <section id="contact" class="contact bg-contact">
-      <div class="container-fluid">
+      <div class="container">
         <h2><i class="fa fa-heart"></i> us on social media!</h2>
-        <ul class="list-inline list-social">
-          <li class="social-twitter">
-            <a href="https://twitter.com/thesuperfanapp" target="_blank"><i class="fa fa-twitter"></i></a>
+        <ul class="list-inline">
+          <li>
+            <a href="https://twitter.com/thesuperfanapp" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
           </li>
-          <li class="social-facebook">
-            <a href="https://www.facebook.com/superfanapp/" target="_blank"><i class="fa fa-facebook"></i></a>
+          <li>
+            <a href="https://www.facebook.com/superfanapp/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
           </li>
-          <li class="social-google-plus">
-            <a href="https://www.instagram.com/superfanapp/" target="_blank"><i class="fa fa-instagram"></i></a>
+          <li>
+            <a href="https://www.instagram.com/superfanapp/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
           </li>
-          <!-- <li class="social-snapchat">
+          <!-- <li>
             <a href="#"><i class="fa fa-snapchat"></i></a>
           </li> -->
+          <li>
+            <a href="mailto:team@superfan.love" target="_blank"><i class="fa fa-envelope fa-2x"></i></a>
+          </li>
         </ul>
         </br>
         </br>
@@ -197,7 +207,7 @@
     <!-- Footer -->
     <footer>
       <div class="row justify-content-center">
-          <p>Copyright &copy; SUPERFAN 2017</p>
+          <p>Copyright &copy; SUPERFAN 2017.  All rights reserved.</p>
         </div>
       </div>
     </footer>

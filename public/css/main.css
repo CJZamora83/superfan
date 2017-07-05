@@ -334,7 +334,7 @@ section.cta .overlay {
 }
 section.sources {
   padding: 80px;
-  background-color: #fffbff;
+  background-color: #FFFFFF;
 }
 section.contact {
   text-align: center;
@@ -385,6 +385,12 @@ section.contact ul.list-social li.social-snapchat a {
 }
 section.contact ul.list-social li.social-snapchat a:hover {
   background-color: #000000;
+}
+section.contact ul.list-social li.social-mail a {
+  background-color: #DB0A5B;
+}
+section.contact ul.list-social li.social-mail a:hover {
+  background-color: #C50951;
 }
 .spread {
   margin-left: 30px;
