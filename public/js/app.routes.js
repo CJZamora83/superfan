@@ -5,9 +5,9 @@
     .module("superfanApp")
     .config(AppRoutes);
 
-  AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider", "$authProvider", '$locationProvider'];
+  AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider", '$locationProvider'];
 
-  function AppRoutes($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
+  function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
     var homeTemplate = "/html/home.html";
     var feedTemplate = "/html/feed.html";
     function detectmob() { 

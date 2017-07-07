@@ -8,9 +8,9 @@
       }])
       .controller("MainController", MainController);
 
-  MainController.$inject = ['$scope','userDataService', '$auth', '$state', '$http', 'feedService', '$location', '$anchorScroll'];
+  MainController.$inject = ['$scope','userDataService', '$state', '$http', 'feedService', '$location', '$anchorScroll'];
 
-  function MainController($scope, userDataService, $auth, $state, $http, feedService, $location, $route, $anchorScroll) {
+  function MainController($scope, userDataService, $state, $http, feedService, $location, $route, $anchorScroll) {
     var vm = this;
     var celebritiesPretty = {};
     $scope.feedPage = false;
@@ -62,7 +62,7 @@
           });
 
           function myFunction() {
-            if (document.body.scrollTop > 720) {
+            if (document.body.scrollTop > 435) {
               document.getElementById("navBar").style.backgroundColor = "#ffffff";
               [].forEach.call(document.getElementsByClassName("nav-link"), function (el) {
                   el.style.color = "#000000";
@@ -188,14 +188,5 @@
     }, function () {
       $(this).find(".overlay").fadeOut();
     });
-
-    vm.isLoggedIn = function() {
-      return $auth.isAuthenticated();
-    };
-
-    vm.logout = function() {
-      $auth.logout();
-      $state.go('homePage');
-    };
   }
 })();

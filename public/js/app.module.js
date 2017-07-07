@@ -1,14 +1,9 @@
 (function() {
 
   angular.module('superfanApp', [
-    "ui.router", 'satellizer', 'ngTagsInput', 'ui.bootstrap', 'masonry'
+    "ui.router", 'ngTagsInput', 'ui.bootstrap', 'masonry'
     ])
 
-    .config(function($httpProvider, $authProvider) {
-      $authProvider.instagram({
-        clientId: 'ebbedcbd196949a3848d793d4a3dd4f3'
-      });
-    })
     .service('feedService', function ($http) {
       var service = {};
       service.feed = [];
