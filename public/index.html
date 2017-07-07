@@ -59,8 +59,9 @@
                     <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="margin-bottom:10px;">
                         <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
                     </tags-input>
-                    <button class="btn btn-outline-primary rounded-circle" type="button" ng-click="loadFeed()" style="margin-left:1px;margin-right:2px;height:50px;width:50px;"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    <button class="btn btn-outline-danger rounded-circle" type="button" ng-click="clearFeed()" style="margin-left:2px;margin-right:1px;height:50px;width:50px;"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
                 </div>
             </form>
         </div>
