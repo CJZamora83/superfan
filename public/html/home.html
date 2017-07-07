@@ -2,11 +2,12 @@
   <div class="w3ls-text text-center" style="padding:15px;">
     <h2><span style="display:block;">SUPER</span><span style="display:block;">FAN</span></h2>
   </div>
+  <br>
       <p><h3 class="text-center text-white">The Next Step in Social Media</h3></p>
 </div>
 <div class="container-fluid">
   <div class="row justify-content-center">
-    <div class="input-group zee">
+    <div class="input-group">
       <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;">
         <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
       </tags-input>
@@ -16,9 +17,7 @@
     </div>
   </div>
 </div>
-  <br>
-  <br>
-  <div class="home-container" style="padding-top:645px;">
+  <div class="home-container">
     <div class="row cien">
       <h3><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Trending</h3>
     </div>
@@ -95,7 +94,7 @@
       <h3><i class="fa fa-twitter"></i></h3>
       </div>
       <div class="col text-right">
-      <span style="padding-right:20px;"><a ng-click="loadFeed(post.systemname)">See More</a></span>
+      <span style="padding-right:20px;"><a ng-click="loadFeed(post.systemname)">See More ></a></span>
       </div>
     </div>
     <div class="row">
