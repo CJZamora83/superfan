@@ -53,16 +53,16 @@
                 <img src="/img/sf_nav_logo.png" style="margin-top:5px;margin-bottom:5px;">
             </a>
         </div>
-        <div class="d-flex justify-content-md-start">
+        <div class="container-fluid d-flex justify-content-md-start">
             <form ng-hide="!feedPage" class="form-inline">
-                <div class="input-group">
-                    <tags-input ng-model="tags" class="form-text" id="nav-input" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="margin-bottom:10px;">
-                        <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
-                    </tags-input>
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                </div>
+              <div class="input-group">
+                <tags-input class="navvy" type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)">
+                  <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
+                </tags-input>
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button" ng-click="loadFeed()" style="height:34px;"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </span>
+              </div>
             </form>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -124,7 +124,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
     <script src="vendor/ng-tags-input/js/ng-tags-input.js" type="text/javascript"></script>
     <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
-    <script src="vendor/glidejs/dist/glide.js" type="text/javascript"></script>
+    <!-- <script src="vendor/glidejs/dist/glide.js" type="text/javascript"></script> -->
 
     <!-- Our Javascript -->
     <script src="js/app.module.js" type="text/javascript"></script>

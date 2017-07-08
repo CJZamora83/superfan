@@ -19,10 +19,6 @@
   /* Opera 11.10+ */
   background: -o-linear-gradient(top, #061161, #780206);
 }
-.btn btn-secondary{
-  height: 100%;
-}
-
 .w3ls-text{
     padding: 4em;
     width: 31%;
@@ -111,17 +107,10 @@ h6 {
 /*Navbar Search Field*/
 .input-group {
   width: 50%;
+  border: 1px;
 }
 tags-input div div.tags {
   border: 0px;
-}
-#input-body {
-  box-shadow: none;
-  border: 1px;
-  padding: 0;
-  min-height: 34px;
-  margin: 0 auto;
-  align-self: center;
 }
 tags-input div div.tags.focused {
   border: 0px !important;
@@ -130,7 +119,7 @@ tags-input div div.tags.focused {
 /*---------------------------------*/
 /*Home Search Field*/
 tags-input .tags {
-  border: 1px solid #cccccc !important;
+  border: none;
   min-height: 32px;
 }
 tags-input .tags.focused {

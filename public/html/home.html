@@ -5,14 +5,15 @@
   <br>
       <p><h3 class="text-center text-white">The Next Step in Social Media</h3></p>
 </div>
+<br>
 <div class="container">
-  <h3><strong>Superfan</strong> is the next generation of social media.  Modernizing the way fans explore their celebrity media, we streamline popular social media sources. Now you can view the content of your favorite celebrities, atheletes, artists, and other famous people in one place.</h3>
+  <h3><strong>Superfan</strong> is the next generation of social media.  Modernizing the way fans explore celebrity media, we streamline popular social media sources and adding more. Now you can view the content of your favorite celebrities, athletes, artists, and other famous people in one app.</h3>
 </div>
 <br>
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="input-group">
-      <tags-input id="input-body" type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)" style="border:none;">
+      <tags-input type="text" ng-model="tags" class="form-control" replace-spaces-with-dashes='false' on-tag-added="feedService.addFeed($tag.system);" on-tag-removed="feedService.removeFeed($tag.system)">
         <auto-complete source="loadNavTags($query)" min-length="0" max-results-to-show="100"></auto-complete>
       </tags-input>
       <span class="input-group-btn">
