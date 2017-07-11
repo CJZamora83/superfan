@@ -1,3 +1,9 @@
+.jumbotron {
+  height: 65vh;
+}
+.vert {
+  margin-top: 20vh;
+}
 #linearBg2 {
   /* fallback */
   background-color: #1a82f7;
