@@ -1,7 +1,7 @@
-var Tube = require('../models/tube.js');
+var Media = require('../models/media.js');
 
 function search(req, res, next) {
-  Tube.find({
+  Media.find({
     systemname: req.query.search,
     media_type: 'youtube'
   }, function (er, row) {
@@ -14,7 +14,7 @@ function search(req, res, next) {
 }
 
 function list(req, res, next) {
-  Tube.find({
+  Media.find({
     media_type: 'youtube'
   }, function (er, row) {
     if (er) {
@@ -30,7 +30,7 @@ function home(req, res, next) {
   twoWeeksAgo.setHours(0, 0, 0, 0);
   twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
 
-  Tube.find({
+  Media.find({
     createdAt: {
       $gte: twoWeeksAgo
     },

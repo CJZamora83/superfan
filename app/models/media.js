@@ -51,6 +51,6 @@ var mediaSchema = new mongoose.Schema({
   insta_id: String
 });
 
-var Media = mongoose.model('Tweet', mediaSchema);
+var Media = mongoose.model('Media', mediaSchema);
 
 module.exports = Media;
