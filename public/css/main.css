@@ -1,3 +1,9 @@
+.jumbotron {
+  height: 65vh;
+}
+.vert {
+  margin-top: 20vh;
+}
 #linearBg2 {
   /* fallback */
   background-color: #1a82f7;
@@ -19,7 +25,6 @@
   /* Opera 11.10+ */
   background: -o-linear-gradient(top, #061161, #780206);
 }
-
 .w3ls-text{
     padding: 4em;
     width: 31%;
@@ -108,9 +113,10 @@ h6 {
 /*Navbar Search Field*/
 .input-group {
   width: 50%;
+  border: 1px;
 }
 tags-input div div.tags {
-  border: 0px !important;
+  border: 0px;
 }
 tags-input div div.tags.focused {
   border: 0px !important;
@@ -119,7 +125,7 @@ tags-input div div.tags.focused {
 /*---------------------------------*/
 /*Home Search Field*/
 tags-input .tags {
-  border: 1px solid #cccccc !important;
+  border: none;
   min-height: 32px;
 }
 tags-input .tags.focused {
