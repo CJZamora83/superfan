@@ -1,4 +1,4 @@
-var Tweet = require('../models/tweet.js');
+var Tweet = require('../models/media.js');
 
 // user oauth2
 function oauth (req, res, next) {
@@ -105,7 +105,8 @@ function oauth (req, res, next) {
 
 function search(req, res, next) {
   Tweet.find({
-    systemname: req.query.search
+    systemname: req.query.search,
+    media_type: 'twitter'
   }, function (er, row) {
     if (er) {
       res.json(er);
@@ -116,7 +117,9 @@ function search(req, res, next) {
 }
 
 function list(req, res, next) {
-  Tweet.find({}, function (er, row) {
+  Tweet.find({
+    media_type: 'twitter'
+  }, function (er, row) {
     if (er) {
       res.json(er);
     } else {
@@ -133,7 +136,8 @@ function home(req, res, next) {
   Tweet.find({
     createdAt: {
       $gte: threeDaysAgo
-    }
+    },
+    media_type: 'twitter'
   }, {}, {sort: {favorites: -1, createdAt: -1}, limit: 4}, function (er, row) {
     if (er) {
       res.json(er);

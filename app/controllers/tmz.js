@@ -1,8 +1,9 @@
-var Tmz = require('../models/tmz.js');
+var Tmz = require('../models/media.js');
 
 function search(req, res, next) {
   Tmz.find({
-    systemname: req.query.search
+    systemname: req.query.search,
+    media_type: 'tmz'
   }, function (er, row) {
     if (er) {
       res.json(er);
@@ -13,7 +14,9 @@ function search(req, res, next) {
 };
 
 function list(req, res, next) {
-  Tmz.find({}, function (er, row) {
+  Tmz.find({
+    media_type: 'tmz'
+  }, function (er, row) {
     if (er) {
       res.json(er);
     } else {

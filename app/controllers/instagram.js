@@ -1,8 +1,9 @@
-var Gram = require('../models/gram.js');
+var Gram = require('../models/media.js');
 
 function search (req, res, next) {
   Gram.find({
-    systemname: req.query.search
+    systemname: req.query.search,
+    media_type: 'instagram'
   }, function (er, row) {
     if (er) {
       console.log(er);
@@ -14,7 +15,9 @@ function search (req, res, next) {
 };
 
 function list (req, res, next) {
-  Gram.find({}, function (er, row) {
+  Gram.find({
+    media_type: 'instagram'
+  }, function (er, row) {
     if (er) {
       console.log(er);
       res.json(er);
@@ -33,7 +36,8 @@ function home (req, res, next) {
     createdAt: {
       $gte: twoWeeksAgo
     },
-    video: null
+    video: null,
+    media_type: 'instagram'
   }, {}, {sort: {likes: -1, createdAt: -1}, limit: 4}, function (er, row) {
     if (er) {
       console.log(er);

@@ -2,7 +2,8 @@ var Tube = require('../models/tube.js');
 
 function search(req, res, next) {
   Tube.find({
-    systemname: req.query.search
+    systemname: req.query.search,
+    media_type: 'youtube'
   }, function (er, row) {
     if (er) {
       res.json(er);
@@ -13,7 +14,9 @@ function search(req, res, next) {
 }
 
 function list(req, res, next) {
-  Tube.find({}, function (er, row) {
+  Tube.find({
+    media_type: 'youtube'
+  }, function (er, row) {
     if (er) {
       res.json(er);
     } else {
@@ -30,7 +33,8 @@ function home(req, res, next) {
   Tube.find({
     createdAt: {
       $gte: twoWeeksAgo
-    }
+    },
+    media_type: 'youtube'
   }, {}, {sort: {createdAt: -1}, limit: 4}, function (er, row) {
     if (er) {
       res.json(er);
