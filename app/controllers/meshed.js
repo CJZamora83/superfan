@@ -66,10 +66,7 @@ function mobileSearch (req, res, next) {
       console.log(er);
     }
 
-    res.json({
-      er: null,
-      results: row
-    });
+    res.json(row);
   });
 };
 
