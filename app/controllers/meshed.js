@@ -36,7 +36,7 @@ function mostRecent (req, res, next) {
 function search (req, res, next) {
   var nameArray = req.query.search.split(';');
 
-  // find tweets and grams based celebrity system name(s)
+  // find media based on celebrity system name(s)
   Media.find({
     systemname: {
       $in: nameArray
@@ -56,14 +56,20 @@ function search (req, res, next) {
 function mobileSearch (req, res, next) {
   var nameArray = req.query.search.split(';');
 
-  // find tweets and grams based on celebrity system name(s)
-  var compiled = [];
-  Meshed.find({
+  // find media based on celebrity system name(s)
+  Media.find({
     systemname: {
       $in: nameArray
     }
-  }, function (er, row1) {
-  
+  }, {}, { limit: 50, skip: req.query.skip, sort: { createdAt: -1 } }, function (er, row) {
+    if (er) {
+      console.log(er);
+    }
+
+    res.json({
+      er: null,
+      results: row
+    });
   });
 };
 

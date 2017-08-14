@@ -107,6 +107,8 @@ router.get('/trending', meshedController.trending);
 
 router.get('/search', meshedController.search);
 
+router.get('/mobile-search', meshedController.mobileSearch);
+
 router.get('/mostRecent', meshedController.mostRecent);
 
 module.exports = router;
