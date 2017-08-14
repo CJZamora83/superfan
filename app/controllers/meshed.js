@@ -61,12 +61,12 @@ function mobileSearch (req, res, next) {
     systemname: {
       $in: nameArray
     }
-  }, {}, { limit: 50, skip: req.query.skip, sort: { createdAt: -1 } }, function (er, row) {
+  }, {}, { limit: 50, skip: parseInt(req.query.skip), sort: { createdAt: -1 } }, function (er, row) {
     if (er) {
       console.log(er);
+    } else {
+      res.json(row);
     }
-
-    res.json(row);
   });
 };
 
