@@ -6,10 +6,14 @@ function trending (req, res, next) {
   oneWeekAgo.setHours(0, 0, 0, 0);
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
+  console.log(oneWeekAgo)
+
   Media.find({
     video: null,
     media_type: 'instagram',
-    createdAt: oneWeekAgo
+    createdAt: {
+      $gte: oneWeekAgo
+    }
   }, {}, { sort: { likes: -1, createdAt: -1 }, limit: 4 }, function (er, row) {
     if (er) {
       console.log(er);
