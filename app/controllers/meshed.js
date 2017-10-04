@@ -7,9 +7,6 @@ function trending (req, res, next) {
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
   Media.find({
-    createdAt: { 
-      $gte: oneWeekAgo
-    },
     video: null,
     media_type: 'instagram'
   }, {}, { sort: { likes: -1, createdAt: -1 }, limit: 4 }, function (er, row) {
@@ -30,7 +27,7 @@ function mostRecent (req, res, next) {
     } else {
       res.json(row);
     }
-  })
+  });
 }
 
 function search (req, res, next) {

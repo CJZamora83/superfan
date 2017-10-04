@@ -148,24 +148,32 @@
 
     $http.get('/api/trending').then(function (results) {
       $scope.trending = results.data;
+      console.log('trending');
+      console.log($scope.trending);
     });
 
     $http.get('/api/mostRecent').then(function (results) {
       $scope.mostRecent = results.data;
+      console.log('most recent');
+      console.log($scope.mostRecent);
     });
 
     $http.get('/api/instagram/home').then(function (results) {
       $scope.instagramHome = results.data;
+      console.log('instagram');
+      console.log($scope.instagramHome);
     });
 
     $http.get('/api/twitter/home').then(function (results) {
       $scope.twitterHome = results.data;
+      console.log('twitter');
       console.log($scope.twitterHome);
     });
 
     $http.get('/api/youtube/home').then(function (results) {
       $scope.youtubeHome = results.data;
-      console.log(results.data)
+      console.log('youtube');
+      console.log(results.data);
     });
 
     $http.get('/api/celebrities/list').then(function (results) {
