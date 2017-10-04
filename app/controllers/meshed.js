@@ -8,7 +8,8 @@ function trending (req, res, next) {
 
   Media.find({
     video: null,
-    media_type: 'instagram'
+    media_type: 'instagram',
+    createdAt: oneWeekAgo
   }, {}, { sort: { likes: -1, createdAt: -1 }, limit: 4 }, function (er, row) {
     if (er) {
       console.log(er);
