@@ -57,13 +57,20 @@ function search (req, res, next) {
 
 function mobileSearch (req, res, next) {
   var nameArray = req.query.search.split(';');
+  var sort = {};
+
+  if (req.query.type === 'mostRecent') {
+    sort = { createdAt: -1 };
+  } else if (req.query.type === 'trending') {
+    sort = { likes: -1, views: -1, favorites: -1, retweets: -1, 'stats.views': -1, 'stats.likes': -1, 'stats.favorites': -1, createdAt: -1 };
+  }
 
   // find media based on celebrity system name(s)
   Media.find({
     systemname: {
       $in: nameArray
     }
-  }, {}, { limit: 50, skip: parseInt(req.query.skip), sort: { createdAt: -1 } }, function (er, row) {
+  }, {}, { limit: 50, skip: parseInt(req.query.skip), sort: sort }, function (er, row) {
     if (er) {
       console.log(er);
     } else {
