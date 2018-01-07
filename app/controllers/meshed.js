@@ -65,18 +65,42 @@ function mobileSearch (req, res, next) {
     sort = { likes: -1, views: -1, favorites: -1, retweets: -1, 'stats.views': -1, 'stats.likes': -1, 'stats.favorites': -1, createdAt: -1 };
   }
 
-  // find media based on celebrity system name(s)
-  Media.find({
-    systemname: {
-      $in: nameArray
-    }
-  }, {}, { limit: 50, skip: parseInt(req.query.skip), sort: sort }, function (er, row) {
-    if (er) {
-      console.log(er);
-    } else {
-      res.json(row);
-    }
-  });
+  if (req.query.label) {
+    Celebrities.find({
+      label: {
+        $in: req.query.label.split(';')
+      }
+    }, function (er, celebrities) {
+      if (er) console.log(er);
+      if (celebrities.length >= 0) celebrities.forEach(function (item) { if (nameArray.indexOf(item.system) < 0) { nameArray.push(item.system); } });
+
+      // find media based on celebrity system name(s)
+      Media.find({
+        systemname: {
+          $in: nameArray
+        }
+      }, {}, { limit: 50, skip: parseInt(req.query.skip), sort: sort }, function (er, row) {
+        if (er) {
+          console.log(er);
+        } else {
+          res.json(row);
+        }
+      });
+    })
+  } else {
+    // find media based on celebrity system name(s)
+    Media.find({
+      systemname: {
+        $in: nameArray
+      }
+    }, {}, { limit: 50, skip: parseInt(req.query.skip), sort: sort }, function (er, row) {
+      if (er) {
+        console.log(er);
+      } else {
+        res.json(row);
+      }
+    });
+  }
 };
 
 module.exports = {
