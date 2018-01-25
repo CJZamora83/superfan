@@ -15,7 +15,8 @@ function tags (req, res, next) {
     while (l--) {
       celebrities.push({
         text: row[l].pretty,
-        system: row[l].system
+        system: row[l].system,
+        image: row[l].image
       });
     }
 

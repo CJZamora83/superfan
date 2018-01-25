@@ -49,7 +49,9 @@ var mediaSchema = new mongoose.Schema({
   likes: Number,
   views: Number,
   insta_id: String,
-  thumbnail: String
+  thumbnail: String,
+  height: Number,
+  width: Number
 });
 
 var Media = mongoose.model('Media', mediaSchema);
