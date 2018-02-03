@@ -6,7 +6,7 @@ var celebritySchema = new mongoose.Schema({
   twitter: String,
   instagram: String,
   youtube: Array,
-  label: [String],
+  labels: [String],
   image: String
 });
 

@@ -38,16 +38,13 @@ function labeled (req, res, next) {
   var sort = { likes: -1, views: -1, favorites: -1, retweets: -1, 'stats.views': -1, 'stats.likes': -1, 'stats.favorites': -1, createdAt: -1 };
 
   Celebrities.find({
-    label: {
+    labels: {
       $in: req.query.labels.split(';')
     }
   }, function (er, celebrities) {
     if (er) console.log(er);
     if (celebrities.length >= 0) celebrities.forEach(function (item) { if (nameArray.indexOf(item.system) < 0) { nameArray.push(item.system); } });
 
-    console.log(req.query.labels);
-    console.log(nameArray)
-    console.log(celebrities)
     // find media based on celebrity system name(s)
     Media.find({
       systemname: {
@@ -95,7 +92,7 @@ function mobileSearch (req, res, next) {
 
   if (req.query.label) {
     Celebrities.find({
-      label: {
+      labels: {
         $in: req.query.labels.split(';')
       }
     }, function (er, celebrities) {
