@@ -36,7 +36,7 @@ function mostRecent (req, res, next) {
 function labeled (req, res, next) {
   Celebrities.find({
     label: {
-      $in: req.query.label.split(';')
+      $in: req.query.labels.split(';')
     }
   }, function (er, celebrities) {
     if (er) console.log(er);
@@ -90,7 +90,7 @@ function mobileSearch (req, res, next) {
   if (req.query.label) {
     Celebrities.find({
       label: {
-        $in: req.query.label.split(';')
+        $in: req.query.labels.split(';')
       }
     }, function (er, celebrities) {
       if (er) console.log(er);
