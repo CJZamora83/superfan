@@ -34,6 +34,7 @@ function mostRecent (req, res, next) {
 }
 
 function labeled (req, res, next) {
+  var nameArray = [];
   Celebrities.find({
     label: {
       $in: req.query.labels.split(';')
