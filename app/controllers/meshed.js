@@ -35,6 +35,8 @@ function mostRecent (req, res, next) {
 
 function labeled (req, res, next) {
   var nameArray = [];
+  var sort = { likes: -1, views: -1, favorites: -1, retweets: -1, 'stats.views': -1, 'stats.likes': -1, 'stats.favorites': -1, createdAt: -1 };
+
   Celebrities.find({
     label: {
       $in: req.query.labels.split(';')
@@ -48,7 +50,7 @@ function labeled (req, res, next) {
       systemname: {
         $in: nameArray
       }
-    }, {}, { limit: 50, skip: parseInt(req.query.skip), sort: sort }, function (er, row) {
+    }, {}, { limit: 10, sort: sort }, function (er, row) {
       if (er) {
         console.log(er);
       } else {
