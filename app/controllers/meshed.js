@@ -45,6 +45,8 @@ function labeled (req, res, next) {
     if (er) console.log(er);
     if (celebrities.length >= 0) celebrities.forEach(function (item) { if (nameArray.indexOf(item.system) < 0) { nameArray.push(item.system); } });
 
+    console.log(nameArray)
+    console.log(celebrities)
     // find media based on celebrity system name(s)
     Media.find({
       systemname: {
