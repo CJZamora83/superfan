@@ -111,4 +111,6 @@ router.get('/mobile-search', meshedController.mobileSearch);
 
 router.get('/mostRecent', meshedController.mostRecent);
 
+router.get('/labeled', meshedController.labeled);
+
 module.exports = router;
